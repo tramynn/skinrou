@@ -1,0 +1,10 @@
+@import "../../modules/./flex.scss";
+
+$primary-bg-color: #e7eff6;
+
+.Body {
+  background-color: $primary-bg-color;
+  width: 100vw;
+  height: 100vh;
+  @include flex;
+}
