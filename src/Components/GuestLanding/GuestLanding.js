@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import headerLogo from "../../images/main-logo.svg";
+import { Link } from "react-router-dom";
 import "../../styles/partials/GuestLanding/GuestLanding.css";
 
 export default class GuestLanding extends Component {
@@ -14,11 +15,15 @@ export default class GuestLanding extends Component {
         </p>
         <div className="GuestLanding-Buttons">
           <div className="GL-buttons-container">
-            <button>Log In</button>
+            <Link to="/login">
+              <button>Log In</button>
+            </Link>
           </div>
           <p>or</p>
           <div className="GL-buttons-container">
-            <button>Register</button>
+            <Link to="/register">
+              <button>Register</button>
+            </Link>
           </div>
         </div>
       </div>

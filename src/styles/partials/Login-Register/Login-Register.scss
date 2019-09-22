@@ -1,0 +1,18 @@
+@import "../../modules/./flex.scss";
+
+.Login-Register-Body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #d0d6ea;
+  @include flex-base;
+  @include flex-column;
+  text-align: center;
+}
+
+.Form-body {
+  width: 30vw;
+  height: 30vw;
+  background-color: white;
+  @include flex-base;
+  @include flex-column;
+}
