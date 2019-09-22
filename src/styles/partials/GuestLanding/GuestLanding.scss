@@ -8,42 +8,76 @@ $primary-h1-color: #024a81;
 $button-color: #21669c;
 $button-color-hover: #b1b3d6;
 
-// Font Headers
-$h1-font: Helvetica,
+$body-fontfamily: Montserrat,
 sans-serif;
-$h1-size: 5vw;
 
-.Body {
+// body
+@mixin body-font {
+  font-family: Montserrat, sans-serif;
+  font-size: 1em;
+  line-height: 1.618em;
+  letter-spacing: .03em;
+}
+
+// Font - h1
+@mixin h1-font {
+  font-family: Paytone One, sans-serif;
+  font-size: 5vw;
+}
+
+.GuestLanding-Body {
   color: $primary-h1-color;
   background-color: $primary-bg-color;
-  font-family: $h1-font;
   font-weight: bold;
   width: 100vw;
   height: 100vh;
   @include flex-base;
   @include flex-column;
+  @include body-font;
+}
+
+.tagline {
+  margin-top: 3vh;
+  text-align: center;
+  @include body-font;
 }
 
 .GuestLanding-Buttons {
   width: 15vw;
-  // height: 50vh;
-  margin-top: 10vh;
+  margin-top: 8vh;
   @include flex-row;
 }
+
+// Buttons
 
 button {
   border-radius: 40px;
   background-color: $button-color;
   color: white;
+  font-family: $body-fontfamily;
+  font-weight: bold;
   font-size: 14px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 12px;
-  margin: 20px;
+  margin: 10px;
+  width: 140px;
 }
 
 button:hover {
   background-color: $button-color-hover;
   transition: 1s;
   cursor: pointer;
+}
+
+@media (max-width: 414px) {
+  .GuestLanding-Buttons {
+    margin-top: 30vh;
+    @include flex-column;
+  }
+
+  button {
+    width: 90vw;
+    margin: 5px;
+  }
 }

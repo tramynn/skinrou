@@ -1,7 +1,6 @@
-.Body {
+.GuestLanding-Body {
   color: #024a81;
   background-color: #e7eff6;
-  font-family: Helvetica, sans-serif;
   font-weight: bold;
   width: 100vw;
   height: 100vh;
@@ -18,11 +17,24 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  font-family: Montserrat, sans-serif;
+  font-size: 1em;
+  line-height: 1.618em;
+  letter-spacing: .03em;
+}
+
+.tagline {
+  margin-top: 3vh;
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  font-size: 1em;
+  line-height: 1.618em;
+  letter-spacing: .03em;
 }
 
 .GuestLanding-Buttons {
   width: 15vw;
-  margin-top: 10vh;
+  margin-top: 8vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,11 +49,14 @@ button {
   border-radius: 40px;
   background-color: #21669c;
   color: white;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
   font-size: 14px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 12px;
-  margin: 20px;
+  margin: 10px;
+  width: 140px;
 }
 
 button:hover {
@@ -49,5 +64,19 @@ button:hover {
   -webkit-transition: 1s;
   transition: 1s;
   cursor: pointer;
+}
+
+@media (max-width: 414px) {
+  .GuestLanding-Buttons {
+    margin-top: 30vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  button {
+    width: 90vw;
+    margin: 5px;
+  }
 }
 /*# sourceMappingURL=GuestLanding.css.map */

@@ -130,3 +130,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Paytone+One|Raleway&display=swap');
