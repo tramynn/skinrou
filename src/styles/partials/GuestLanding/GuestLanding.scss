@@ -1,10 +1,49 @@
 @import "../../modules/./flex.scss";
 
+// Primary Colors
 $primary-bg-color: #e7eff6;
+$primary-h1-color: #024a81;
+
+// Button Colors
+$button-color: #21669c;
+$button-color-hover: #b1b3d6;
+
+// Font Headers
+$h1-font: Helvetica,
+sans-serif;
+$h1-size: 5vw;
 
 .Body {
+  color: $primary-h1-color;
   background-color: $primary-bg-color;
+  font-family: $h1-font;
+  font-weight: bold;
   width: 100vw;
   height: 100vh;
-  @include flex;
+  @include flex-base;
+  @include flex-column;
+}
+
+.GuestLanding-Buttons {
+  width: 15vw;
+  // height: 50vh;
+  margin-top: 10vh;
+  @include flex-row;
+}
+
+button {
+  border-radius: 40px;
+  background-color: $button-color;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 12px;
+  margin: 20px;
+}
+
+button:hover {
+  background-color: $button-color-hover;
+  transition: 1s;
+  cursor: pointer;
 }
