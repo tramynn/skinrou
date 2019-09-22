@@ -14,17 +14,13 @@ export default class GuestLanding extends Component {
           treat your skin with priority.
         </p>
         <div className="GuestLanding-Buttons">
-          <div className="GL-buttons-container">
-            <Link to="/login">
-              <button>Log In</button>
-            </Link>
-          </div>
+          <Link to="/login">
+            <button className="Login-btn">Log In</button>
+          </Link>
           <p>or</p>
-          <div className="GL-buttons-container">
-            <Link to="/register">
-              <button>Register</button>
-            </Link>
-          </div>
+          <Link to="/register">
+            <button className="Register-btn">Register</button>
+          </Link>
         </div>
       </div>
     );

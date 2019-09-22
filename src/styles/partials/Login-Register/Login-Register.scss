@@ -4,9 +4,9 @@
   width: 100vw;
   height: 100vh;
   background-color: #d0d6ea;
+  text-align: center;
   @include flex-base;
   @include flex-column;
-  text-align: center;
 }
 
 .Form-body {

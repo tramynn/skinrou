@@ -1,6 +1,9 @@
 .GuestLanding-Body {
   color: #024a81;
-  background-color: #e7eff6;
+  background-image: url("../../../images/login-register-bg.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   font-weight: bold;
   width: 100vw;
   height: 100vh;
@@ -26,6 +29,7 @@
 .tagline {
   margin-top: 3vh;
   text-align: center;
+  text-shadow: 0px 2px 2px gray;
   font-family: Montserrat, sans-serif;
   font-size: 1em;
   line-height: 1.618em;
@@ -45,8 +49,10 @@
           align-items: center;
 }
 
-button {
+.Login-btn,
+.Register-btn {
   border-radius: 40px;
+  border: 2px solid #21669c;
   background-color: #21669c;
   color: white;
   font-family: Montserrat, sans-serif;
@@ -59,22 +65,38 @@ button {
   width: 140px;
 }
 
-button:hover {
-  background-color: #b1b3d6;
+.Login-btn:hover {
+  color: #024a81;
+  background-color: transparent;
   -webkit-transition: 1s;
   transition: 1s;
   cursor: pointer;
 }
 
+.Register-btn:hover {
+  color: white;
+  background-color: #21669c;
+  -webkit-transition: 1s;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.Register-btn {
+  background-color: transparent;
+  color: #024a81;
+  border: 2px solid #21669c;
+}
+
 @media (max-width: 414px) {
   .GuestLanding-Buttons {
-    margin-top: 30vh;
+    margin-top: 5vh;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  button {
+  .Login-btn,
+  .Register-btn {
     width: 90vw;
     margin: 5px;
   }

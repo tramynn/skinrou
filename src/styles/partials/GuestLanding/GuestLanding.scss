@@ -6,8 +6,9 @@ $primary-h1-color: #024a81;
 
 // Button Colors
 $button-color: #21669c;
-$button-color-hover: #b1b3d6;
+$button-color-hover: #4b86b4;
 
+// Body Font-Family
 $body-fontfamily: Montserrat,
 sans-serif;
 
@@ -27,7 +28,10 @@ sans-serif;
 
 .GuestLanding-Body {
   color: $primary-h1-color;
-  background-color: $primary-bg-color;
+  background-image: url("../../../images/login-register-bg.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   font-weight: bold;
   width: 100vw;
   height: 100vh;
@@ -39,6 +43,7 @@ sans-serif;
 .tagline {
   margin-top: 3vh;
   text-align: center;
+  text-shadow: 0px 2px 2px gray;
   @include body-font;
 }
 
@@ -50,8 +55,10 @@ sans-serif;
 
 // Buttons
 
-button {
+.Login-btn,
+.Register-btn {
   border-radius: 40px;
+  border: 2px solid $button-color;
   background-color: $button-color;
   color: white;
   font-family: $body-fontfamily;
@@ -64,19 +71,36 @@ button {
   width: 140px;
 }
 
-button:hover {
-  background-color: $button-color-hover;
+.Login-btn:hover {
+  color: $primary-h1-color;
+  background-color: transparent;
   transition: 1s;
   cursor: pointer;
 }
 
+.Register-btn:hover {
+  color: white;
+  background-color: $button-color;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.Register-btn {
+  background-color: transparent;
+  color: $primary-h1-color;
+  border: 2px solid $button-color;
+}
+
+// MEDIA QUERIES
+
 @media (max-width: 414px) {
   .GuestLanding-Buttons {
-    margin-top: 30vh;
+    margin-top: 5vh;
     @include flex-column;
   }
 
-  button {
+  .Login-btn,
+  .Register-btn {
     width: 90vw;
     margin: 5px;
   }
