@@ -1,18 +1,38 @@
-@import "../../modules/./flex.scss";
+@import "../../modules/flex//flex.scss";
+@import "../../modules/colors/colors.scss";
+@import "../../modules/fonts/fonts.scss";
 
-.Login-Register-Body {
+.Login-Register-container {
   width: 100vw;
   height: 100vh;
-  background-color: #d0d6ea;
+  background-color: #6497b1;
   text-align: center;
   @include flex-base;
-  @include flex-column;
+
+  .Left-box,
+  .Right-box {
+    @include flex-base;
+    @include flex-column;
+  }
 }
 
-.Form-body {
-  width: 30vw;
-  height: 30vw;
+.Welcome-message {
+  @include h1-font;
+  color: $primary-h1-color;
+}
+
+.Left-box {
+  width: 50vw;
+  height: 100vh;
+}
+
+.Right-box {
+  width: 50vw;
+  height: 100vh;
   background-color: white;
-  @include flex-base;
-  @include flex-column;
+
+  .Form-body {
+    @include flex-base;
+    @include flex-column;
+  }
 }

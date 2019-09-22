@@ -1,8 +1,21 @@
-.Login-Register-Body {
+.Login-Register-container {
   width: 100vw;
   height: 100vh;
-  background-color: #d0d6ea;
+  background-color: #6497b1;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Login-Register-container .Left-box,
+.Login-Register-container .Right-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,10 +31,24 @@
           flex-direction: column;
 }
 
-.Form-body {
-  width: 30vw;
-  height: 30vw;
+.Welcome-message {
+  font-family: Paytone One, sans-serif;
+  font-size: 5vw;
+  color: #024a81;
+}
+
+.Left-box {
+  width: 50vw;
+  height: 100vh;
+}
+
+.Right-box {
+  width: 50vw;
+  height: 100vh;
   background-color: white;
+}
+
+.Right-box .Form-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

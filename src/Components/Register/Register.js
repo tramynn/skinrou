@@ -13,12 +13,16 @@ class Register extends Component {
   }
   render() {
     return (
-      <div className="Login-Register-Body">
-        <header>
-          <h1>Welcome, please sign-up.</h1>
-        </header>
-        <main>
-          <form>
+      <div className="Login-Register-container">
+        <div className="Left-box">
+          <h1 className="Welcome-message">
+            Welcome,
+            <br />
+            please sign-up.
+          </h1>
+        </div>
+        <div className="Right-box">
+          <form className="Form-body">
             <input type="text" placeholder="First Name" autoFocus required />
             <input type="text" placeholder="Last Name" required />
             <input type="text" placeholder="Username" required />
@@ -27,7 +31,7 @@ class Register extends Component {
             <input type="text" placeholder="Phone #" required />
             <button type="submit">Register</button>
           </form>
-        </main>
+        </div>
       </div>
     );
   }

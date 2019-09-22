@@ -11,20 +11,17 @@ class Login extends Component {
   }
   render() {
     return (
-      <div className="Login-Register-Body">
-        <div className>
-
+      <div className="Login-Register-container">
+        <div className="Left-box">
+          <h1 className="Welcome-message">Welcome Back.</h1>
         </div>
-        <header>
-          <h1>Welcome Back.</h1>
-        </header>
-        <main>
+        <div className="Right-box">
           <form className="Form-body">
             <input type="text" placeholder="Username" autoFocus required />
             <input type="password" placeholder="Password" required />
             <button type="submit">Log In</button>
           </form>
-        </main>
+        </div>
       </div>
     );
   }
