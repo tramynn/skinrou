@@ -69,6 +69,7 @@ export default function reducer(state = initialState, action) {
       };
     }
     case `${LOGIN_USER}_FULFILLED`: {
+      console.log(payload.data);
       return {
         ...state,
         userId: payload.data.user_id,
