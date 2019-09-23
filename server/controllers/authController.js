@@ -18,6 +18,7 @@ async function register(req, res) {
     const salt = await bcrypt.genSaltSync(10);
     const hash = await bcrypt.hashSync(password, salt);
 
+    console.log("ac20", typeof age, typeof phoneNum);
     const newUser = await db.auth.registerUser(
       firstName,
       lastName,
@@ -44,7 +45,7 @@ async function login(req, res) {
   const { username, password } = req.body;
   const db = req.app.get("db");
 
-  const foundUser = await db.auth.checkForUsername(username);
+  const foundUser = await db.auth.checkForUsername([username]);
 
   if (!foundUser[0]) {
     res.status(400).json("Username or Password incorrect.");
@@ -55,12 +56,12 @@ async function login(req, res) {
       res.status(403).json("Username or Password incorrect.");
     } else {
       req.session.user = {
-        user_id: newUser[0].user_id,
-        username: newUser[0].username,
-        firstName: newUser[0].first_name,
-        lastName: newUser[0].last_name,
-        age: newUser[0].age,
-        phoneNum: newUser[0].phone_number
+        user_id: foundUser[0].user_id,
+        username: foundUser[0].username,
+        firstName: foundUser[0].first_name,
+        lastName: foundUser[0].last_name,
+        age: foundUser[0].age,
+        phoneNum: foundUser[0].phone_number
       };
       res.status(200).json(req.session.user);
     }
