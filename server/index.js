@@ -25,10 +25,10 @@ massive(CONNECTION_STRING).then(db => {
 });
 
 // auth endpoints
-app.get("/auth/user");
-app.post("/auth/register");
-app.post("/auth/login");
-app.post("/auth/logout");
+app.get("/auth/user", authController.getUser);
+app.post("/auth/register", authController.register);
+app.post("/auth/login", authController.login);
+app.post("/auth/logout", authController.logout);
 
 // routines endpoints
 
