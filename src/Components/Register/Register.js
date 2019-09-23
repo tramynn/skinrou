@@ -7,6 +7,8 @@ class Register extends Component {
     this.state = {
       firstName: "",
       lastName: "",
+      age: "",
+      phoneNum: "",
       username: "",
       password: ""
     };
@@ -25,10 +27,10 @@ class Register extends Component {
           <form className="Form-body">
             <input type="text" placeholder="First Name" autoFocus required />
             <input type="text" placeholder="Last Name" required />
-            <input type="text" placeholder="Username" required />
-            <input type="password" placeholder="Password" required />
             <input type="number" placeholder="Age" required />
             <input type="text" placeholder="Phone #" required />
+            <input type="text" placeholder="Username" required />
+            <input type="password" placeholder="Password" required />
             <button type="submit">Register</button>
           </form>
         </div>
