@@ -15,14 +15,15 @@ async function register(req, res) {
   if (foundUser[0]) {
     res.status(200).json("Username Taken");
   } else {
-    const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync(password, salt);
+    const salt = await bcrypt.genSaltSync(10);
+    const hash = await bcrypt.hashSync(password, salt);
 
     const newUser = await db.auth.registerUser(
       firstName,
       lastName,
       age,
       phoneNum,
+      username,
       hash
     );
 

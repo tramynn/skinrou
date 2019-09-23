@@ -28,14 +28,14 @@ export function registerUser() {
   };
 }
 
-export function login() {
+export function loginUser() {
   return {
     type: LOGIN_USER,
     payload: Axios.post("/auth/login")
   };
 }
 
-export function logout() {
+export function logoutUser() {
   return {
     type: LOGOUT_USER,
     payload: Axios.post("/auth/logout")

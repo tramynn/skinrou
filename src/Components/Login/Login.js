@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "../../styles/partials/Login-Register/Login-Register.scss";
+import { connect } from "react-redux";
+import { loginUser } from "../../redux/reducers/userReducer";
 
 class Login extends Component {
   constructor() {
@@ -27,4 +29,15 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = reduxState => {
+  return {
+    userId: reduxState.props.userId
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  {
+    loginUser
+  }
+)(Login);
