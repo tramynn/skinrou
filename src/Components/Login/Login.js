@@ -31,7 +31,7 @@ class Login extends Component {
 
 const mapStateToProps = reduxState => {
   return {
-    userId: reduxState.props.userId
+    userId: reduxState.userReducer.userId
   };
 };
 

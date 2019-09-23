@@ -10,23 +10,22 @@ async function register(req, res) {
   const { firstName, lastName, age, phoneNum, username, password } = req.body;
   const db = req.app.get("db");
 
-  const foundUser = await db.auth.checkForUsername(username);
+  const foundUser = await db.auth.checkForUsername([username]);
 
   if (foundUser[0]) {
     res.status(200).json("Username Taken");
   } else {
     const salt = await bcrypt.genSaltSync(10);
     const hash = await bcrypt.hashSync(password, salt);
-
-    console.log("ac20", typeof age, typeof phoneNum);
-    const newUser = await db.auth.registerUser(
+    console.log(req.body);
+    const newUser = await db.auth.registerUser([
       firstName,
       lastName,
       age,
       phoneNum,
       username,
       hash
-    );
+    ]);
 
     req.session.user = {
       user_id: newUser[0].user_id,

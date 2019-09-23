@@ -21,24 +21,24 @@ export function getSession() {
   };
 }
 
-export function registerUser() {
+export function registerUser(newUser) {
   return {
     type: REGISTER_USER,
-    payload: Axios.post("/auth/register")
+    payload: Axios.post("/auth/register", newUser)
   };
 }
 
-export function loginUser() {
+export function loginUser(user) {
   return {
     type: LOGIN_USER,
-    payload: Axios.post("/auth/login")
+    payload: Axios.post("/auth/login", user)
   };
 }
 
 export function logoutUser() {
+  Axios.post("/auth/logout");
   return {
-    type: LOGOUT_USER,
-    payload: Axios.post("/auth/logout")
+    type: LOGOUT_USER
   };
 }
 
@@ -79,15 +79,14 @@ export default function reducer(state = initialState, action) {
         phoneNum: payload.data.phoneNum
       };
     }
-    case `${LOGOUT_USER}_FULFILLED`: {
+    case LOGOUT_USER: {
       return {
-        ...state,
-        userId: payload.data.user_id,
-        username: payload.data.username,
-        firstName: payload.data.firstName,
-        lastName: payload.data.lastName,
-        age: payload.data.age,
-        phoneNum: payload.data.phoneNum
+        userId: null,
+        username: "",
+        firstName: "",
+        lastName: "",
+        age: "",
+        phoneNum: ""
       };
     }
     default:
