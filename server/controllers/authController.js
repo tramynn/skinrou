@@ -17,7 +17,7 @@ async function register(req, res) {
   } else {
     const salt = await bcrypt.genSaltSync(10);
     const hash = await bcrypt.hashSync(password, salt);
-    console.log(req.body);
+    // console.log(req.body);
     const newUser = await db.auth.registerUser([
       firstName,
       lastName,

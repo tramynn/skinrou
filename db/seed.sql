@@ -67,3 +67,17 @@ CREATE TABLE skincare_category (
 -- change skincare_category to skin_category
 ALTER TABLE skincare_category
 RENAME TO skin_category;
+
+-- Get skincare routines from user
+SELECT * FROM skin_routine sr
+INNER JOIN skinrou_user su
+ON sr.user_id = su.user_id
+WHERE su.user_id = 1;
+
+-- hardcored values into skin_routine
+INSERT INTO skin_routine (first_cleanser, second_cleanser, exfoliator, toner, essence, eye_serum, eye_moisturizer, face_serum, face_moisturizer, neck_serum, neck_moisturizer, mask, sunscreen, time, skin_type, user_id, category_id)
+VALUES
+('TO Squalane', 'Clinique Liquid Facial Soap', 'St. Ives Green Tea', 'Clinique Mild Toner', 'KB', 'ES', 'EM', 'FS', 'FM', 'NS', 'NM', 'KB Mask', 'SPF 50', 'Day Time', 'Combo', 1, 2),
+('TO Hello', 'Clinique Liquid Facial Soap', 'St. Ives Green Tea', 'Clinique Mild Toner', 'KB', 'ES', 'EM', 'FS', 'FM', 'NS', 'NM', 'KB Mask', 'SPF 50', 'Day Time', 'Combo', 1, 2),
+('TO D', 'Clinique Liquid Facial Soap', 'St. Ives Green Tea', 'Clinique Mild Toner', 'KB', 'ES', 'EM', 'FS', 'FM', 'NS', 'NM', 'KB Mask', 'SPF 50', 'Day Time', 'Combo', 3, 1),
+('TO Sup', 'Clinique Liquid Facial Soap', 'St. Ives Green Tea', 'Clinique Mild Toner', 'KB', 'ES', 'EM', 'FS', 'FM', 'NS', 'NM', 'KB Mask', 'SPF 50', 'Day Time', 'Combo', 4, 1);
