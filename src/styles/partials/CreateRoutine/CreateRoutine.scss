@@ -1,0 +1,32 @@
+@import "../../modules/flex/flex.scss";
+@import "../../modules/colors/colors.scss";
+@import "../../modules/fonts/fonts.scss";
+@import "../../modules/buttons/buttons.scss";
+@import "../../modules/background/background.scss";
+
+.CreateRoutine-container {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../../../images/create-routine.jpg");
+  @include bg-full;
+}
+
+.CreateRoutine-main {
+  @include flex-start;
+
+  .CreateRoutine-left-box {
+    @include bg-third-width;
+    background-color: $mo-5;
+    opacity: 0.2;
+  }
+
+  .CreateRoutine-right-box {
+    @include flex-base;
+    @include flex-column;
+    @include bg-two-thirds-width;
+    background-color: $ol-1;
+
+    
+  }
+}

@@ -13,5 +13,10 @@
 
 @mixin bg-third-width {
   width: 33vw;
-  height: 100vh;
+  height: 90vh;
+}
+
+@mixin bg-two-thirds-width {
+  width: 67vw;
+  height: 90vh;
 }
