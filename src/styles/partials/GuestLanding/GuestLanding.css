@@ -1,12 +1,46 @@
+.Login-btn,
+.Register-btn {
+  border-radius: 40px;
+  border: 2px solid #21669c;
+  background-color: #21669c;
+  color: white;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px;
+  margin: 10px;
+  width: 140px;
+}
+
+.Login-btn:hover {
+  color: #024a81;
+  background-color: transparent;
+  -webkit-transition: 1s;
+  transition: 1s;
+  cursor: pointer;
+}
+
+
+.Register-btn {
+  background-color: transparent;
+  color: #024a81;
+  border: 2px solid #21669c;
+}
+
+.Register-btn:hover {
+  color: white;
+  background-color: #21669c;
+  -webkit-transition: 1s;
+  transition: 1s;
+  cursor: pointer;
+}
+
 .GuestLanding-Body {
   color: #024a81;
   background-image: url("../../../images/login-register-bg.svg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   font-weight: bold;
-  width: 100vw;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,6 +54,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
   font-family: Montserrat, sans-serif;
   font-size: 1em;
   line-height: 1.618em;
@@ -47,44 +86,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.Login-btn,
-.Register-btn {
-  border-radius: 40px;
-  border: 2px solid #21669c;
-  background-color: #21669c;
-  color: white;
-  font-family: Montserrat, sans-serif;
-  font-weight: bold;
-  font-size: 14px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 12px;
-  margin: 10px;
-  width: 140px;
-}
-
-.Login-btn:hover {
-  color: #024a81;
-  background-color: transparent;
-  -webkit-transition: 1s;
-  transition: 1s;
-  cursor: pointer;
-}
-
-.Register-btn:hover {
-  color: white;
-  background-color: #21669c;
-  -webkit-transition: 1s;
-  transition: 1s;
-  cursor: pointer;
-}
-
-.Register-btn {
-  background-color: transparent;
-  color: #024a81;
-  border: 2px solid #21669c;
 }
 
 @media (max-width: 414px) {

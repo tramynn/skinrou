@@ -1,0 +1,8 @@
+.secondary-btn:hover {
+  color: white;
+  background-color: #21669c;
+  -webkit-transition: 1s;
+  transition: 1s;
+  cursor: pointer;
+}
+/*# sourceMappingURL=buttons.css.map */

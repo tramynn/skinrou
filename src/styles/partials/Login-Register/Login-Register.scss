@@ -1,6 +1,7 @@
 @import "../../modules/flex//flex.scss";
 @import "../../modules/colors/colors.scss";
 @import "../../modules/fonts/fonts.scss";
+@import "../../modules/background/background.scss";
 
 .Login-Register-container {
   width: 100vw;
@@ -22,14 +23,12 @@
 }
 
 .Left-box {
-  width: 50vw;
-  height: 100vh;
+  @include bg-half-width;
 }
 
 .Right-box {
-  width: 50vw;
-  height: 100vh;
   background-color: white;
+  @include bg-half-width;
 
   .Form-body {
     @include flex-base;

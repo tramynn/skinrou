@@ -43,9 +43,9 @@
 }
 
 .Right-box {
+  background-color: white;
   width: 50vw;
   height: 100vh;
-  background-color: white;
 }
 
 .Right-box .Form-body {

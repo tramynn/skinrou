@@ -1,0 +1,17 @@
+@mixin bg-full {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+@mixin bg-half-width {
+  width: 50vw;
+  height: 100vh;
+}
+
+@mixin bg-third-width {
+  width: 33vw;
+  height: 100vh;
+}

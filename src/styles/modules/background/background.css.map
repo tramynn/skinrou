@@ -2,8 +2,8 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "buttons.scss"
+        "background.scss"
     ],
     "names": [],
-    "file": "buttons.css"
+    "file": "background.css"
 }
