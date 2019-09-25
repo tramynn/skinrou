@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class UserSettings extends Component {
+class CreateRoutine extends Component {
   constructor() {
     super();
     this.state = {};
@@ -10,7 +10,7 @@ class UserSettings extends Component {
     return (
       <>
         <header>
-          <h1>My Settings</h1>
+          <h1>Create Your SKIN/care ROU/tine</h1>
         </header>
         <main></main>
       </>
@@ -18,4 +18,4 @@ class UserSettings extends Component {
   }
 }
 
-export default UserSettings;
+export default CreateRoutine;

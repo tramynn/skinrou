@@ -26,12 +26,19 @@
   span {
     margin-right: 5px;
   }
+
+  .Header-message {
+    margin-left: 10px;
+    text-transform: none;
+  }
+
   .Nav-links {
     height: 10vh;
     padding-left: 12px;
     padding-right: 12px;
     @include flex-base;
   }
+
   .Nav-links:hover {
     background-color: $tl-2;
     transition: 0.5s;

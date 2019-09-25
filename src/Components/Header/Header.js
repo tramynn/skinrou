@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { getSession, logoutUser } from "../../redux/reducers/userReducer";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 class Header extends Component {
   componentDidMount() {
@@ -31,39 +31,65 @@ class Header extends Component {
           <img src={navLogo} width={200} alt="SKINROU" />
           <nav className="Nav-default-container">
             <ul className="Nav-default-links">
-              <li className="Nav-links">
-                <span>
-                  <FontAwesomeIcon icon={faHome} color="#FFFFFF" />
-                </span>
-                Home
-              </li>
-              <li className="Nav-links">
-                <span>
-                  <FontAwesomeIcon icon={faPlusCircle} color="#FFFFFF" />
-                </span>
-                Routine
-              </li>
-              <li className="Nav-links">
-                <span>
-                  <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />
-                </span>
-                Profile
-              </li>
-              <li className="Nav-links">
-                <span>
-                  <FontAwesomeIcon icon={faCog} color="#FFFFFF" />
-                </span>
-                Settings
-              </li>
-              <li>
-                <FontAwesomeIcon icon={faGripLinesVertical} color="#FFFFFF" />
-              </li>
+              <Link
+                to="/home"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-links">
+                  <span>
+                    <FontAwesomeIcon icon={faHome} color="#FFFFFF" />
+                  </span>
+                  Home
+                </li>
+              </Link>
+              <Link
+                to="/createRoutine"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-links">
+                  <span>
+                    <FontAwesomeIcon icon={faPlusCircle} color="#FFFFFF" />
+                  </span>
+                  Routine
+                </li>
+              </Link>
+              <Link
+                to="/"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <Link
+                  to="/settings"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  <li className="Nav-links">
+                    <span>
+                      <FontAwesomeIcon icon={faCog} color="#FFFFFF" />
+                    </span>
+                    <span className="Link">Settings</span>
+                  </li>
+                </Link>
+              </Link>
               <li className="Nav-links" onClick={this.handleLogout}>
                 <span>
                   <FontAwesomeIcon icon={faSignOutAlt} color="#FFFFFF" />
                 </span>
                 Log Out
               </li>
+              <li>
+                <FontAwesomeIcon icon={faGripLinesVertical} color="#FFFFFF" />
+              </li>
+              <li className="Header-message">Hello, Guest</li>
+              <Link
+                to="/profile"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-links">
+                  <span>
+                    <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />
+                  </span>
+                  Profile
+                </li>
+              </Link>
             </ul>
           </nav>
         </div>
