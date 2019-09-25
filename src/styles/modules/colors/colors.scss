@@ -1,11 +1,20 @@
-// Primary Colors
-$primary-bg-color: #b6d3dd;
+// Primary Bg Color
+$primary-bg-color: #e7eff6;
 
-// h1 color
+// Secondary Bg Color
+$secondary-bg-color: #b2d3e3;
+
+// Primary h1 color
 $primary-h1-color: #024a81;
 
-// h2 color
+// Secondary h1 color
+$secondary-h1-color: #294016;
+
+// Primary h2 color
 $primary-h2-color: #306b91;
+
+// Secondary h2 color
+$primary-h2-color: #38553c;
 
 // p color
 $primary-p-color: black;
@@ -13,3 +22,28 @@ $primary-p-color: black;
 // Button Colors
 $button-color: #21669c;
 $button-color-hover: #4b86b4;
+
+// Tree Leaves Color Palette
+
+$tl-1: #77a37a;
+$tl-2: #5f926a;
+$tl-3: #587e60;
+$tl-4: #485e52;
+$tl-5: #3a4f3f;
+$tl-light-1: #7fb356;
+$tl-light-2: #91b263;
+
+// Monochromatic Ocean Color Palette
+// 1 - light, 5 - dark
+$mo-1: #6497b1;
+$mo-2: #5890b3;
+$mo-3: #4b86b4;
+$mo-4: #21669b;
+$mo-5: #024a81;
+
+// Ocean luxury Color Palette
+$ol-1: #e7eff6;
+$ol-2: #adcbe3;
+$ol-3: #63ace5;
+$ol-4: #005b96;
+$ol-5: #03396c;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import headerLogo from "../../images/main-logo.svg";
+import logo from "../../images/main-logo.svg";
 import { Link } from "react-router-dom";
 import "../../styles/partials/GuestLanding/GuestLanding.css";
 
@@ -7,7 +7,7 @@ export default class GuestLanding extends Component {
   render() {
     return (
       <div className="GuestLanding-Body">
-        <img src={headerLogo} width={320} alt="SKINROU" />
+        <img src={logo} width={320} alt="SKINROU" />
         <p className="tagline">
           Beauty starts with a routine;
           <br />

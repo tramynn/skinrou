@@ -1,0 +1,11 @@
+@import "../../modules/flex/flex.scss";
+@import "../../modules/colors/colors.scss";
+@import "../../modules/fonts/fonts.scss";
+@import "../../modules/buttons/buttons.scss";
+@import "../../modules/background/background.scss";
+
+.Home-container {
+  // background-image: url("../../../images/home-bg.jpg");
+  @include bg-full;
+  background-color: $ol-1;
+}

@@ -1,0 +1,41 @@
+@import "../../modules/flex/flex.scss";
+@import "../../modules/colors/colors.scss";
+@import "../../modules/fonts/fonts.scss";
+@import "../../modules/buttons/buttons.scss";
+@import "../../modules/background/background.scss";
+
+.Header-container {
+  color: white;
+  background: linear-gradient(90deg, $mo-4 0%, $tl-2 100%);
+  height: 10vh;
+  width: 100vw;
+  @include flex-base;
+  @include flex-row-space-bt;
+  @include nav-font;
+
+  img {
+    margin-left: 30px;
+  }
+}
+
+.Nav-default-container {
+  .Nav-default-links {
+    // position: relative;
+    @include flex-row-space-a;
+  }
+
+  span {
+    margin-right: 7px;
+  }
+  .Nav-links {
+    height: 10vh;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include flex-base;
+  }
+  .Nav-links:hover {
+    background-color: $tl-1;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+}
