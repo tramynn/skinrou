@@ -10,12 +10,19 @@ import {
   faCog,
   faGripLinesVertical
 } from "@fortawesome/free-solid-svg-icons";
+import { getSession, logoutUser } from "../../redux/reducers/userReducer";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 class Header extends Component {
-  constructor() {
-    super();
-    this.state = {};
+  componentDidMount() {
+    this.props.getSession();
   }
+
+  handleLogout = e => {
+    this.props.logoutUser();
+    this.props.history.push("/");
+  };
 
   render() {
     return (
@@ -34,24 +41,24 @@ class Header extends Component {
                 <span>
                   <FontAwesomeIcon icon={faPlusCircle} color="#FFFFFF" />
                 </span>
-                Create Routine
+                Routine
               </li>
               <li className="Nav-links">
                 <span>
                   <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />
                 </span>
-                My Profile
+                Profile
               </li>
               <li className="Nav-links">
                 <span>
                   <FontAwesomeIcon icon={faCog} color="#FFFFFF" />
                 </span>
-                User Settings
+                Settings
               </li>
               <li>
                 <FontAwesomeIcon icon={faGripLinesVertical} color="#FFFFFF" />
               </li>
-              <li className="Nav-links">
+              <li className="Nav-links" onClick={this.handleLogout}>
                 <span>
                   <FontAwesomeIcon icon={faSignOutAlt} color="#FFFFFF" />
                 </span>
@@ -87,4 +94,18 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = reduxState => {
+  return {
+    firstName: reduxState.userReducer.firstName
+  };
+};
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    {
+      getSession,
+      logoutUser
+    }
+  )(Header)
+);

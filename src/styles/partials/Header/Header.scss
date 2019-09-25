@@ -6,7 +6,7 @@
 
 .Header-container {
   color: white;
-  background: linear-gradient(90deg, $mo-4 0%, $tl-2 100%);
+  background: linear-gradient(90deg, $mo-4 0%, $tl-3 100%);
   height: 10vh;
   width: 100vw;
   @include flex-base;
@@ -20,21 +20,20 @@
 
 .Nav-default-container {
   .Nav-default-links {
-    // position: relative;
     @include flex-row-space-a;
   }
 
   span {
-    margin-right: 7px;
+    margin-right: 5px;
   }
   .Nav-links {
     height: 10vh;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 12px;
+    padding-right: 12px;
     @include flex-base;
   }
   .Nav-links:hover {
-    background-color: $tl-1;
+    background-color: $tl-2;
     transition: 0.5s;
     cursor: pointer;
   }
