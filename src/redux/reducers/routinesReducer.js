@@ -36,21 +36,21 @@ export function getMyRoutines(userId) {
 export function addRoutine(newRoutine) {
   return {
     type: ADD_ROUTINE,
-    payload: Axios.post("/api/routines/:userId", newRoutine)
+    payload: Axios.post("/api/routines", newRoutine)
   };
 }
 
-export function editRoutine(routineInfo) {
+export function editRoutine(routineId) {
   return {
     type: EDIT_ROUTINE,
-    payload: Axios.put("/api/routines/:userId", routineInfo)
+    payload: Axios.put(`/api/routines/${routineId}`)
   };
 }
 
-export function deleteRoutine(routineInfo) {
+export function deleteRoutine(routineId) {
   return {
     type: DELETE_ROUTINE,
-    payload: Axios.delete("/api/routines/:userId/:routineId", routineInfo)
+    payload: Axios.delete(`/api/routines/${routineId}`)
   };
 }
 

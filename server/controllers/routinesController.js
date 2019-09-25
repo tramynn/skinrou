@@ -1,25 +1,26 @@
 async function categories(req, res) {
   const db = req.app.get("db");
-
   const categories = await db.categories.getCategories();
 
-  res.status(200).json(categories);
+  if (db) {
+    res.status(200).json(categories);
+  }
 }
 async function routines(req, res) {
   const db = req.app.get("db");
-
   const routines = await db.routines.getAllRoutines();
 
-  res.status(200).json(routines);
+  if (db) {
+    res.status(200).json(routines);
+  }
 }
 async function myRoutines(req, res) {
   const db = req.app.get("db");
-
   const { userId } = req.params;
-
   const userRoutines = await db.routines.getMyRoutines(userId);
-
-  res.status(200).json(userRoutines);
+  if (db) {
+    res.status(200).json(userRoutines);
+  }
 }
 
 async function addRoutine(req, res) {
@@ -45,7 +46,7 @@ async function addRoutine(req, res) {
     skinType
   } = req.body;
 
-  const routine = await db.routines.addRoutine([
+  const addedRoutine = await db.routines.addRoutine([
     userId,
     categoryId,
     firstCleanser,
@@ -64,17 +65,28 @@ async function addRoutine(req, res) {
     time,
     skinType
   ]);
-
-  res.status(200).json(routine);
+  if (db) {
+    res.status(200).json(addedRoutine);
+  }
 }
 
 async function editRoutine(req, res) {
   const db = req.app.get("db");
-
   const { routineId } = req.params;
+  const editedRoutine = await db.routine.editRoutine(routineId);
+
+  if (db) {
+    res.status(200).json(editedRoutine);
+  }
 }
 async function deleteRoutine(req, res) {
   const db = req.app.get("db");
+  const { routineId } = req.params;
+  const deletedRoutine = await db.route.deleteRoutine(routineId);
+
+  if (db) {
+    res.status(200).json(deletedRoutine);
+  }
 }
 
 module.exports = {
