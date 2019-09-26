@@ -1,8 +1,14 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAMA,AAAA,iBAAiB,CAAC;EAChB,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,gDAA4C;EACxD,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,KAAK;ECTZ,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EAoBnB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;EETnB,WAAW,EAAE,mBAAmB;EAChC,SAAS,EAAE,GAAG;EACd,WAAW,EAAE,IAAI;EACjB,cAAc,EAAE,MAAM;EACtB,cAAc,EAAE,SAAS;CHF1B;;AAZD,AASE,iBATe,CASf,GAAG,CAAC;EACF,WAAW,EAAE,IAAI;CAClB;;AAGH,AACE,sBADoB,CACpB,kBAAkB,CAAC;ECJnB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,YAAY;EAC7B,WAAW,EAAE,MAAM;CDIlB;;AAHH,AAKE,sBALoB,CAKpB,IAAI,CAAC;EACH,YAAY,EAAE,GAAG;CAClB;;AAPH,AASE,sBAToB,CASpB,eAAe,CAAC;EACd,WAAW,EAAE,IAAI;EACjB,cAAc,EAAE,IAAI;CACrB;;AAZH,AAcE,sBAdoB,CAcpB,UAAU,CAAC;EACT,MAAM,EAAE,IAAI;EACZ,YAAY,EAAE,IAAI;EAClB,aAAa,EAAE,IAAI;ECpCrB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;CDoClB;;AAnBH,AAqBE,sBArBoB,CAqBpB,UAAU,AAAA,MAAM,CAAC;EACf,gBAAgB,EEdb,OAAO;EFeV,UAAU,EAAE,IAAI;EAChB,MAAM,EAAE,OAAO;CAChB",
     "sources": [
-        "Header.scss"
+        "Header.scss",
+        "../../modules/flex/flex.scss",
+        "../../modules/colors/colors.scss",
+        "../../modules/fonts/fonts.scss",
+        "../../modules/buttons/buttons.scss",
+        "../../modules/colors/colors.scss",
+        "../../modules/background/background.scss"
     ],
     "names": [],
     "file": "Header.css"

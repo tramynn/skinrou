@@ -1,0 +1,10 @@
+@import "../../modules/flex/flex.scss";
+@import "../../modules/colors/colors.scss";
+@import "../../modules/fonts/fonts.scss";
+@import "../../modules/buttons/buttons.scss";
+@import "../../modules/background/background.scss";
+
+.UserProfile-container {
+  @include flex-start;
+  @include flex-column;
+}

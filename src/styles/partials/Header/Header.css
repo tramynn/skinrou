@@ -1,1 +1,73 @@
-/* No CSS *//*# sourceMappingURL=Header.css.map */
+.Header-container {
+  color: white;
+  background: -webkit-gradient(linear, left top, right top, from(#21669b), to(#587e60));
+  background: linear-gradient(90deg, #21669b 0%, #587e60 100%);
+  height: 10vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  align-items: center;
+  font-family: Raleway, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.Header-container img {
+  margin-left: 30px;
+}
+
+.Nav-default-container .Nav-default-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Nav-default-container span {
+  margin-right: 5px;
+}
+
+.Nav-default-container .Header-message {
+  margin-left: 10px;
+  text-transform: none;
+}
+
+.Nav-default-container .Nav-links {
+  height: 10vh;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Nav-default-container .Nav-links:hover {
+  background-color: #5f926a;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+/*# sourceMappingURL=Header.css.map */

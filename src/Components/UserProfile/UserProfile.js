@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Header from "../Header/Header";
+import "../../styles/partials/UserProfile/UserProfile.scss";
 
 class UserProfile extends Component {
   constructor() {
@@ -8,12 +10,13 @@ class UserProfile extends Component {
 
   render() {
     return (
-      <>
+      <div className="UserProfile-container">
+        <Header />
         <header>
           <h1>My Profile</h1>
         </header>
         <main></main>
-      </>
+      </div>
     );
   }
 }

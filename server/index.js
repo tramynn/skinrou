@@ -40,6 +40,13 @@ app.post("/api/routines", routinesController.addRoutine);
 app.put("/api/routines/:routineId", routinesController.editRoutine);
 app.delete("/api/routines/:routineId", routinesController.deleteRoutine);
 
+// Sockets
+// var http = require("http").createServer(app);
+
+// app.get("/chat/general", )
+
+// const general = io.of("/chat/")
+
 app.listen(SERVER_PORT, () => {
   console.log(`SERVER LISTENING ON PORT: ${SERVER_PORT}`);
 });

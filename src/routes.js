@@ -7,6 +7,7 @@ import Home from "./Components/Home/Home";
 import CreateRoutine from "./Components/CreateRoutine/CreateRoutine";
 import UserSettings from "./Components/UserSettings/UserSettings";
 import UserProfile from "./Components/UserProfile/UserProfile";
+import Chatrooms from "./Components/Chatrooms/Chatrooms";
 
 export default (
   <Switch>
@@ -17,6 +18,7 @@ export default (
     <Route component={CreateRoutine} path="/createRoutine" />
     <Route component={UserSettings} path="/settings" />
     <Route component={UserProfile} path="/profile" />
+    <Route component={Chatrooms} path="/chatrooms" />
     <Route
       render={() => {
         return <h1>404 Not Found.</h1>;

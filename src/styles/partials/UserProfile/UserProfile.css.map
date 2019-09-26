@@ -1,8 +1,8 @@
 {
     "version": 3,
-    "mappings": "AAMA,AAAA,eAAe,CAAC;EMLd,mBAAmB,EAAE,MAAM;EAC3B,eAAe,EAAE,KAAK;EACtB,iBAAiB,EAAE,SAAS;EAC5B,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;ENIb,gBAAgB,EEmCX,OAAO;CFlCb",
+    "mappings": "AAMA,AAAA,oBAAoB,CAAC;ECuBnB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,UAAU;EAvB3B,cAAc,EAAE,MAAM;CDEvB",
     "sources": [
-        "Home.scss",
+        "UserProfile.scss",
         "../../modules/flex/flex.scss",
         "../../modules/colors/colors.scss",
         "../../modules/fonts/fonts.scss",
@@ -11,5 +11,5 @@
         "../../modules/background/background.scss"
     ],
     "names": [],
-    "file": "Home.css"
+    "file": "UserProfile.css"
 }

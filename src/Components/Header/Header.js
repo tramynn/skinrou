@@ -8,7 +8,8 @@ import {
   faUserCircle,
   faSignOutAlt,
   faCog,
-  faGripLinesVertical
+  faGripLinesVertical,
+  faCommentDots
 } from "@fortawesome/free-solid-svg-icons";
 import { getSession, logoutUser } from "../../redux/reducers/userReducer";
 import { connect } from "react-redux";
@@ -51,6 +52,17 @@ class Header extends Component {
                     <FontAwesomeIcon icon={faPlusCircle} color="#FFFFFF" />
                   </span>
                   Routine
+                </li>
+              </Link>
+              <Link
+                to="/chatrooms"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-links">
+                  <span>
+                    <FontAwesomeIcon icon={faCommentDots} color="#FFFFFF" />
+                  </span>
+                  Chat
                 </li>
               </Link>
               <Link

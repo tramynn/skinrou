@@ -1,0 +1,80 @@
+.Chatrooms-container {
+  background-color: #e7eff6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Chatbox {
+  margin-top: 2.5vh;
+  width: 95vw;
+  height: 85vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Chatbox .Chatrooms-left-box {
+  width: 33%;
+  height: 90%;
+  padding: 10px;
+  border-right: 1px solid gray;
+}
+
+.Chatbox .Chatrooms-right-box {
+  width: 67%;
+  height: 95%;
+  padding: 10px;
+}
+
+.Chatbox .Chatrooms-right-box .Chat-title {
+  text-align: center;
+}
+
+.Chatbox .Chatrooms-right-box .Chat-messages {
+  height: 90%;
+  width: 100%;
+  background-color: pink;
+}
+
+.Chatbox .Chatrooms-right-box .Chat-message-send {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Chatbox .Chatrooms-right-box .Chat-message-send input {
+  width: 90%;
+}
+
+.Chatbox .Chatrooms-right-box .Chat-message-send button {
+  width: 10%;
+}
+/*# sourceMappingURL=Chatrooms.css.map */

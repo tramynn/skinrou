@@ -1,0 +1,52 @@
+@import "../../modules/flex/flex.scss";
+@import "../../modules/colors/colors.scss";
+@import "../../modules/fonts/fonts.scss";
+@import "../../modules/buttons/buttons.scss";
+@import "../../modules/background/background.scss";
+
+.Chatrooms-container {
+  background-color: $ol-1;
+  @include flex-start;
+  @include flex-column;
+  @include bg-full;
+}
+
+.Chatbox {
+  margin-top: 2.5vh;
+  width: 95vw;
+  height: 85vh;
+  @include flex-start;
+
+  .Chatrooms-left-box {
+    width: 33%;
+    height: 90%;
+    padding: 10px;
+    border-right: 1px solid gray;
+  }
+
+  .Chatrooms-right-box {
+    width: 67%;
+    height: 95%;
+    padding: 10px;
+
+    .Chat-title {
+      text-align: center;
+    }
+
+    .Chat-messages {
+      height: 90%;
+      width: 100%;
+      background-color: pink;
+    }
+
+    .Chat-message-send {
+      @include flex-start;
+      input {
+        width: 90%;
+      }
+      button {
+        width: 10%;
+      }
+    }
+  }
+}
