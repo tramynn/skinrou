@@ -32,6 +32,7 @@ class Header extends Component {
           <img src={navLogo} width={200} alt="SKINROU" />
           <nav className="Nav-default-container">
             <ul className="Nav-default-links">
+              {/* Home Link */}
               <Link
                 to="/home"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -43,6 +44,7 @@ class Header extends Component {
                   Home
                 </li>
               </Link>
+              {/* Create Routine Link */}
               <Link
                 to="/createRoutine"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -54,6 +56,7 @@ class Header extends Component {
                   Routine
                 </li>
               </Link>
+              {/* Chat Link */}
               <Link
                 to="/chatrooms"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -65,31 +68,36 @@ class Header extends Component {
                   Chat
                 </li>
               </Link>
+              {/* User Settings Link */}
+              <Link
+                to="/settings"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-links">
+                  <span>
+                    <FontAwesomeIcon icon={faCog} color="#FFFFFF" />
+                  </span>
+                  <span className="Link">Settings</span>
+                </li>
+              </Link>
+              {/* Log Out Btn */}
               <Link
                 to="/"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
-                <Link
-                  to="/settings"
-                  style={{ color: "inherit", textDecoration: "inherit" }}
-                >
-                  <li className="Nav-links">
-                    <span>
-                      <FontAwesomeIcon icon={faCog} color="#FFFFFF" />
-                    </span>
-                    <span className="Link">Settings</span>
-                  </li>
-                </Link>
+                <li className="Nav-links" onClick={this.handleLogout}>
+                  <span>
+                    <FontAwesomeIcon icon={faSignOutAlt} color="#FFFFFF" />
+                  </span>
+                  Log Out
+                </li>
               </Link>
-              <li className="Nav-links" onClick={this.handleLogout}>
-                <span>
-                  <FontAwesomeIcon icon={faSignOutAlt} color="#FFFFFF" />
-                </span>
-                Log Out
-              </li>
+              {/* Vertical Bar */}
               <li>
                 <FontAwesomeIcon icon={faGripLinesVertical} color="#FFFFFF" />
               </li>
+
+              {/* User Message */}
               <li className="Header-message">Hello, Guest</li>
               <Link
                 to="/profile"
@@ -105,6 +113,7 @@ class Header extends Component {
             </ul>
           </nav>
         </div>
+        {/* Mobile Nav */}
         {/* <nav className="Nav-collapsed-container">
           <ul className="Nav-collapsed-links">
             <li>

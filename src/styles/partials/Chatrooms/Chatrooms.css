@@ -24,6 +24,7 @@
   margin-top: 2.5vh;
   width: 95vw;
   height: 85vh;
+  background-color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,6 +41,11 @@
   height: 90%;
   padding: 10px;
   border-right: 1px solid gray;
+  background-color: #5890b3;
+}
+
+.Chatbox .Chatrooms-left-box .Chatroom-topics {
+  color: white;
 }
 
 .Chatbox .Chatrooms-right-box {

@@ -7,7 +7,8 @@
 .Header-container {
   color: white;
   background: linear-gradient(90deg, $mo-4 0%, $tl-3 100%);
-  height: 10vh;
+  max-height: 7vh;
+  height: 7vh;
   width: 100vw;
   @include flex-base;
   @include flex-row-space-bt;
@@ -33,7 +34,8 @@
   }
 
   .Nav-links {
-    height: 10vh;
+    height: 7vh;
+    max-height: 7vh;
     padding-left: 12px;
     padding-right: 12px;
     @include flex-base;

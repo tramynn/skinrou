@@ -6,7 +6,23 @@ class CreateRoutine extends Component {
   constructor() {
     super();
     this.state = {
-      
+      userId: "",
+      categoryId: "",
+      firstCleanser: "",
+      secondCleanser: "",
+      exfoliator: "",
+      toner: "",
+      essence: "",
+      eyeSerum: "",
+      eyeMoisturizer: "",
+      faceSerum: "",
+      faceMoisturizer: "",
+      neckSerum: "",
+      neckMoisturizer: "",
+      mask: "",
+      sunscreen: "",
+      time: "",
+      skinType: ""
     };
   }
 

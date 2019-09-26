@@ -4,13 +4,13 @@ $body-fontfamily: Montserrat, sans-serif;
 // Font h1
 @mixin h1-font {
   font-family: Paytone One, sans-serif;
-  font-size: 5vw;
+  font-size: 3em;
 }
 
 // Font h2
 @mixin h2-font {
   font-family: Raleway, sans-serif;
-  font-size: 3vw;
+  font-size: 2em;
 }
 
 @mixin nav-font {
