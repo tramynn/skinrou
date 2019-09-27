@@ -1,3 +1,4 @@
+// Get all categories
 async function categories(req, res) {
   const db = req.app.get("db");
   const categories = await db.categories.getCategories();
@@ -6,6 +7,7 @@ async function categories(req, res) {
     res.status(200).json(categories);
   }
 }
+// Get all routines
 async function routines(req, res) {
   const db = req.app.get("db");
   const routines = await db.routines.getAllRoutines();
@@ -14,20 +16,31 @@ async function routines(req, res) {
     res.status(200).json(routines);
   }
 }
+// Get routines by category
+async function routinesByCategory(req, res) {
+  const db = req.app.get("db");
+  const categoryId = +req.params.categoryId;
+  const routines = await db.routines.getRoutinesByCategory(categoryId);
+
+  if (db) {
+    res.status(200).json(routines);
+  }
+}
+// Get user routines
 async function myRoutines(req, res) {
   const db = req.app.get("db");
-  const { userId } = req.params;
-  const userRoutines = await db.routines.getMyRoutines(userId);
+  const { categoryId, userId } = req.params;
+  const userRoutines = await db.routines.getMyRoutines([categoryId, userId]);
   if (db) {
     res.status(200).json(userRoutines);
   }
 }
-
+// User can add routines
 async function addRoutine(req, res) {
   const db = req.app.get("db");
-  const { user_id } = req.session.user;
+
   const {
-    user_id,
+    userId,
     categoryId,
     skinType,
     time,
@@ -43,11 +56,13 @@ async function addRoutine(req, res) {
     neckSerum,
     neckMoisturizer,
     mask,
-    sunscreen
+    sunscreen,
+    note
   } = req.body;
+  console.log(req.body);
 
   const addedRoutine = await db.routines.addRoutine([
-    user_id,
+    userId,
     categoryId,
     skinType,
     time,
@@ -63,26 +78,65 @@ async function addRoutine(req, res) {
     neckSerum,
     neckMoisturizer,
     mask,
-    sunscreen
+    sunscreen,
+    note
   ]);
   if (db) {
     res.status(200).json(addedRoutine);
   }
 }
-
+// User can only edit their routine by the routineId and categoryId
 async function editRoutine(req, res) {
   const db = req.app.get("db");
-  const { routineId } = req.params;
-  const editedRoutine = await db.routine.editRoutine(routineId);
+  const { routineId, categoryId } = req.params;
+  const {
+    time,
+    skinType,
+    firstCleanser,
+    secondCleanser,
+    exfoliator,
+    toner,
+    essence,
+    eyeSerum,
+    eyeMoisturizer,
+    faceSerum,
+    faceMoisturizer,
+    neckSerum,
+    neckMoisturizer,
+    mask,
+    sunscreen,
+    note
+  } = req.body;
+  const editedRoutine = await db.routine.editRoutine([
+    routineId,
+    categoryId,
+    time,
+    skinType,
+    firstCleanser,
+    secondCleanser,
+    exfoliator,
+    toner,
+    essence,
+    eyeSerum,
+    eyeMoisturizer,
+    faceSerum,
+    faceMoisturizer,
+    neckSerum,
+    neckMoisturizer,
+    mask,
+    sunscreen,
+    note
+  ]);
 
   if (db) {
     res.status(200).json(editedRoutine);
   }
 }
+// User can only delete their routine by the routineId and categoryId
 async function deleteRoutine(req, res) {
   const db = req.app.get("db");
-  const { routineId } = req.params;
-  const deletedRoutine = await db.route.deleteRoutine(routineId);
+  const { routineId, categoryId } = req.params;
+  const deletedRoutine = await db.route.deleteRoutine([routineId, categoryId]);
 
   if (db) {
     res.status(200).json(deletedRoutine);
@@ -92,6 +146,7 @@ async function deleteRoutine(req, res) {
 module.exports = {
   categories,
   routines,
+  routinesByCategory,
   myRoutines,
   addRoutine,
   editRoutine,

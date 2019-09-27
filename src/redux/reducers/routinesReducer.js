@@ -40,17 +40,17 @@ export function addRoutine(newRoutine) {
   };
 }
 
-export function editRoutine(routineId) {
+export function editRoutine(routineId, categoryId) {
   return {
     type: EDIT_ROUTINE,
-    payload: Axios.put(`/api/routines/${routineId}`)
+    payload: Axios.put(`/api/routines/${routineId}/${categoryId}`)
   };
 }
 
-export function deleteRoutine(routineId) {
+export function deleteRoutine(routineId, categoryId) {
   return {
     type: DELETE_ROUTINE,
-    payload: Axios.delete(`/api/routines/${routineId}`)
+    payload: Axios.delete(`/api/routines/${routineId}/${categoryId}`)
   };
 }
 
