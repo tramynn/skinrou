@@ -7,6 +7,7 @@ const initialState = {
 
 const GET_CATEGORIES = "GET_CATEGORIES";
 const GET_ALL_ROUTINES = "GET_ALL_ROUTINES";
+const GET_ROUTINES_BY_CATEGORIES = "GET_ROUTINES_BY_CATEGORIES";
 const GET_MY_ROUTINES = "GET_MY_ROUTINES";
 const ADD_ROUTINE = "ADD_ROUTINE";
 const EDIT_ROUTINE = "EDIT_ROUTINE";
@@ -26,10 +27,17 @@ export function getAllRoutines() {
   };
 }
 
-export function getMyRoutines(userId) {
+export function getRoutineByCategories(categoryId) {
+  return {
+    type: GET_ROUTINES_BY_CATEGORIES,
+    payload: Axios.get(`/api/routines/${categoryId}`)
+  };
+}
+
+export function getMyRoutines(categoryId, userId) {
   return {
     type: GET_MY_ROUTINES,
-    payload: Axios.get(`/api/routines/${userId}`)
+    payload: Axios.get(`/api/routines/${categoryId}/${userId}`)
   };
 }
 
@@ -64,6 +72,11 @@ export default function reducer(state = initialState, action) {
         categories: payload.data
       };
     case `${GET_ALL_ROUTINES}_FULFILLED`:
+      return {
+        ...state,
+        routines: payload.data
+      };
+    case `${GET_ROUTINES_BY_CATEGORIES}_FULFILLED`:
       return {
         ...state,
         routines: payload.data

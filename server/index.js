@@ -36,6 +36,8 @@ app.get("/auth/user", authController.getUser);
 app.post("/auth/register", authController.register);
 app.post("/auth/login", authController.login);
 app.post("/auth/logout", authController.logout);
+// edit user profile
+// delete user profile
 
 // Routines Endpoints
 app.get("/api/categories", routinesController.categories);
