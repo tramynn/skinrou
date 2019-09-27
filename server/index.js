@@ -26,13 +26,13 @@ massive(CONNECTION_STRING).then(db => {
   console.log("db connected :D");
 });
 
-// Auth endpoints
+// Auth Endpoints
 app.get("/auth/user", authController.getUser);
 app.post("/auth/register", authController.register);
 app.post("/auth/login", authController.login);
 app.post("/auth/logout", authController.logout);
 
-// Routines endpoints
+// Routines Endpoints
 app.get("/api/categories", routinesController.categories);
 app.get("/api/routines", routinesController.routines);
 app.get("/api/routines/:userId", routinesController.myRoutines);
@@ -44,7 +44,6 @@ app.delete("/api/routines/:routineId", routinesController.deleteRoutine);
 // var http = require("http").createServer(app);
 
 // app.get("/chat/general", )
-
 // const general = io.of("/chat/")
 
 app.listen(SERVER_PORT, () => {

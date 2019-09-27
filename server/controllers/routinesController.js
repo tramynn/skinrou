@@ -25,10 +25,12 @@ async function myRoutines(req, res) {
 
 async function addRoutine(req, res) {
   const db = req.app.get("db");
-
+  const { user_id } = req.session.user;
   const {
-    userId,
+    user_id,
     categoryId,
+    skinType,
+    time,
     firstCleanser,
     secondCleanser,
     exfoliator,
@@ -41,14 +43,14 @@ async function addRoutine(req, res) {
     neckSerum,
     neckMoisturizer,
     mask,
-    sunscreen,
-    time,
-    skinType
+    sunscreen
   } = req.body;
 
   const addedRoutine = await db.routines.addRoutine([
-    userId,
+    user_id,
     categoryId,
+    skinType,
+    time,
     firstCleanser,
     secondCleanser,
     exfoliator,
@@ -61,9 +63,7 @@ async function addRoutine(req, res) {
     neckSerum,
     neckMoisturizer,
     mask,
-    sunscreen,
-    time,
-    skinType
+    sunscreen
   ]);
   if (db) {
     res.status(200).json(addedRoutine);
