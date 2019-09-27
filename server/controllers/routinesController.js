@@ -90,6 +90,7 @@ async function editRoutine(req, res) {
   const db = req.app.get("db");
   const { routineId, categoryId } = req.params;
   const {
+    userId,
     time,
     skinType,
     firstCleanser,
@@ -107,7 +108,9 @@ async function editRoutine(req, res) {
     sunscreen,
     note
   } = req.body;
-  const editedRoutine = await db.routine.editRoutine([
+
+  const editedRoutine = await db.routines.editRoutine([
+    userId,
     routineId,
     categoryId,
     time,
@@ -127,7 +130,7 @@ async function editRoutine(req, res) {
     sunscreen,
     note
   ]);
-
+  console.log(editedRoutine);
   if (db) {
     res.status(200).json(editedRoutine);
   }
@@ -136,7 +139,12 @@ async function editRoutine(req, res) {
 async function deleteRoutine(req, res) {
   const db = req.app.get("db");
   const { routineId, categoryId } = req.params;
-  const deletedRoutine = await db.route.deleteRoutine([routineId, categoryId]);
+  const { userId } = req.body;
+  const deletedRoutine = await db.routines.deleteRoutine([
+    userId,
+    routineId,
+    categoryId
+  ]);
 
   if (db) {
     res.status(200).json(deletedRoutine);
