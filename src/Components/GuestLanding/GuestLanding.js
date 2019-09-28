@@ -7,17 +7,18 @@ export default class GuestLanding extends Component {
   render() {
     return (
       <div className="GuestLanding-Body">
-        <img src={logo} width={320} alt="SKINROU" />
-        <p className="tagline">
-          Beauty starts with a routine;
-          <br />
-          treat your skin with priority.
-        </p>
+        <header className="GuestLanding-header">
+          <img src={logo} width={320} alt="SKINROU" />
+          <p className="tagline">
+            Beauty starts with a routine;
+            <br />
+            treat your skin with priority.
+          </p>
+        </header>
         <div className="GuestLanding-Buttons">
           <Link to="/login">
             <button className="Login-btn">Log In</button>
           </Link>
-          <p>or</p>
           <Link to="/register">
             <button className="Register-btn">Register</button>
           </Link>

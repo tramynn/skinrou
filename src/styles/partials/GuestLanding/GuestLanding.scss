@@ -15,7 +15,7 @@
 }
 
 .tagline {
-  margin-top: 3vh;
+  margin-top: 2vh;
   text-align: center;
   text-shadow: 0px 2px 2px gray;
   @include p-font;
@@ -32,6 +32,7 @@
 .Login-btn,
 .Register-btn {
   @extend %btn-base;
+  margin: 5px;
 }
 
 .Login-btn:hover {
@@ -49,6 +50,10 @@
 // MEDIA QUERIES
 
 @media (max-width: 414px) {
+  .GuestLanding-header {
+    margin-top: -5vh;
+    margin-bottom: 10vh;
+  }
   .GuestLanding-Buttons {
     margin-top: 5vh;
     @include flex-column;

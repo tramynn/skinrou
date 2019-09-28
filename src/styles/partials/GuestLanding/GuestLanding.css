@@ -65,7 +65,7 @@
 }
 
 .tagline {
-  margin-top: 3vh;
+  margin-top: 2vh;
   text-align: center;
   text-shadow: 0px 2px 2px gray;
   font-family: Montserrat, sans-serif;
@@ -87,7 +87,16 @@
           align-items: center;
 }
 
+.Login-btn,
+.Register-btn {
+  margin: 5px;
+}
+
 @media (max-width: 414px) {
+  .GuestLanding-header {
+    margin-top: -5vh;
+    margin-bottom: 10vh;
+  }
   .GuestLanding-Buttons {
     margin-top: 5vh;
     -webkit-box-orient: vertical;

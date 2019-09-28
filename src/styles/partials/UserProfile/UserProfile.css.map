@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAMA,AAAA,oBAAoB,CAAC;ECuBnB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,UAAU;EAvB3B,cAAc,EAAE,MAAM;CDEvB",
+    "mappings": "AAMA,AAAA,sBAAsB,CAAC;ECuBrB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,UAAU;EAC3B,WAAW,EAAE,MAAM;EAxBnB,cAAc,EAAE,MAAM;CDEvB",
     "sources": [
         "UserProfile.scss",
         "../../modules/flex/flex.scss",

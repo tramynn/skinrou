@@ -10,6 +10,7 @@ import FormControl from "@material-ui/core/FormControl";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-regular-svg-icons";
+import { makeStyles } from "@material-ui/core/styles";
 
 class CreateRoutine extends Component {
   constructor() {
@@ -49,7 +50,11 @@ class CreateRoutine extends Component {
 
   handleSubmit = e => {};
 
-  handleInputChange = e => {};
+  handleInputChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
 
   render() {
     return (
@@ -59,7 +64,7 @@ class CreateRoutine extends Component {
           <div className="CreateRoutine-left-box">LEFT BOX</div>
           <div className="CreateRoutine-right-box">
             <h1>YOUR SKINROU</h1>
-            <form>
+            <form onSubmit={this.handleSubmit}>
               <table>
                 <tbody>
                   <tr>
@@ -70,31 +75,22 @@ class CreateRoutine extends Component {
                       </FontAwesomeIcon>
                     </td>
                     <td className="Right-col">
-                      <FormControl>
+                      <FormControl className="Create-Input">
                         <InputLabel>Time</InputLabel>
                         <Select
                           value={this.state.time}
                           onChange={this.handleTimeChange}
+                          fullWidth
                         >
                           <MenuItem>
                             <em>Select One</em>
                           </MenuItem>
-                          <MenuItem
-                            value={`Day`}
-                            onChange={this.handleTimeChange}
-                          >
-                            Day
-                          </MenuItem>
-                          <MenuItem
-                            value={`Night`}
-                            onChange={this.handleTimeChange}
-                          >
-                            Night
-                          </MenuItem>
+                          <MenuItem value={`Day`}>Day</MenuItem>
+                          <MenuItem value={`Night`}>Night</MenuItem>
                         </Select>
-                        <FormHelperText>
-                          When you would like to do your skincare.
-                        </FormHelperText>
+                        {/* <FormHelperText>
+                          Time you would like to do your skincare.
+                        </FormHelperText> */}
                       </FormControl>
                     </td>
                   </tr>
@@ -108,32 +104,18 @@ class CreateRoutine extends Component {
                         <Select
                           value={this.state.skinType}
                           onChange={this.handleSkinTypeChange}
+                          fullWidth
                         >
                           <MenuItem>
                             <em>Select One</em>
                           </MenuItem>
-                          <MenuItem
-                            value={`Combo`}
-                            onChange={this.handleSkinTypeChange}
-                          >
-                            Combo
-                          </MenuItem>
-                          <MenuItem
-                            value={`Dry`}
-                            onChange={this.handleSkinTypeChange}
-                          >
-                            Dry
-                          </MenuItem>
-                          <MenuItem
-                            value={`Oil`}
-                            onChange={this.handleSkinTypeChange}
-                          >
-                            Oily
-                          </MenuItem>
+                          <MenuItem value={`Combo`}>Combo</MenuItem>
+                          <MenuItem value={`Dry`}>Dry</MenuItem>
+                          <MenuItem value={`Oily`}>Oily</MenuItem>
+                          <MenuItem value={`Sensitive`}>Sensitive</MenuItem>
+                          <MenuItem value={`Normal`}>Normal</MenuItem>
                         </Select>
-                        <FormHelperText>
-                          When you would like to do your skincare.
-                        </FormHelperText>
+                        {/* <FormHelperText></FormHelperText> */}
                       </FormControl>
                     </td>
                   </tr>
