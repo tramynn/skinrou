@@ -20,7 +20,7 @@ class Header extends Component {
     this.props.getSession();
   }
 
-  handleLogout = e => {
+  handleLogout = () => {
     this.props.logoutUser();
     this.props.history.push("/");
   };

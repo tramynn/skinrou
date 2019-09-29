@@ -57,7 +57,57 @@ class CreateRoutine extends Component {
     });
   };
 
-  handleSubmit = e => {};
+  handleSubmit = e => {
+    e.preventDefault();
+
+    const { userId } = this.props;
+    const {
+      categoryId,
+      skinType,
+      time,
+      firstCleanser,
+      secondCleanser,
+      exfoliator,
+      toner,
+      essence,
+      eyeSerum,
+      eyeMoisturizer,
+      faceSerum,
+      faceMoisturizer,
+      neckSerum,
+      neckMoisturizer,
+      mask,
+      sunscreen,
+      note
+    } = this.state;
+    const newRoutine = {
+      userId,
+      categoryId,
+      skinType,
+      time,
+      firstCleanser,
+      secondCleanser,
+      exfoliator,
+      toner,
+      essence,
+      eyeSerum,
+      eyeMoisturizer,
+      faceSerum,
+      faceMoisturizer,
+      neckSerum,
+      neckMoisturizer,
+      mask,
+      sunscreen,
+      note
+    };
+    // if (!time || !skinType || !categoryId) {
+    //   alert("Please make sure you select a time, skin type, and category.");
+    // }
+    if (userId) {
+      this.props.addRoutine(newRoutine);
+      this.props.history.push(`/home`);
+    }
+  };
 
   render() {
     return (
@@ -83,9 +133,10 @@ class CreateRoutine extends Component {
                           onChange={this.handleInput}
                           className="Create-text"
                         >
-                          <MenuItem>
+                          {/* <MenuItem>
                             <em>Select One</em>
-                          </MenuItem>
+                          </MenuItem> */}
+                          <MenuItem value={``}>Select One</MenuItem>
                           <MenuItem value={`Day`}>Day</MenuItem>
                           <MenuItem value={`Night`}>Night</MenuItem>
                         </Select>
@@ -110,9 +161,7 @@ class CreateRoutine extends Component {
                           onChange={this.handleInput}
                           className="Create-text"
                         >
-                          <MenuItem>
-                            <em>Select One</em>
-                          </MenuItem>
+                          <MenuItem value={``}>Select One</MenuItem>
                           <MenuItem value={`Combo`}>Combo</MenuItem>
                           <MenuItem value={`Dry`}>Dry</MenuItem>
                           <MenuItem value={`Oily`}>Oily</MenuItem>
@@ -138,9 +187,7 @@ class CreateRoutine extends Component {
                           onChange={this.handleInput}
                           className="Create-text"
                         >
-                          <MenuItem>
-                            <em>Select One</em>
-                          </MenuItem>
+                          <MenuItem value={``}>Select One</MenuItem>
                           <MenuItem value={`1`}>Skincare by Skin Type</MenuItem>
                           <MenuItem value={`2`}>Skincare by Age</MenuItem>
                         </Select>
@@ -358,8 +405,7 @@ class CreateRoutine extends Component {
 
 const mapStateToProps = reduxState => {
   return {
-    userId: reduxState.userReducer.userId,
-    userReducer: reduxState.userReducer
+    userId: reduxState.userReducer.userId
   };
 };
 
