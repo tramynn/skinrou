@@ -4,6 +4,7 @@ import GuestLanding from "./Components/GuestLanding/GuestLanding";
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
+import Routines from "./Components/Routines/Routines";
 import CreateRoutine from "./Components/CreateRoutine/CreateRoutine";
 import UserSettings from "./Components/UserSettings/UserSettings";
 import UserProfile from "./Components/UserProfile/UserProfile";
@@ -15,6 +16,7 @@ export default (
     <Route component={Register} path="/register" />
     <Route component={Login} path="/login" />
     <Route component={Home} path="/home" />
+    <Route component={Routines} path="/routines/:categoryId" />
     <Route component={CreateRoutine} path="/createRoutine" />
     <Route component={UserSettings} path="/settings" />
     <Route component={UserProfile} path="/profile" />

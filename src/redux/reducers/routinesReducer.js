@@ -27,7 +27,7 @@ export function getAllRoutines() {
   };
 }
 
-export function getRoutineByCategories(categoryId) {
+export function getRoutinesByCategories(categoryId) {
   return {
     type: GET_ROUTINES_BY_CATEGORIES,
     payload: Axios.get(`/api/routines/${categoryId}`)
