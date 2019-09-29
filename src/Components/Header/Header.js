@@ -7,7 +7,7 @@ import {
   faPlusCircle,
   faUserCircle,
   faSignOutAlt,
-  faCog,
+  // faCog,
   faGripLinesVertical,
   faCommentDots
 } from "@fortawesome/free-solid-svg-icons";
@@ -26,13 +26,14 @@ class Header extends Component {
   };
 
   render() {
+    const { firstName } = this.props;
+
     return (
       <div>
         <div className="Header-container">
           <img src={navLogo} width={200} alt="SKINROU" />
           <nav className="Nav-default-container">
             <ul className="Nav-default-links">
-              {/* Home Link */}
               <Link
                 to="/home"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -44,7 +45,6 @@ class Header extends Component {
                   Home
                 </li>
               </Link>
-              {/* Create Routine Link */}
               <Link
                 to="/createRoutine"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -56,7 +56,6 @@ class Header extends Component {
                   Routine
                 </li>
               </Link>
-              {/* Chat Link */}
               <Link
                 to="/chatrooms"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -68,8 +67,7 @@ class Header extends Component {
                   Chat
                 </li>
               </Link>
-              {/* User Settings Link */}
-              <Link
+              {/* <Link
                 to="/settings"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
@@ -79,8 +77,7 @@ class Header extends Component {
                   </span>
                   <span className="Link">Settings</span>
                 </li>
-              </Link>
-              {/* Log Out Btn */}
+              </Link> */}
               <Link
                 to="/"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -92,13 +89,10 @@ class Header extends Component {
                   Log Out
                 </li>
               </Link>
-              {/* Vertical Bar */}
               <li>
                 <FontAwesomeIcon icon={faGripLinesVertical} color="#FFFFFF" />
               </li>
-
-              {/* User Message */}
-              <li className="Header-message">Hello, Guest</li>
+              <li className="Header-message">Hello, {firstName}</li>
               <Link
                 to="/profile"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -113,7 +107,6 @@ class Header extends Component {
             </ul>
           </nav>
         </div>
-        {/* Mobile Nav */}
         {/* <nav className="Nav-collapsed-container">
           <ul className="Nav-collapsed-links">
             <li>
