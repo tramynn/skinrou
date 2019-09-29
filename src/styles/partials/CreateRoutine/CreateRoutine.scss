@@ -8,23 +8,77 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-image: url("../../../images/create-routine.jpg");
-  @include bg-full;
 }
 
 .CreateRoutine-main {
   @include flex-start;
+  overflow-y: auto;
 
   .CreateRoutine-left-box {
-    @include bg-third-width;
-    background-color: $mo-5;
-    opacity: 0.2;
+    // @include bg-third-width;
+    width: 33vw;
   }
 
   .CreateRoutine-right-box {
     @include flex-base;
     @include flex-column;
-    @include bg-two-thirds-width;
+    // @include bg-two-thirds-width;
+    width: 67vw;
+    height: auto;
     background-color: $ol-1;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: right;
+
+    h1 {
+      @include h1-font;
+      padding-bottom: 40px;
+      font-style: italic;
+    }
+
+    .Left-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-right: 10px;
+      width: 70px;
+      height: 0px;
+
+      img {
+        position: relative;
+        top: 42px;
+      }
+    }
+    .Create-form {
+      width: 300px;
+      border-radius: 4px;
+      margin: 2px;
+      .Create-label {
+        color: $mo-3;
+      }
+      .Create-text {
+        color: $mo-5;
+      }
+    }
+    .Create-input {
+      width: 300px;
+      border-radius: 4px;
+      margin: 2px;
+      margin-top: 16px;
+      color: white;
+    }
+    .Create-btn {
+      @extend %btn-base;
+      height: 50px;
+      width: 200px;
+      margin-top: 40px;
+      margin-right: 2px;
+    }
+    .Create-btn:hover {
+      @extend %primary-btn-hover;
+    }
   }
 }

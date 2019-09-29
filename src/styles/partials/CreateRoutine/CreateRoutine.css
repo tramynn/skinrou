@@ -1,4 +1,5 @@
 .CreateRoutine-container {
+  color: #03396c;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -46,5 +47,26 @@
   width: 67vw;
   height: 93vh;
   background-color: #e7eff6;
+}
+
+.CreateRoutine-main .CreateRoutine-right-box h1 {
+  font-family: Paytone One, sans-serif;
+  font-size: 3em;
+  padding: 20px;
+  font-style: italic;
+}
+
+.CreateRoutine-main .CreateRoutine-right-box .Create-form {
+  width: 300px;
+  border-radius: 4px;
+  margin: 2px;
+}
+
+.CreateRoutine-main .CreateRoutine-right-box .Create-form .Create-label {
+  color: #4b86b4;
+}
+
+.CreateRoutine-main .CreateRoutine-right-box .Create-form .Create-text {
+  color: #024a81;
 }
 /*# sourceMappingURL=CreateRoutine.css.map */
