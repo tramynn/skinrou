@@ -105,8 +105,8 @@ class CreateRoutine extends Component {
     // }
     if (userId) {
       this.props.addRoutine(newRoutine);
-      this.props.history.push(`/home`);
     }
+    this.props.history.push(`/home`);
   };
 
   render() {

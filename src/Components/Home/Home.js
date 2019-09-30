@@ -11,14 +11,25 @@ import Card from "@material-ui/core/Card";
 import Paper from "@material-ui/core/Paper";
 
 class UserLanding extends Component {
+  constructor() {
+    super();
+    this.state = {
+      categories: []
+    };
+  }
   componentDidMount() {
+    this.setState({
+      categories: this.props.categories
+    });
     this.props.getCategories();
     this.props.getAllRoutines();
   }
+
   handleChange = () => {};
 
   render() {
-    const categoriesMapped = this.props.categories.map((category, i) => {
+    console.log(this.props.categories, this.state.categories);
+    const categoriesMapped = this.state.categories.map((category, i) => {
       return (
         <div key={i} className="Category-name">
           <Link
@@ -56,6 +67,10 @@ class UserLanding extends Component {
               <li>{routine.mask}</li>
               <li>{routine.sunscreen}</li>
               <li>{routine.note}</li>
+              <li>
+                <br />
+                <br />
+              </li>
             </ul>
           </Card>
         </div>
