@@ -9,6 +9,7 @@ import {
 } from "../../redux/reducers/routinesReducer";
 import Card from "@material-ui/core/Card";
 import Paper from "@material-ui/core/Paper";
+import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 
 class UserLanding extends Component {
   constructor() {
@@ -79,6 +80,7 @@ class UserLanding extends Component {
     return (
       <div className="Home-container">
         <Header />
+        <ScrollToTopOnMount />
         <nav>{categoriesMapped}</nav>
         <div>
           <aside className="Home-left-box"></aside>

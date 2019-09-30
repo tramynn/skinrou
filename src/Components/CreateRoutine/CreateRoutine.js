@@ -133,9 +133,6 @@ class CreateRoutine extends Component {
                           onChange={this.handleInput}
                           className="Create-text"
                         >
-                          {/* <MenuItem>
-                            <em>Select One</em>
-                          </MenuItem> */}
                           <MenuItem value={``}>Select One</MenuItem>
                           <MenuItem value={`Day`}>Day</MenuItem>
                           <MenuItem value={`Night`}>Night</MenuItem>
@@ -168,7 +165,6 @@ class CreateRoutine extends Component {
                           <MenuItem value={`Sensitive`}>Sensitive</MenuItem>
                           <MenuItem value={`Normal`}>Normal</MenuItem>
                         </Select>
-                        {/* <FormHelperText></FormHelperText> */}
                       </FormControl>
                     </td>
                   </tr>
@@ -394,7 +390,9 @@ class CreateRoutine extends Component {
                   </tr>
                 </tbody>
               </table>
-              <button className="Create-btn">Create Routine</button>
+              <button type="submit" className="Create-btn">
+                Create Routine
+              </button>
             </form>
           </div>
         </div>
