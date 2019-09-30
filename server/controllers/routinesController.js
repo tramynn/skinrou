@@ -27,7 +27,7 @@ async function routinesByCategory(req, res) {
   }
 }
 
-async function ageCategory(req, res) {
+async function age(req, res) {
   const db = req.app.get("db");
   const age = +req.params.age;
 
@@ -61,7 +61,7 @@ async function ageCategory(req, res) {
   }
 }
 
-async function skintypeCategory(req, res) {
+async function skintype(req, res) {
   const db = req.app.get("db");
 }
 
@@ -80,7 +80,6 @@ async function addRoutine(req, res) {
 
   const {
     userId,
-    // categoryId,
     skinType,
     time,
     firstCleanser,
@@ -102,7 +101,6 @@ async function addRoutine(req, res) {
 
   const addedRoutine = await db.routines.addRoutine([
     userId,
-    // categoryId,
     skinType,
     time,
     firstCleanser,
@@ -194,8 +192,8 @@ module.exports = {
   categories,
   routines,
   routinesByCategory,
-  ageCategory,
-  skintypeCategory,
+  age,
+  skintype,
   myRoutines,
   addRoutine,
   editRoutine,
