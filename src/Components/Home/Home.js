@@ -26,10 +26,7 @@ class UserLanding extends Component {
     this.props.getAllRoutines();
   }
 
-  handleChange = () => {};
-
   render() {
-    console.log(this.props.categories, this.state.categories);
     const categoriesMapped = this.state.categories.map((category, i) => {
       return (
         <div key={i} className="Category-name">
@@ -79,8 +76,8 @@ class UserLanding extends Component {
     });
     return (
       <div className="Home-container">
-        <Header />
         <ScrollToTopOnMount />
+        <Header />
         <nav>{categoriesMapped}</nav>
         <div>
           <aside className="Home-left-box"></aside>
