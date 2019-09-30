@@ -26,6 +26,45 @@ async function routinesByCategory(req, res) {
     res.status(200).json(routines);
   }
 }
+
+async function ageCategory(req, res) {
+  const db = req.app.get("db");
+  const age = +req.params.age;
+
+  // console.log("hit", age, typeof age);
+  if (age === 15) {
+    const ageFiltered = await db.ageCategories.age15();
+    if (db) {
+      res.status(200).json(ageFiltered);
+    }
+  } else if (age === 20) {
+    const ageFiltered = await db.ageCategories.age20();
+    if (db) {
+      res.status(200).json(ageFiltered);
+    }
+    console.log(ageFiltered);
+  } else if (age === 30) {
+    const ageFiltered = await db.ageCategories.age30();
+    if (db) {
+      res.status(200).json(ageFiltered);
+    }
+  } else if (age === 40) {
+    const ageFiltered = await db.ageCategories.age40();
+    if (db) {
+      res.status(200).json(ageFiltered);
+    }
+  } else if (age === 50) {
+    const ageFiltered = await db.ageCategories.age50();
+    if (db) {
+      res.status(200).json(ageFiltered);
+    }
+  }
+}
+
+async function skintypeCategory(req, res) {
+  const db = req.app.get("db");
+}
+
 // Get user routines
 async function myRoutines(req, res) {
   const db = req.app.get("db");
@@ -155,6 +194,8 @@ module.exports = {
   categories,
   routines,
   routinesByCategory,
+  ageCategory,
+  skintypeCategory,
   myRoutines,
   addRoutine,
   editRoutine,

@@ -81,3 +81,44 @@ VALUES
 ('TO Hello', 'Clinique Liquid Facial Soap', 'St. Ives Green Tea', 'Clinique Mild Toner', 'KB', 'ES', 'EM', 'FS', 'FM', 'NS', 'NM', 'KB Mask', 'SPF 50', 'Day Time', 'Combo', 1, 2),
 ('TO D', 'Clinique Liquid Facial Soap', 'St. Ives Green Tea', 'Clinique Mild Toner', 'KB', 'ES', 'EM', 'FS', 'FM', 'NS', 'NM', 'KB Mask', 'SPF 50', 'Day Time', 'Combo', 3, 1),
 ('TO Sup', 'Clinique Liquid Facial Soap', 'St. Ives Green Tea', 'Clinique Mild Toner', 'KB', 'ES', 'EM', 'FS', 'FM', 'NS', 'NM', 'KB Mask', 'SPF 50', 'Day Time', 'Combo', 4, 1);
+
+-- FILTER AGE
+-- 15 - 20s
+SELECT sr.*, su.username, su.age FROM skin_routine sr
+INNER JOIN skin_category sc
+ON sr.category_id = sc.category_id
+INNER JOIN skinrou_user su
+ON sr.user_id = su.user_id
+WHERE su.age >= 15 AND su.age < 20;
+
+-- 20 to 30
+SELECT sr.*, su.username, su.age FROM skin_routine sr
+INNER JOIN skin_category sc
+ON sr.category_id = sc.category_id
+INNER JOIN skinrou_user su
+ON sr.user_id = su.user_id
+WHERE su.age >= 20 AND su.age < 30;
+
+-- 30 to 40
+SELECT sr.*, su.username, su.age FROM skin_routine sr
+INNER JOIN skin_category sc
+ON sr.category_id = sc.category_id
+INNER JOIN skinrou_user su
+ON sr.user_id = su.user_id
+WHERE su.age >= 30 AND su.age < 40;
+
+-- 40 to 50
+SELECT sr.*, su.username, su.age FROM skin_routine sr
+INNER JOIN skin_category sc
+ON sr.category_id = sc.category_id
+INNER JOIN skinrou_user su
+ON sr.user_id = su.user_id
+WHERE su.age >= 40 AND su.age < 50;
+
+-- 50+
+SELECT sr.*, su.username, su.age FROM skin_routine sr
+INNER JOIN skin_category sc
+ON sr.category_id = sc.category_id
+INNER JOIN skinrou_user su
+ON sr.user_id = su.user_id
+WHERE su.age >= 50;

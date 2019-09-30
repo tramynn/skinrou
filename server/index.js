@@ -43,6 +43,7 @@ app.post("/auth/logout", authController.logout);
 app.get("/api/categories", routinesController.categories);
 app.get("/api/routines", routinesController.routines);
 app.get("/api/routines/:categoryId", routinesController.routinesByCategory);
+app.get("/api/routines/age/:age", routinesController.ageCategory);
 app.get("/api/routines/:categoryId/:userId", routinesController.myRoutines);
 app.post("/api/routines", routinesController.addRoutine);
 app.put("/api/routines/:routineId/:categoryId", routinesController.editRoutine);
@@ -51,7 +52,7 @@ app.delete(
   routinesController.deleteRoutine
 );
 
-// Sockets
+// Socketss
 // var http = require("http").createServer(app);
 // app.get("/chat/general", )
 // const general = io.of("/chat/")
