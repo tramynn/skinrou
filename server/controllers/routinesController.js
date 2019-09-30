@@ -58,6 +58,8 @@ async function age(req, res) {
     if (db) {
       res.status(200).json(ageFiltered);
     }
+  } else {
+    res.status(404).json("404 Not Found.");
   }
 }
 
@@ -66,30 +68,32 @@ async function skintype(req, res) {
   const { type } = req.params;
 
   if (type === "Combination") {
-    const skintypeFiltered = await db.ageCategories.age15();
+    const skintypeFiltered = await db.skintypeCategories.combo();
     if (db) {
       res.status(200).json(skintypeFiltered);
     }
   } else if (type === "Dry") {
-    const skintypeFiltered = await db.ageCategories.age20();
+    const skintypeFiltered = await db.skintypeCategories.dry();
     if (db) {
       res.status(200).json(skintypeFiltered);
     }
   } else if (type === "Oily") {
-    const skintypeFiltered = await db.ageCategories.age30();
+    const skintypeFiltered = await db.skintypeCategories.oily();
     if (db) {
       res.status(200).json(skintypeFiltered);
     }
   } else if (type === "Sensitive") {
-    const skintypeFiltered = await db.ageCategories.age40();
+    const skintypeFiltered = await db.skintypeCategories.sens();
     if (db) {
       res.status(200).json(skintypeFiltered);
     }
   } else if (type === "Normal") {
-    const skintypeFiltered = await db.ageCategories.age50();
+    const skintypeFiltered = await db.skintypeCategories.normal();
     if (db) {
       res.status(200).json(skintypeFiltered);
     }
+  } else {
+    res.status(404).json("404 Not Found.");
   }
 }
 

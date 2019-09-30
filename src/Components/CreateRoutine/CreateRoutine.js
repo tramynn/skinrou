@@ -161,7 +161,7 @@ class CreateRoutine extends Component {
                           className="Create-text"
                         >
                           <MenuItem value={``}>Select One</MenuItem>
-                          <MenuItem value={`Combination`}>Combo</MenuItem>
+                          <MenuItem value={`Combination`}>Combination</MenuItem>
                           <MenuItem value={`Dry`}>Dry</MenuItem>
                           <MenuItem value={`Oily`}>Oily</MenuItem>
                           <MenuItem value={`Sensitive`}>Sensitive</MenuItem>
