@@ -80,7 +80,7 @@ async function addRoutine(req, res) {
 
   const {
     userId,
-    categoryId,
+    // categoryId,
     skinType,
     time,
     firstCleanser,
@@ -102,7 +102,7 @@ async function addRoutine(req, res) {
 
   const addedRoutine = await db.routines.addRoutine([
     userId,
-    categoryId,
+    // categoryId,
     skinType,
     time,
     firstCleanser,

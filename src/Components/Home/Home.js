@@ -1,33 +1,24 @@
 import React, { Component } from "react";
 import Header from "../Header/Header";
 import "../../styles/partials/Home/Home.scss";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   getCategories,
   getAllRoutines
 } from "../../redux/reducers/routinesReducer";
-import Card from "@material-ui/core/Card";
 import Paper from "@material-ui/core/Paper";
+import Card from "@material-ui/core/Card";
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 
 class UserLanding extends Component {
-  constructor() {
-    super();
-    this.state = {
-      categories: []
-    };
-  }
   componentDidMount() {
-    this.setState({
-      categories: this.props.categories
-    });
     this.props.getCategories();
     this.props.getAllRoutines();
   }
 
   render() {
-    const categoriesMapped = this.state.categories.map((category, i) => {
+    const categoriesMapped = this.props.categories.map((category, i) => {
       return (
         <div key={i} className="Category-name">
           <Link
@@ -74,6 +65,7 @@ class UserLanding extends Component {
         </div>
       );
     });
+
     return (
       <div className="Home-container">
         <ScrollToTopOnMount />

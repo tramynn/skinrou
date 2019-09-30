@@ -2,7 +2,8 @@ import Axios from "axios";
 
 const initialState = {
   categories: [],
-  routines: []
+  routines: [],
+  shouldRedirect: false
 };
 
 const GET_CATEGORIES = "GET_CATEGORIES";
@@ -74,6 +75,7 @@ export default function reducer(state = initialState, action) {
     case `${GET_ALL_ROUTINES}_FULFILLED`:
       return {
         ...state,
+        shouldRedirect: false,
         routines: payload.data
       };
     case `${GET_ROUTINES_BY_CATEGORIES}_FULFILLED`:
@@ -88,10 +90,13 @@ export default function reducer(state = initialState, action) {
       };
     case `${ADD_ROUTINE}_FULFILLED`:
       return {
+        ...state,
+        shouldRedirect: true,
         routines: payload.data
       };
     case `${EDIT_ROUTINE}_FULFILLED`:
       return {
+        ...state,
         routines: payload.data
       };
     case `${DELETE_ROUTINE}_FULFILLED`:

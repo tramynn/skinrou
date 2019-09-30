@@ -10,21 +10,20 @@ class Routines extends Component {
 
   componentDidMount() {
     this.props.getRoutinesByCategories(this.props.match.params.categoryId);
+    console.log(typeof this.props.match.params.categoryId);
   }
 
   render() {
-    // const routinesMapped = this.props.routines.map((routine, i) => {
-    //   return (
-    //     <div key={i}>
-    //       <h1>{routine.username}</h1>
-    //       <h3>{routine.skin_type}</h3>
-    //       <h3>{routine.age}</h3>
-    //       <h3>{routine.time}</h3>
-    //     </div>
-    //   );
-    // });
+    return (
+      <div>
+        { this.props.match.params.categoryId === "1" ? 
+        
+         : null}
+        {
 
-    return <div>{/* <h1>{routinesMapped}</h1> */}</div>;
+        }
+      </div>
+    );
   }
 }
 

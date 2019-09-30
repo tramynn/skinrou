@@ -25,7 +25,9 @@ import num13 from "../../images/13.png";
 import num14 from "../../images/14.png";
 import num15 from "../../images/15.png";
 import num16 from "../../images/16.png";
-import num17 from "../../images/17.png";
+
+// Routing
+import { Redirect } from "react-router-dom";
 
 class CreateRoutine extends Component {
   constructor() {
@@ -100,16 +102,16 @@ class CreateRoutine extends Component {
       sunscreen,
       note
     };
-    // if (!time || !skinType || !categoryId) {
-    //   alert("Please make sure you select a time, skin type, and category.");
-    // }
+
     if (userId) {
       this.props.addRoutine(newRoutine);
     }
-    this.props.history.push(`/home`);
   };
 
   render() {
+    if (this.props.shouldRedirect === true) {
+      return <Redirect to="/home" />;
+    }
     return (
       <div className="CreateRoutine-container">
         <Header />
@@ -173,21 +175,14 @@ class CreateRoutine extends Component {
                       <img src={num3} alt="3" width="50" />
                     </td>
                     <td className="Right-col">
-                      <FormControl className="Create-form">
-                        <InputLabel className="Create-label">
-                          Category
-                        </InputLabel>
-                        <Select
-                          name="categoryId"
-                          value={this.state.categoryId}
-                          onChange={this.handleInput}
-                          className="Create-text"
-                        >
-                          <MenuItem value={``}>Select One</MenuItem>
-                          <MenuItem value={`1`}>Skincare by Skin Type</MenuItem>
-                          <MenuItem value={`2`}>Skincare by Age</MenuItem>
-                        </Select>
-                      </FormControl>
+                      <TextField
+                        name="firstCleanser"
+                        placeholder="First Cleanser"
+                        value={this.state.firstCleanser}
+                        onChange={this.handleInput}
+                        className="Create-input"
+                        autoComplete="off"
+                      />
                     </td>
                   </tr>
                   <tr>
@@ -196,11 +191,12 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <TextField
-                        name="firstCleanser"
-                        placeholder="First Cleanser"
-                        value={this.state.firstCleanser}
+                        name="secondCleanser"
+                        placeholder="Second Cleanser"
+                        value={this.state.secondCleanser}
                         onChange={this.handleInput}
                         className="Create-input"
+                        autoComplete="off"
                       />
                     </td>
                   </tr>
@@ -210,11 +206,12 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <TextField
-                        name="secondCleanser"
-                        placeholder="Second Cleanser"
-                        value={this.state.secondCleanser}
+                        name="exfoliator"
+                        placeholder="Exfoliator"
+                        value={this.state.exfoliator}
                         onChange={this.handleInput}
                         className="Create-input"
+                        autoComplete="off"
                       />
                     </td>
                   </tr>
@@ -224,11 +221,12 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <TextField
-                        name="exfoliator"
-                        placeholder="Exfoliator"
-                        value={this.state.exfoliator}
+                        name="toner"
+                        placeholder="Toner"
+                        value={this.state.toner}
                         onChange={this.handleInput}
                         className="Create-input"
+                        autoComplete="off"
                       />
                     </td>
                   </tr>
@@ -238,11 +236,12 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <TextField
-                        name="toner"
-                        placeholder="Toner"
-                        value={this.state.toner}
+                        name="essence"
+                        placeholder="Essence"
+                        value={this.state.essence}
                         onChange={this.handleInput}
                         className="Create-input"
+                        autoComplete="off"
                       />
                     </td>
                   </tr>
@@ -252,11 +251,12 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <TextField
-                        name="essence"
-                        placeholder="Essence"
-                        value={this.state.essence}
+                        name="eyeSerum"
+                        placeholder="Eye Serum"
+                        value={this.state.eyeSerum}
                         onChange={this.handleInput}
                         className="Create-input"
+                        autoComplete="off"
                       />
                     </td>
                   </tr>
@@ -266,11 +266,12 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <TextField
-                        name="eyeSerum"
-                        placeholder="Eye Serum"
-                        value={this.state.eyeSerum}
+                        name="eyeMoisturizer"
+                        placeholder="Eye Moisturizer"
+                        value={this.state.eyeMoisturizer}
                         onChange={this.handleInput}
                         className="Create-input"
+                        autoComplete="off"
                       />
                     </td>
                   </tr>
@@ -280,11 +281,12 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <TextField
-                        name="eyeMoisturizer"
-                        placeholder="Eye Moisturizer"
-                        value={this.state.eyeMoisturizer}
+                        name="faceSerum"
+                        placeholder="Face Serum"
+                        value={this.state.faceSerum}
                         onChange={this.handleInput}
                         className="Create-input"
+                        autoComplete="off"
                       />
                     </td>
                   </tr>
@@ -294,11 +296,12 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <TextField
-                        name="faceSerum"
-                        placeholder="Face Serum"
-                        value={this.state.faceSerum}
+                        name="faceMoisturizer"
+                        placeholder="Face Moisturizer"
+                        value={this.state.faceMoisturizer}
                         onChange={this.handleInput}
                         className="Create-input"
+                        autoComplete="off"
                       />
                     </td>
                   </tr>
@@ -308,11 +311,12 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <TextField
-                        name="faceMoisturizer"
-                        placeholder="Face Moisturizer"
-                        value={this.state.faceMoisturizer}
+                        name="neckSerum"
+                        placeholder="Neck Serum"
+                        value={this.state.neckSerum}
                         onChange={this.handleInput}
                         className="Create-input"
+                        autoComplete="off"
                       />
                     </td>
                   </tr>
@@ -322,11 +326,12 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <TextField
-                        name="neckSerum"
-                        placeholder="Neck Serum"
-                        value={this.state.neckSerum}
+                        name="neckMoisturizer"
+                        placeholder="Neck Moisturizer"
+                        value={this.state.neckMoisturizer}
                         onChange={this.handleInput}
                         className="Create-input"
+                        autoComplete="off"
                       />
                     </td>
                   </tr>
@@ -336,11 +341,12 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <TextField
-                        name="neckMoisturizer"
-                        placeholder="Neck Moisturizer"
-                        value={this.state.neckMoisturizer}
+                        name="mask"
+                        placeholder="Mask"
+                        value={this.state.mask}
                         onChange={this.handleInput}
                         className="Create-input"
+                        autoComplete="off"
                       />
                     </td>
                   </tr>
@@ -350,11 +356,12 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <TextField
-                        name="mask"
-                        placeholder="Mask"
-                        value={this.state.mask}
+                        name="sunscreen"
+                        placeholder="Sunscreen"
+                        value={this.state.sunscreen}
                         onChange={this.handleInput}
                         className="Create-input"
+                        autoComplete="off"
                       />
                     </td>
                   </tr>
@@ -364,25 +371,12 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <TextField
-                        name="sunscreen"
-                        placeholder="Sunscreen"
-                        value={this.state.sunscreen}
-                        onChange={this.handleInput}
-                        className="Create-input"
-                      />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="Left-col">
-                      <img src={num17} alt="17" width="50" />
-                    </td>
-                    <td className="Right-col">
-                      <TextField
                         name="note"
                         placeholder="Note"
                         value={this.state.note}
                         onChange={this.handleInput}
                         className="Create-input"
+                        autoComplete="off"
                         multiline
                         rows="4"
                       />
@@ -403,7 +397,8 @@ class CreateRoutine extends Component {
 
 const mapStateToProps = reduxState => {
   return {
-    userId: reduxState.userReducer.userId
+    userId: reduxState.userReducer.userId,
+    shouldRedirect: reduxState.routinesReducer.shouldRedirect
   };
 };
 
