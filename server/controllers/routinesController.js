@@ -63,6 +63,34 @@ async function age(req, res) {
 
 async function skintype(req, res) {
   const db = req.app.get("db");
+  const { type } = req.params;
+
+  if (type === "Combination") {
+    const skintypeFiltered = await db.ageCategories.age15();
+    if (db) {
+      res.status(200).json(skintypeFiltered);
+    }
+  } else if (type === "Dry") {
+    const skintypeFiltered = await db.ageCategories.age20();
+    if (db) {
+      res.status(200).json(skintypeFiltered);
+    }
+  } else if (type === "Oily") {
+    const skintypeFiltered = await db.ageCategories.age30();
+    if (db) {
+      res.status(200).json(skintypeFiltered);
+    }
+  } else if (type === "Sensitive") {
+    const skintypeFiltered = await db.ageCategories.age40();
+    if (db) {
+      res.status(200).json(skintypeFiltered);
+    }
+  } else if (type === "Normal") {
+    const skintypeFiltered = await db.ageCategories.age50();
+    if (db) {
+      res.status(200).json(skintypeFiltered);
+    }
+  }
 }
 
 // Get user routines
@@ -141,7 +169,7 @@ async function editRoutine(req, res) {
     faceMoisturizer,
     neckSerum,
     neckMoisturizer,
-    mask,
+    faceMask,
     sunscreen,
     note
   } = req.body;
@@ -163,7 +191,7 @@ async function editRoutine(req, res) {
     faceMoisturizer,
     neckSerum,
     neckMoisturizer,
-    mask,
+    faceMask,
     sunscreen,
     note
   ]);

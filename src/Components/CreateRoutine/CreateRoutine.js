@@ -47,7 +47,7 @@ class CreateRoutine extends Component {
       faceMoisturizer: "",
       neckSerum: "",
       neckMoisturizer: "",
-      mask: "",
+      faceMask: "",
       sunscreen: "",
       note: ""
     };
@@ -78,7 +78,7 @@ class CreateRoutine extends Component {
       faceMoisturizer,
       neckSerum,
       neckMoisturizer,
-      mask,
+      faceMask,
       sunscreen,
       note
     } = this.state;
@@ -98,7 +98,7 @@ class CreateRoutine extends Component {
       faceMoisturizer,
       neckSerum,
       neckMoisturizer,
-      mask,
+      faceMask,
       sunscreen,
       note
     };
@@ -119,7 +119,7 @@ class CreateRoutine extends Component {
           <div className="CreateRoutine-left-box"></div>
           <div className="CreateRoutine-right-box">
             <h1>your skinrou.</h1>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} autoComplete="off">
               <table>
                 <tbody>
                   <tr>
@@ -161,7 +161,7 @@ class CreateRoutine extends Component {
                           className="Create-text"
                         >
                           <MenuItem value={``}>Select One</MenuItem>
-                          <MenuItem value={`Combo`}>Combo</MenuItem>
+                          <MenuItem value={`Combination`}>Combo</MenuItem>
                           <MenuItem value={`Dry`}>Dry</MenuItem>
                           <MenuItem value={`Oily`}>Oily</MenuItem>
                           <MenuItem value={`Sensitive`}>Sensitive</MenuItem>
@@ -341,9 +341,9 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <TextField
-                        name="mask"
-                        placeholder="Mask"
-                        value={this.state.mask}
+                        name="faceMask"
+                        placeholder="Face Mask"
+                        value={this.state.faceMask}
                         onChange={this.handleInput}
                         className="Create-input"
                         autoComplete="off"
