@@ -7,10 +7,33 @@ class Routines extends Component {
     super();
     this.state = {};
   }
+
+  componentDidMount() {
+    this.props.getRoutinesByCategories(this.props.match.params.categoryId);
+  }
+
+  // Filtering out data
+  // filterRoutines(someData) {
+  //   (reducers routines, reducers filteredRoutines)
+  //   let routines = this.props.filteredRoutines.length > 0 ? this.filteredRoutines : this.props.routines;
+
+  // }
+
   render() {
+    const routinesMapped = this.props.routines.map((routine, i) => {
+      return (
+        <div key={i}>
+          <h1>{routine.username}</h1>
+          <h3>{routine.skin_type}</h3>
+          <h3>{routine.age}</h3>
+          <h3>{routine.time}</h3>
+        </div>
+      );
+    });
+
     return (
       <div>
-        <h1>Routines</h1>
+        <h1>{routinesMapped}</h1>
       </div>
     );
   }
@@ -18,7 +41,7 @@ class Routines extends Component {
 
 const mapStateToProps = reduxState => {
   return {
-    getRoutinesByCategories
+    routines: reduxState.routinesReducer.routines
   };
 };
 export default connect(

@@ -17,6 +17,7 @@ export default (
     <Route component={Login} path="/login" />
     <Route component={Home} path="/home" />
     <Route component={Routines} path="/routines/:categoryId" />
+    <Route component={Routines} path="/routines/:categoryId/:skinType" />
     <Route component={CreateRoutine} path="/createRoutine" />
     <Route component={UserSettings} path="/settings" />
     <Route component={UserProfile} path="/profile" />

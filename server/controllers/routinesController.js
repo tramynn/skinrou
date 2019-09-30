@@ -29,8 +29,8 @@ async function routinesByCategory(req, res) {
 // Get user routines
 async function myRoutines(req, res) {
   const db = req.app.get("db");
-  const { categoryId, userId } = req.params;
-  const userRoutines = await db.routines.getMyRoutines([categoryId, userId]);
+  const { userId } = req.params;
+  const userRoutines = await db.routines.getMyRoutines(userId);
   if (db) {
     res.status(200).json(userRoutines);
   }

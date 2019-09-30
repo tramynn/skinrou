@@ -34,10 +34,10 @@ export function getRoutinesByCategories(categoryId) {
   };
 }
 
-export function getMyRoutines(categoryId, userId) {
+export function getMyRoutines(userId) {
   return {
     type: GET_MY_ROUTINES,
-    payload: Axios.get(`/api/routines/${categoryId}/${userId}`)
+    payload: Axios.get(`/api/routines/${userId}`)
   };
 }
 
