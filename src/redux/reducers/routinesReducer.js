@@ -11,7 +11,7 @@ const GET_ALL_ROUTINES = "GET_ALL_ROUTINES";
 const GET_ROUTINES_BY_CATEGORIES = "GET_ROUTINES_BY_CATEGORIES";
 const GET_AGE_ROUTINES = "GET_AGE_ROUTINES";
 const GET_SKINTYPE_ROUTINES = "GET_SKINTYPE_ROUTINES";
-const GET_MY_ROUTINES = "GET_MY_ROUTINES";
+const GET_USER_ROUTINES = "GET_USER_ROUTINES";
 const ADD_ROUTINE = "ADD_ROUTINE";
 const EDIT_ROUTINE = "EDIT_ROUTINE";
 const DELETE_ROUTINE = "DELETE_ROUTINE";
@@ -51,10 +51,10 @@ export function getSkintypeRoutines(type) {
   };
 }
 
-export function getMyRoutines(userId) {
+export function getUserRoutines(userId) {
   return {
-    type: GET_MY_ROUTINES,
-    payload: Axios.get(`/api/routines/${userId}`)
+    type: GET_USER_ROUTINES,
+    payload: Axios.get(`/api/routines/profile/${userId}`)
   };
 }
 
@@ -72,7 +72,7 @@ export function editRoutine(routineId) {
   };
 }
 
-export function deleteRoutine(routineId) {
+export function deleteRoutine(routineId, userId) {
   return {
     type: DELETE_ROUTINE,
     payload: Axios.delete(`/api/routines/${routineId}/${userId}`)
@@ -109,7 +109,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         routines: payload.data
       };
-    case `${GET_MY_ROUTINES}_FULFILLED`:
+    case `${GET_USER_ROUTINES}_FULFILLED`:
       return {
         ...state,
         routines: payload.data

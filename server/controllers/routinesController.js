@@ -63,7 +63,7 @@ async function age(req, res) {
     res.status(404).json("404 Not Found.");
   }
 }
-
+0
 // Get skintype categories
 async function skintype(req, res) {
   const db = req.app.get("db");
@@ -100,10 +100,10 @@ async function skintype(req, res) {
 }
 
 // Get user routines
-async function myRoutines(req, res) {
+async function userRoutines(req, res) {
   const db = req.app.get("db");
   const { userId } = req.params;
-  const userRoutines = await db.routines.getMyRoutines(userId);
+  const userRoutines = await db.routines.getUserRoutines(userId);
   if (db) {
     res.status(200).json(userRoutines);
   }
@@ -223,7 +223,7 @@ module.exports = {
   routinesByCategory,
   age,
   skintype,
-  myRoutines,
+  userRoutines,
   addRoutine,
   editRoutine,
   deleteRoutine
