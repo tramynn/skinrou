@@ -38,6 +38,7 @@ class Routines extends Component {
             <Link to="/routines/age/50">
               <h1>50+</h1>
             </Link>
+            {/* <AgeRoutines /> */}
           </div>
         ) : null}
         {/* {this.props.match.params.categoryId === "2" ? (
