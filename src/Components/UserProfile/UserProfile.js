@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import Header from "../Header/Header";
 import { connect } from "react-redux";
-import { getUserRoutines } from "../../redux/reducers/routinesReducer";
+import {
+  getUserRoutines,
+  editRoutine,
+  deleteRoutine
+} from "../../redux/reducers/routinesReducer";
 import { getSession } from "../../redux/reducers/userReducer";
 import Card from "@material-ui/core/Card";
 import "../../styles/partials/UserProfile/UserProfile.scss";
@@ -15,6 +19,16 @@ class UserProfile extends Component {
     this.props.getSession();
     this.props.getUserRoutines(this.props.match.params.userId);
   }
+  handleEdit = e => {
+    e.preventDefault();
+    this.props.editRoutine(this.props.match.params.routineId);
+  };
+
+  handleDelete = e => {
+    e.preventDefault();
+    this.props.deleteRoutine(this.props.match.params.routineId);
+  };
+
   render() {
     const {
       username,
@@ -29,10 +43,13 @@ class UserProfile extends Component {
       return (
         <div key={i} className="User-routines">
           <Card className="Routine">
-            <h1>{routine.username}</h1>
-            <h3>{routine.skin_type}</h3>
-            <h3>{routine.age}</h3>
-            <h3>{routine.time}</h3>
+            <header>
+              <h1>{routine.username}</h1>
+              <h3>{routine.skin_type}</h3>
+              <h3>{routine.age}</h3>
+              <h3>{routine.time}</h3>
+            </header>
+            <main></main>
             <ul>
               <li>{routine.first_cleanser}</li>
               <li>{routine.second_cleanser}</li>
@@ -48,11 +65,12 @@ class UserProfile extends Component {
               <li>{routine.mask}</li>
               <li>{routine.sunscreen}</li>
               <li>{routine.note}</li>
-              <li>
-                <br />
-                <br />
-              </li>
             </ul>
+            <span>
+              <button>EDIT</button>
+              <button>DELETE</button>
+            </span>
+            <br />
           </Card>
         </div>
       );
@@ -95,6 +113,8 @@ export default connect(
   mapStateToProps,
   {
     getSession,
-    getUserRoutines
+    getUserRoutines,
+    editRoutine,
+    deleteRoutine
   }
 )(UserProfile);
