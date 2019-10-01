@@ -63,7 +63,7 @@ async function age(req, res) {
     res.status(404).json("404 Not Found.");
   }
 }
-0
+0;
 // Get skintype categories
 async function skintype(req, res) {
   const db = req.app.get("db");
@@ -208,10 +208,12 @@ async function editRoutine(req, res) {
 // User can only delete their routine by the routineId and categoryId
 async function deleteRoutine(req, res) {
   const db = req.app.get("db");
-  const { routineId } = req.params;
-  const { userId } = req.body;
-  const deletedRoutine = await db.routines.deleteRoutine([userId, routineId]);
-
+  const routine_id = +req.params.routine_id;
+  console.log(routine_id);
+  const userId = +req.session.user.user_id;
+  console.log(userId);
+  const deletedRoutine = await db.routines.deleteRoutine([userId, routine_id]);
+  console.log(deletedRoutine);
   if (db) {
     res.status(200).json(deletedRoutine);
   }

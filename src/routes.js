@@ -11,6 +11,7 @@ import UserProfile from "./Components/UserProfile/UserProfile";
 import Chatrooms from "./Components/Chatrooms/Chatrooms";
 import AgeRoutines from "./Components/AgeRoutines/AgeRoutines";
 import SkintypeRoutines from "./Components/SkintypeRoutines/SkintypeRoutines";
+import EditRoutine from "./Components/EditRoutine/EditRoutine";
 
 export default (
   <Switch>
@@ -22,6 +23,7 @@ export default (
     <Route component={SkintypeRoutines} exact path="/routines/skintype/:type" />
     <Route component={Routines} exact path="/routines/:categoryId" />
     <Route component={CreateRoutine} path="/createRoutine" />
+    <Route component={EditRoutine} exact path="/editRoutine/:routineId" />
     <Route component={UserSettings} path="/settings" />
     <Route component={UserProfile} path="/profile/user/:userId" />
     <Route component={Chatrooms} path="/chatrooms" />
