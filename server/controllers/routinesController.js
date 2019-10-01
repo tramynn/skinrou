@@ -29,31 +29,32 @@ async function routinesByCategory(req, res) {
 
 async function age(req, res) {
   const db = req.app.get("db");
-  const age = +req.params.age;
+  const age = req.params.age;
+  console.log(typeof age);
 
   // console.log("hit", age, typeof age);
-  if (age === 15) {
+  if (age == "15") {
     const ageFiltered = await db.ageCategories.age15();
     if (db) {
       res.status(200).json(ageFiltered);
     }
-  } else if (age === 20) {
+  } else if (age == "20") {
     const ageFiltered = await db.ageCategories.age20();
     if (db) {
       res.status(200).json(ageFiltered);
     }
     console.log(ageFiltered);
-  } else if (age === 30) {
+  } else if (age == "30") {
     const ageFiltered = await db.ageCategories.age30();
     if (db) {
       res.status(200).json(ageFiltered);
     }
-  } else if (age === 40) {
+  } else if (age == "40") {
     const ageFiltered = await db.ageCategories.age40();
     if (db) {
       res.status(200).json(ageFiltered);
     }
-  } else if (age === 50) {
+  } else if (age == "50") {
     const ageFiltered = await db.ageCategories.age50();
     if (db) {
       res.status(200).json(ageFiltered);

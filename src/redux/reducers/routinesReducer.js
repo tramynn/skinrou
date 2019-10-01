@@ -9,6 +9,8 @@ const initialState = {
 const GET_CATEGORIES = "GET_CATEGORIES";
 const GET_ALL_ROUTINES = "GET_ALL_ROUTINES";
 const GET_ROUTINES_BY_CATEGORIES = "GET_ROUTINES_BY_CATEGORIES";
+const GET_AGE_ROUTINES = "GET_AGE_ROUTINES";
+const GET_SKINTYPE_ROUTINES = "GET_SKINTYPE_ROUTINES";
 const GET_MY_ROUTINES = "GET_MY_ROUTINES";
 const ADD_ROUTINE = "ADD_ROUTINE";
 const EDIT_ROUTINE = "EDIT_ROUTINE";
@@ -32,6 +34,20 @@ export function getRoutinesByCategories(categoryId) {
   return {
     type: GET_ROUTINES_BY_CATEGORIES,
     payload: Axios.get(`/api/routines/${categoryId}`)
+  };
+}
+
+export function getAgeRoutines(age) {
+  return {
+    type: GET_AGE_ROUTINES,
+    payload: Axios.get(`/api/routines/age/${age}`)
+  };
+}
+
+export function getSkintypeRoutines(type) {
+  return {
+    type: GET_SKINTYPE_ROUTINES,
+    payload: Axios.get(`/api/routines/skintype/${type}`)
   };
 }
 
@@ -79,6 +95,16 @@ export default function reducer(state = initialState, action) {
         routines: payload.data
       };
     case `${GET_ROUTINES_BY_CATEGORIES}_FULFILLED`:
+      return {
+        ...state,
+        routines: payload.data
+      };
+    case `${GET_AGE_ROUTINES}_FULFILLED`:
+      return {
+        ...state,
+        routines: payload.data
+      };
+    case `${GET_SKINTYPE_ROUTINES}_FULFILLED`:
       return {
         ...state,
         routines: payload.data
