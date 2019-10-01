@@ -54,7 +54,7 @@ export function getSkintypeRoutines(type) {
 export function getUserRoutines(userId) {
   return {
     type: GET_USER_ROUTINES,
-    payload: Axios.get(`/api/routines/profile/${userId}`)
+    payload: Axios.get(`/api/routines/user/${userId}`)
   };
 }
 
@@ -72,10 +72,10 @@ export function editRoutine(routineId) {
   };
 }
 
-export function deleteRoutine(routineId, userId) {
+export function deleteRoutine(routineId) {
   return {
     type: DELETE_ROUTINE,
-    payload: Axios.delete(`/api/routines/${routineId}/${userId}`)
+    payload: Axios.delete(`/api/routines/${routineId}`)
   };
 }
 

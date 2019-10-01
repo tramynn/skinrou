@@ -23,7 +23,7 @@ export default (
     <Route component={Routines} exact path="/routines/:categoryId" />
     <Route component={CreateRoutine} path="/createRoutine" />
     <Route component={UserSettings} path="/settings" />
-    <Route component={UserProfile} path="/profile" />
+    <Route component={UserProfile} path="/profile/user/:userId" />
     <Route component={Chatrooms} path="/chatrooms" />
     <Route
       render={() => {

@@ -7,7 +7,7 @@ import {
   faPlusCircle,
   faUserCircle,
   faSignOutAlt,
-  // faCog,
+  faCog,
   faGripLinesVertical,
   faCommentDots
 } from "@fortawesome/free-solid-svg-icons";
@@ -26,7 +26,7 @@ class Header extends Component {
   };
 
   render() {
-    const { firstName } = this.props;
+    const { firstName, userId } = this.props;
 
     return (
       <div>
@@ -67,7 +67,7 @@ class Header extends Component {
                   Chat
                 </li>
               </Link>
-              {/* <Link
+              <Link
                 to="/settings"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
@@ -77,7 +77,7 @@ class Header extends Component {
                   </span>
                   <span className="Link">Settings</span>
                 </li>
-              </Link> */}
+              </Link>
               <Link
                 to="/"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -94,7 +94,7 @@ class Header extends Component {
               </li>
               <li className="Header-message">Hello, {firstName}</li>
               <Link
-                to="/profile"
+                to={`/profile/user/${userId}`}
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <li className="Nav-links">
@@ -136,6 +136,7 @@ class Header extends Component {
 
 const mapStateToProps = reduxState => {
   return {
+    userId: reduxState.userReducer.userId,
     firstName: reduxState.userReducer.firstName
   };
 };

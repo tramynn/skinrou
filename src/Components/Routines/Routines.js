@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { getRoutinesByCategories } from "../../redux/reducers/routinesReducer";
 import Header from "../Header/Header";
 import { Link } from "react-router-dom";
-// import AgeRoutines from "../AgeRoutines/AgeRoutines";
 
 class Routines extends Component {
   componentDidMount() {
@@ -11,13 +10,6 @@ class Routines extends Component {
   }
 
   render() {
-    // const ageRou = this.props.routines.map((age, i) => {
-    //   return (
-    //     <Link to={`/routines/age/${age}`} key={i}>
-    //       <h3 key={i}>{age}</h3>
-    //     </Link>
-    //   );
-    // });
     return (
       <div>
         <Header />
