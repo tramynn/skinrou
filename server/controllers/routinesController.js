@@ -27,10 +27,10 @@ async function routinesByCategory(req, res) {
   }
 }
 
+// Get age categories
 async function age(req, res) {
   const db = req.app.get("db");
   const age = req.params.age;
-  console.log(typeof age);
 
   // console.log("hit", age, typeof age);
   if (age == "15") {
@@ -64,31 +64,32 @@ async function age(req, res) {
   }
 }
 
+// Get skintype categories
 async function skintype(req, res) {
   const db = req.app.get("db");
   const { type } = req.params;
 
-  if (type === "Combination") {
+  if (type === "combination") {
     const skintypeFiltered = await db.skintypeCategories.combo();
     if (db) {
       res.status(200).json(skintypeFiltered);
     }
-  } else if (type === "Dry") {
+  } else if (type === "dry") {
     const skintypeFiltered = await db.skintypeCategories.dry();
     if (db) {
       res.status(200).json(skintypeFiltered);
     }
-  } else if (type === "Oily") {
+  } else if (type === "oily") {
     const skintypeFiltered = await db.skintypeCategories.oily();
     if (db) {
       res.status(200).json(skintypeFiltered);
     }
-  } else if (type === "Sensitive") {
+  } else if (type === "sensitive") {
     const skintypeFiltered = await db.skintypeCategories.sens();
     if (db) {
       res.status(200).json(skintypeFiltered);
     }
-  } else if (type === "Normal") {
+  } else if (type === "normal") {
     const skintypeFiltered = await db.skintypeCategories.normal();
     if (db) {
       res.status(200).json(skintypeFiltered);
@@ -158,7 +159,7 @@ async function addRoutine(req, res) {
 // User can only edit their routine by the routineId and categoryId
 async function editRoutine(req, res) {
   const db = req.app.get("db");
-  const { routineId, categoryId } = req.params;
+  const { routineId } = req.params;
   const {
     userId,
     time,
@@ -182,7 +183,6 @@ async function editRoutine(req, res) {
   const editedRoutine = await db.routines.editRoutine([
     userId,
     routineId,
-    categoryId,
     time,
     skinType,
     firstCleanser,
@@ -208,13 +208,9 @@ async function editRoutine(req, res) {
 // User can only delete their routine by the routineId and categoryId
 async function deleteRoutine(req, res) {
   const db = req.app.get("db");
-  const { routineId, categoryId } = req.params;
+  const { routineId } = req.params;
   const { userId } = req.body;
-  const deletedRoutine = await db.routines.deleteRoutine([
-    userId,
-    routineId,
-    categoryId
-  ]);
+  const deletedRoutine = await db.routines.deleteRoutine([userId, routineId]);
 
   if (db) {
     res.status(200).json(deletedRoutine);

@@ -18,16 +18,16 @@ export default (
     <Route component={Register} path="/register" />
     <Route component={Login} path="/login" />
     <Route component={Home} path="/home" />
-    <Route component={Routines} path="/routines/:categoryId" />
-    <Route component={AgeRoutines} path="/routines/age/:age" />
-    <Route component={SkintypeRoutines} path="/routines/skintype/:type" />
+    <Route component={AgeRoutines} exact path="/routines/age/:age" />
+    <Route component={SkintypeRoutines} exact path="/routines/skintype/:type" />
+    <Route component={Routines} exact path="/routines/:categoryId" />
     <Route component={CreateRoutine} path="/createRoutine" />
     <Route component={UserSettings} path="/settings" />
     <Route component={UserProfile} path="/profile" />
     <Route component={Chatrooms} path="/chatrooms" />
     <Route
       render={() => {
-        return <h1>404 Not Found.</h1>;
+        return <h1>404 Page Not Found.</h1>;
       }}
     />
   </Switch>

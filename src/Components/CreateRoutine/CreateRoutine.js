@@ -161,11 +161,11 @@ class CreateRoutine extends Component {
                           className="Create-text"
                         >
                           <MenuItem value={``}>Select One</MenuItem>
-                          <MenuItem value={`Combination`}>Combination</MenuItem>
-                          <MenuItem value={`Dry`}>Dry</MenuItem>
-                          <MenuItem value={`Oily`}>Oily</MenuItem>
-                          <MenuItem value={`Sensitive`}>Sensitive</MenuItem>
-                          <MenuItem value={`Normal`}>Normal</MenuItem>
+                          <MenuItem value={`combination`}>Combination</MenuItem>
+                          <MenuItem value={`dry`}>Dry</MenuItem>
+                          <MenuItem value={`oily`}>Oily</MenuItem>
+                          <MenuItem value={`sensitive`}>Sensitive</MenuItem>
+                          <MenuItem value={`normal`}>Normal</MenuItem>
                         </Select>
                       </FormControl>
                     </td>

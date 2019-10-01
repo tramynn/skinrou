@@ -45,11 +45,11 @@ app.get("/api/routines", routinesController.routines);
 app.get("/api/routines/:categoryId", routinesController.routinesByCategory);
 app.get("/api/routines/age/:age", routinesController.age);
 app.get("/api/routines/skintype/:type", routinesController.skintype);
-app.get("/api/routines/:categoryId/:userId", routinesController.myRoutines);
+app.get("/api/routines/user/:userId", routinesController.myRoutines);
 app.post("/api/routines", routinesController.addRoutine);
-app.put("/api/routines/:routineId/:categoryId", routinesController.editRoutine);
+app.put("/api/routines/:routineId", routinesController.editRoutine);
 app.delete(
-  "/api/routines/:routineId/:categoryId",
+  "/api/routines/:routineId/:userId",
   routinesController.deleteRoutine
 );
 
