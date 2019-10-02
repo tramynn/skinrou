@@ -65,10 +65,10 @@ export function addRoutine(newRoutine) {
   };
 }
 
-export function editRoutine(routineId) {
+export function editRoutine(routineId, updatedRoutine) {
   return {
     type: EDIT_ROUTINE,
-    payload: Axios.put(`/api/routines/${routineId}`, editRoutine)
+    payload: Axios.put(`/api/routines/${routineId}`, updatedRoutine)
   };
 }
 

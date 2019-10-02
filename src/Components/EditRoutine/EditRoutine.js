@@ -50,28 +50,30 @@ class EditRoutine extends Component {
   }
 
   componentDidMount() {
-    const { routines } = this.props;
+    // const { routines } = this.props;
     // console.log(routines);
     // console.log(typeof routines[0]["time"]);
-
-    this.setState({
-      time: `${routines[0]["time"]}`,
-      skinType: `${routines[0]["skin_type"]}`,
-      firstCleanser: `${routines[0]["first_cleanser"]}`,
-      secondCleanser: `${routines[0]["second_cleanser"]}`,
-      exfoliator: `${routines[0]["exfoliator"]}`,
-      toner: `${routines[0]["toner"]}`,
-      essence: `${routines[0]["essence"]}`,
-      eyeSerum: `${routines[0]["eye_serum"]}`,
-      eyeMoisturizer: `${routines[0]["eye_moisturizer"]}`,
-      faceSerum: `${routines[0]["face_serum"]}`,
-      faceMoisturizer: `${routines[0]["face_moisturizer"]}`,
-      neckSerum: `${routines[0]["neck_serum"]}`,
-      neckMoisturizer: `${routines[0]["neck_moisturizer"]}`,
-      faceMask: `${routines[0]["face_mask"]}`,
-      sunscreen: `${routines[0]["sunscreen"]}`,
-      note: `${routines[0]["note"]}`
-    });
+    // map over routines and if a property is undefined then
+    // set state to an empty string
+    // otherwise set state with value
+    // this.setState({
+    //   time: `${routines[0]["time"]}`,
+    //   skinType: `${routines[0]["skin_type"]}`,
+    //   firstCleanser: `${routines[0]["first_cleanser"]}`,
+    //   secondCleanser: `${routines[0]["second_cleanser"]}`,
+    //   exfoliator: `${routines[0]["exfoliator"]}`,
+    //   toner: `${routines[0]["toner"]}`,
+    //   essence: `${routines[0]["essence"]}`,
+    //   eyeSerum: `${routines[0]["eye_serum"]}`,
+    //   eyeMoisturizer: `${routines[0]["eye_moisturizer"]}`,
+    //   faceSerum: `${routines[0]["face_serum"]}`,
+    //   faceMoisturizer: `${routines[0]["face_moisturizer"]}`,
+    //   neckSerum: `${routines[0]["neck_serum"]}`,
+    //   neckMoisturizer: `${routines[0]["neck_moisturizer"]}`,
+    //   faceMask: `${routines[0]["face_mask"]}`,
+    //   sunscreen: `${routines[0]["sunscreen"]}`,
+    //   note: `${routines[0]["note"]}`
+    // });
   }
 
   handleInput = e => {
@@ -80,15 +82,50 @@ class EditRoutine extends Component {
     });
   };
 
-  handleEdit = () => {
-    console.log("hit");
+  handleEdit = routineId => {
     // send new state
     // destructure userId
-    // destrucutre routineId
-    // destructure elements from state
-    // pass in one variable into edit routine
+    const { userId } = this.props;
+    const {
+      time,
+      skinType,
+      firstCleanser,
+      secondCleanser,
+      exfoliator,
+      toner,
+      essence,
+      eyeSerum,
+      eyeMoisturizer,
+      faceSerum,
+      faceMoisturizer,
+      neckSerum,
+      neckMoisturizer,
+      faceMask,
+      sunscreen,
+      note
+    } = this.state;
 
-    this.props.editRoutine();
+    const updatedRoutine = {
+      routineId,
+      userId,
+      time,
+      skinType,
+      firstCleanser,
+      secondCleanser,
+      exfoliator,
+      toner,
+      essence,
+      eyeSerum,
+      eyeMoisturizer,
+      faceSerum,
+      faceMoisturizer,
+      neckSerum,
+      neckMoisturizer,
+      faceMask,
+      sunscreen,
+      note
+    };
+    this.props.editRoutine(updatedRoutine);
   };
 
   render() {
@@ -365,7 +402,7 @@ class EditRoutine extends Component {
                   </tr>
                 </tbody>
               </table>
-              <button onClick={this.handleEdit} className="Create-btn">
+              <button onClick={() => this.handleEdit} className="Create-btn">
                 Edit Routine
               </button>
             </form>
