@@ -106,7 +106,6 @@ class EditRoutine extends Component {
     } = this.state;
 
     const updatedRoutine = {
-      routineId,
       userId,
       time,
       skinType,
@@ -125,7 +124,7 @@ class EditRoutine extends Component {
       sunscreen,
       note
     };
-    this.props.editRoutine(updatedRoutine);
+    this.props.editRoutine(routineId, updatedRoutine);
   };
 
   render() {
