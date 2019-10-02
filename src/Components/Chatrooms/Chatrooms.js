@@ -77,12 +77,15 @@ function Chatrooms() {
 
   // socket.emit("joinRoom", "General");
 
-  if (socket) {
-    socket.on(
-      "newMessage",
-      data => console.log(data) || setMessages(data.messages)
-    );
-  }
+  // Mount and watched socket
+  React.useEffect(() => {
+    if (socket) {
+      socket.on(
+        "newMessage",
+        data => console.log(data) || setMessages(data.messages)
+      );
+    }
+  }, [socket]);
 
   return (
     <div className="Chatrooms-container">
