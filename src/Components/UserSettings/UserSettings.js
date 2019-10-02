@@ -9,7 +9,9 @@ import {
 class UserSettings extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      url: ""
+    };
   }
 
   checkUploadResult = (error, resultEvent) => {
@@ -20,9 +22,22 @@ class UserSettings extends Component {
     }
   };
 
-  // handleAdd = () => {
-  //   this.
-  // };
+  componentDidMount() {
+    const { url } = this.props;
+    console.log(url);
+    this.setState({
+      url
+    });
+  }
+
+  handleAdd = () => {
+    const { userId } = this.props;
+    const { url } = this.state;
+    console.log(typeof url);
+    console.log(userId);
+    const newPic = { userId, url };
+    this.props.addProfPic(newPic);
+  };
 
   render() {
     const widget = window.cloudinary.createUploadWidget(
@@ -41,6 +56,10 @@ class UserSettings extends Component {
         <header>
           <h1>My Settings</h1>
         </header>
+        <img
+          src={this.state.url}
+          alt={`${this.props.username}'s profile pic`}
+        />
         <main>
           <button onClick={() => widget.open()}>
             <h1>Upload photo</h1>
@@ -56,6 +75,7 @@ class UserSettings extends Component {
 
 const mapStateToProps = reduxState => {
   return {
+    userId: reduxState.userReducer.userId,
     username: reduxState.userReducer.username,
     url: reduxState.userReducer.url,
     firstName: reduxState.userReducer.firstName,

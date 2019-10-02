@@ -1,2 +1,2 @@
-SELECT username, url from skinrou_user
-WHERE user_id = 1;
+SELECT url from skinrou_user
+WHERE user_id = $1;
