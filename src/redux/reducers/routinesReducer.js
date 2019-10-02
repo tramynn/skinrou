@@ -123,6 +123,7 @@ export default function reducer(state = initialState, action) {
     case `${EDIT_ROUTINE}_FULFILLED`:
       return {
         ...state,
+        shouldRedirect: true,
         routines: payload.data
       };
     case `${DELETE_ROUTINE}_FULFILLED`:

@@ -159,9 +159,9 @@ async function addRoutine(req, res) {
 // User can only edit their routine by the routineId and categoryId
 async function editRoutine(req, res) {
   const db = req.app.get("db");
-  const { routineId } = req.params;
+  const routineId = +req.params.routineId;
+  const userId = +req.session.user.user_id;
   const {
-    userId,
     time,
     skinType,
     firstCleanser,
@@ -200,7 +200,7 @@ async function editRoutine(req, res) {
     sunscreen,
     note
   ]);
-  console.log(editedRoutine);
+
   if (db) {
     res.status(200).json(editedRoutine);
   }

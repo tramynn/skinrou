@@ -25,6 +25,7 @@ import num16 from "../../images/16.png";
 import { connect } from "react-redux";
 import { editRoutine } from "../../redux/reducers/routinesReducer";
 import { getSession } from "../../redux/reducers/userReducer";
+import { Redirect } from "react-router-dom";
 
 class EditRoutine extends Component {
   constructor() {
@@ -50,30 +51,31 @@ class EditRoutine extends Component {
   }
 
   componentDidMount() {
-    // const { routines } = this.props;
+    const { routines } = this.props;
     // console.log(routines);
     // console.log(typeof routines[0]["time"]);
     // map over routines and if a property is undefined then
     // set state to an empty string
     // otherwise set state with value
-    // this.setState({
-    //   time: `${routines[0]["time"]}`,
-    //   skinType: `${routines[0]["skin_type"]}`,
-    //   firstCleanser: `${routines[0]["first_cleanser"]}`,
-    //   secondCleanser: `${routines[0]["second_cleanser"]}`,
-    //   exfoliator: `${routines[0]["exfoliator"]}`,
-    //   toner: `${routines[0]["toner"]}`,
-    //   essence: `${routines[0]["essence"]}`,
-    //   eyeSerum: `${routines[0]["eye_serum"]}`,
-    //   eyeMoisturizer: `${routines[0]["eye_moisturizer"]}`,
-    //   faceSerum: `${routines[0]["face_serum"]}`,
-    //   faceMoisturizer: `${routines[0]["face_moisturizer"]}`,
-    //   neckSerum: `${routines[0]["neck_serum"]}`,
-    //   neckMoisturizer: `${routines[0]["neck_moisturizer"]}`,
-    //   faceMask: `${routines[0]["face_mask"]}`,
-    //   sunscreen: `${routines[0]["sunscreen"]}`,
-    //   note: `${routines[0]["note"]}`
-    // });
+
+    this.setState({
+      time: `${routines[0]["time"]}`,
+      skinType: `${routines[0]["skin_type"]}`,
+      firstCleanser: `${routines[0]["first_cleanser"]}`,
+      secondCleanser: `${routines[0]["second_cleanser"]}`,
+      exfoliator: `${routines[0]["exfoliator"]}`,
+      toner: `${routines[0]["toner"]}`,
+      essence: `${routines[0]["essence"]}`,
+      eyeSerum: `${routines[0]["eye_serum"]}`,
+      eyeMoisturizer: `${routines[0]["eye_moisturizer"]}`,
+      faceSerum: `${routines[0]["face_serum"]}`,
+      faceMoisturizer: `${routines[0]["face_moisturizer"]}`,
+      neckSerum: `${routines[0]["neck_serum"]}`,
+      neckMoisturizer: `${routines[0]["neck_moisturizer"]}`,
+      faceMask: `${routines[0]["mask"]}`,
+      sunscreen: `${routines[0]["sunscreen"]}`,
+      note: `${routines[0]["note"]}`
+    });
   }
 
   handleInput = e => {
@@ -82,9 +84,8 @@ class EditRoutine extends Component {
     });
   };
 
-  handleEdit = routineId => {
-    // send new state
-    // destructure userId
+  handleEdit = (e, routineId) => {
+    e.preventDefault();
     const { userId } = this.props;
     const {
       time,
@@ -129,6 +130,10 @@ class EditRoutine extends Component {
 
   render() {
     // console.log(this.props.match.params.routineId);
+    const { userId } = this.props;
+    if (this.props.shouldRedirect === true) {
+      return <Redirect to={`/profile/user/${userId}`} />;
+    }
     return (
       <div className="CreateRoutine-container">
         <Header />
@@ -401,7 +406,12 @@ class EditRoutine extends Component {
                   </tr>
                 </tbody>
               </table>
-              <button onClick={() => this.handleEdit} className="Create-btn">
+              <button
+                onClick={e =>
+                  this.handleEdit(e, this.props.match.params.routineId)
+                }
+                className="Create-btn"
+              >
                 Edit Routine
               </button>
             </form>
@@ -415,7 +425,8 @@ class EditRoutine extends Component {
 const mapStateToProps = reduxState => {
   return {
     userId: reduxState.userReducer.userId,
-    routines: reduxState.routinesReducer.routines
+    routines: reduxState.routinesReducer.routines,
+    shouldRedirect: reduxState.routinesReducer.shouldRedirect
   };
 };
 
