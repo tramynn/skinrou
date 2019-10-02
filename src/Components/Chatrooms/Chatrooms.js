@@ -6,6 +6,22 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import { makeStyles } from "@material-ui/styles";
+const io = require("socket.io-client");
+let chatrooms = io.connect("http://localhost:4242/chatrooms");
+
+chatrooms.on("Welcome", msg => {
+  console.log("Received: ", msg);
+});
+
+chatrooms.emit("joinRoom", "General");
+
+chatrooms.on("newUser", res => console.log(res));
+
+chatrooms.on("err", err => {
+  console.log(err);
+});
+
+chatrooms.on("success", res => console.log(res));
 
 const useStyles = makeStyles(() => ({
   chatbox: {
@@ -53,6 +69,7 @@ const useStyles = makeStyles(() => ({
 
 function Chatrooms() {
   const classes = useStyles();
+  // const [messages, setMessages] =
 
   return (
     <div className="Chatrooms-container">
@@ -62,16 +79,13 @@ function Chatrooms() {
           <h1>Chatrooms</h1>
           <hr />
           <List className="Chatroom-topics">
-            {[
-              "General",
-              "Skincare by Skin Type",
-              "Skincare by Age",
-              "Skincare by Concerns"
-            ].map(topic => (
-              <ListItem key={topic} button>
-                <ListItemText primary={topic} />
-              </ListItem>
-            ))}
+            {["General", "Skincare by Skin Type", "Skincare by Concerns"].map(
+              topic => (
+                <ListItem key={topic} button>
+                  <ListItemText primary={topic} />
+                </ListItem>
+              )
+            )}
           </List>
         </nav>
         <span className={classes.chatboxRight}>
@@ -79,9 +93,9 @@ function Chatrooms() {
             <h1>General</h1>
           </header>
           <main className={classes.chatboxRightMessages}>
-            Tramy: Hello
-            <br />
-            Jacob: Hi
+            <ul>
+              <li></li>
+            </ul>
           </main>
           <span className={classes.chatboxRightMessageSend}>
             <input placeholder="Message.." className={classes.input} />

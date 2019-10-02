@@ -1,8 +1,7 @@
 const initialState = {
   general: [],
   typeTopic: [],
-  skinTopic: [],
-  concernTopic: []
+  skinTopic: []
 };
 
 const RECEIVE_MESSAGE = "RECEIVE_MESSAGE";
