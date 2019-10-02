@@ -1,14 +1,31 @@
+.CreateRoutine-main .CreateRoutine-right-box .Create-btn {
+  border-radius: 40px;
+  border: 2px solid #21669c;
+  background-color: #21669c;
+  color: white;
+  font-family: Montserrat, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px;
+  width: 140px;
+}
+
+.CreateRoutine-main .CreateRoutine-right-box .Create-btn:hover {
+  color: #024a81;
+  background-color: transparent;
+  -webkit-transition: 1s;
+  transition: 1s;
+  cursor: pointer;
+}
+
 .CreateRoutine-container {
-  color: #03396c;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-image: url("../../../images/create-routine.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
 }
 
 .CreateRoutine-main {
@@ -21,13 +38,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow-y: auto;
 }
 
 .CreateRoutine-main .CreateRoutine-left-box {
   width: 33vw;
-  height: 93vh;
-  background-color: #024a81;
-  opacity: 0.2;
 }
 
 .CreateRoutine-main .CreateRoutine-right-box {
@@ -45,15 +60,39 @@
       -ms-flex-direction: column;
           flex-direction: column;
   width: 67vw;
-  height: 93vh;
+  height: auto;
   background-color: #e7eff6;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  text-align: right;
 }
 
 .CreateRoutine-main .CreateRoutine-right-box h1 {
   font-family: Paytone One, sans-serif;
   font-size: 3em;
-  padding: 20px;
+  padding-bottom: 40px;
   font-style: italic;
+}
+
+.CreateRoutine-main .CreateRoutine-right-box .Left-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding-right: 10px;
+  width: 70px;
+  height: 0px;
+}
+
+.CreateRoutine-main .CreateRoutine-right-box .Left-col img {
+  position: relative;
+  top: 42px;
 }
 
 .CreateRoutine-main .CreateRoutine-right-box .Create-form {
@@ -68,5 +107,20 @@
 
 .CreateRoutine-main .CreateRoutine-right-box .Create-form .Create-text {
   color: #024a81;
+}
+
+.CreateRoutine-main .CreateRoutine-right-box .Create-input {
+  width: 300px;
+  border-radius: 4px;
+  margin: 2px;
+  margin-top: 16px;
+  color: white;
+}
+
+.CreateRoutine-main .CreateRoutine-right-box .Create-btn {
+  height: 50px;
+  width: 200px;
+  margin-top: 40px;
+  margin-right: 2px;
 }
 /*# sourceMappingURL=CreateRoutine.css.map */

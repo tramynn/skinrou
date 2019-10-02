@@ -30,10 +30,8 @@ class EditRoutine extends Component {
   constructor() {
     super();
     this.state = {
-      routines: [],
       time: "",
       skinType: "",
-      categoryId: "",
       firstCleanser: "",
       secondCleanser: "",
       exfoliator: "",
@@ -52,14 +50,31 @@ class EditRoutine extends Component {
   }
 
   componentDidMount() {
-    // get routine and set state to result
-    // for loop that will go through routines
-    // look for routine.routine_id that matches this.props.match.params.routineId
-    // when it does, sets state to this.state
+    const { routines } = this.props;
+    // console.log(routines);
+    // console.log(typeof routines[0]["time"]);
+
+    this.setState({
+      time: `${routines[0]["time"]}`,
+      skinType: `${routines[0]["skin_type"]}`,
+      firstCleanser: `${routines[0]["first_cleanser"]}`,
+      secondCleanser: `${routines[0]["second_cleanser"]}`,
+      exfoliator: `${routines[0]["exfoliator"]}`,
+      toner: `${routines[0]["toner"]}`,
+      essence: `${routines[0]["essence"]}`,
+      eyeSerum: `${routines[0]["eye_serum"]}`,
+      eyeMoisturizer: `${routines[0]["eye_moisturizer"]}`,
+      faceSerum: `${routines[0]["face_serum"]}`,
+      faceMoisturizer: `${routines[0]["face_moisturizer"]}`,
+      neckSerum: `${routines[0]["neck_serum"]}`,
+      neckMoisturizer: `${routines[0]["neck_moisturizer"]}`,
+      faceMask: `${routines[0]["face_mask"]}`,
+      sunscreen: `${routines[0]["sunscreen"]}`,
+      note: `${routines[0]["note"]}`
+    });
   }
 
   handleInput = e => {
-    // edit state to match changes
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -77,8 +92,7 @@ class EditRoutine extends Component {
   };
 
   render() {
-    // const { userId } = this.props;
-    console.log(this.props.match.params.routineId);
+    // console.log(this.props.match.params.routineId);
     return (
       <div className="CreateRoutine-container">
         <Header />
