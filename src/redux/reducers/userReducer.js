@@ -6,13 +6,16 @@ const initialState = {
   firstName: "",
   lastName: "",
   age: "",
-  phoneNum: ""
+  phoneNum: "",
+  url: ""
 };
 
 const GET_SESSION = "GET_SESSION";
 const REGISTER_USER = "REGISTER_USER";
 const LOGIN_USER = "LOGIN_USER";
 const LOGOUT_USER = "LOGOUT_USER";
+const GET_PROFILE_PIC = "GET_PROFILE_PIC";
+const ADD_PROFILE_PIC = "ADD_PROFILE_PIC";
 
 export function getSession() {
   return {
@@ -42,6 +45,20 @@ export function logoutUser() {
   };
 }
 
+export function getProfPic() {
+  return {
+    type: GET_PROFILE_PIC,
+    payload: Axios.get("/api/profile")
+  };
+}
+
+export function addProfPic(newPic) {
+  return {
+    type: ADD_PROFILE_PIC,
+    payload: Axios.post("/api/profile", newPic)
+  };
+}
+
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
 
@@ -54,7 +71,8 @@ export default function reducer(state = initialState, action) {
         firstName: payload.data.firstName,
         lastName: payload.data.lastName,
         age: payload.data.age,
-        phoneNum: payload.data.phoneNum
+        phoneNum: payload.data.phoneNum,
+        url: payload.data.url
       };
     }
     case `${REGISTER_USER}_FULFILLED`: {
@@ -87,6 +105,18 @@ export default function reducer(state = initialState, action) {
         lastName: "",
         age: "",
         phoneNum: ""
+      };
+    }
+    case `${GET_PROFILE_PIC}_FULFILLED`: {
+      return {
+        ...state,
+        url: payload.data.url
+      };
+    }
+    case `${ADD_PROFILE_PIC}_FULFILLED`: {
+      return {
+        ...state,
+        url: payload.data.url
       };
     }
     default:

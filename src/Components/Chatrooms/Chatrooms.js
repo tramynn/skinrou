@@ -6,22 +6,8 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import { makeStyles } from "@material-ui/styles";
+import { useSelector } from "react-redux";
 const io = require("socket.io-client");
-let chatrooms = io.connect("http://localhost:4242/chatrooms");
-
-chatrooms.on("Welcome", msg => {
-  console.log("Received: ", msg);
-});
-
-chatrooms.emit("joinRoom", "General");
-
-chatrooms.on("newUser", res => console.log(res));
-
-chatrooms.on("err", err => {
-  console.log(err);
-});
-
-chatrooms.on("success", res => console.log(res));
 
 const useStyles = makeStyles(() => ({
   chatbox: {
@@ -69,7 +55,34 @@ const useStyles = makeStyles(() => ({
 
 function Chatrooms() {
   const classes = useStyles();
-  // const [messages, setMessages] =
+  const username = useSelector(
+    initialState => initialState.userReducer.username
+  );
+  const [messages, setMessages] = React.useState([]);
+  const [userMessage, setUserMessage] = React.useState("");
+  const [socket, setSocket] = React.useState(null);
+
+  React.useEffect(() => {
+    setSocket(io("http://localhost:4242/chatrooms"));
+  }, []);
+
+  // socket.on("Welcome", msg => {
+  //   console.log("Received: ", msg);
+  // });
+  // socket.on("newUser", res => console.log(res));
+  // socket.on("err", err => {
+  //   console.log(err);
+  // });
+  // socket.on("success", res => console.log(res));
+
+  // socket.emit("joinRoom", "General");
+
+  if (socket) {
+    socket.on(
+      "newMessage",
+      data => console.log(data) || setMessages(data.messages)
+    );
+  }
 
   return (
     <div className="Chatrooms-container">
@@ -93,13 +106,38 @@ function Chatrooms() {
             <h1>General</h1>
           </header>
           <main className={classes.chatboxRightMessages}>
-            <ul>
-              <li></li>
-            </ul>
+            {messages.map(message => {
+              return (
+                <div>
+                  <ul>
+                    <div className="Username">
+                      <li>{message.username}</li>
+                    </div>
+                    <div className="User-message">
+                      <li>{message.message}</li>
+                    </div>
+                  </ul>
+                </div>
+              );
+            })}
           </main>
           <span className={classes.chatboxRightMessageSend}>
-            <input placeholder="Message.." className={classes.input} />
-            <button className={classes.button}>Send</button>
+            <input
+              placeholder="Message.."
+              className={classes.input}
+              onChange={e => setUserMessage(e.target.value)}
+            />
+            <button
+              className={classes.button}
+              onClick={() => {
+                socket.emit("sendMsg", {
+                  username: username,
+                  message: userMessage
+                });
+              }}
+            >
+              Send
+            </button>
           </span>
         </span>
       </Paper>

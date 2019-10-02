@@ -111,7 +111,8 @@ const mapStateToProps = reduxState => {
     lastName: reduxState.userReducer.lastName,
     age: reduxState.userReducer.age,
     phoneNum: reduxState.userReducer.phoneNum,
-    routines: reduxState.routinesReducer.routines
+    routines: reduxState.routinesReducer.routines,
+    url: reduxState.userReducer.url
   };
 };
 
