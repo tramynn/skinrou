@@ -1,4 +1,4 @@
-DELETE FROM from post_likes
+DELETE FROM routines_likes
 WHERE user_id = $1 AND routine_id = $2;
 
 UPDATE skin_routine

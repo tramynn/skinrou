@@ -129,3 +129,23 @@ CREATE TABLE routine_likes (
   user_id INTEGER NOT NULL REFERENCES skinrou_user(user_id),
   liked BOOL
 );
+
+-- Like routine
+UPDATE skin_routine
+SET likes = likes + 1
+WHERE routine_id = 73;
+
+INSERT INTO routine_likes
+(user_id, routine_id, liked)
+VALUES (5, 73, true);
+
+-- Unlike routine
+DELETE FROM routine_likes
+WHERE user_id = 5 AND routine_id = 73;
+
+UPDATE skin_routine
+SET likes = likes - 1
+WHERE routine_id = 73;
+
+-- Drop not null constraint
+ALTER TABLE skin_routine ALTER COLUMN skin_type DROP NOT NULL;

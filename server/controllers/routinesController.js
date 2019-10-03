@@ -221,21 +221,40 @@ async function deleteRoutine(req, res) {
 
 async function likeRoutine(req, res) {
   const db = req.app.get("db");
-  const { userId } = req.session.user.user_id;
-  const { routineId } = req.params;
-  const likedRoutine = await db.routines.likeRoutine([userId, routineId]);
-  if (db) {
-    res.status(200).json(likedRoutine);
+  const userId = +req.session.user.user_id;
+  const routineId = +req.params.routineId;
+  const foundLiked = await db.routines.checkUserLikedRoutine([
+    userId,
+    routineId
+  ]);
+  if (foundLiked[0]) {
+    res.status(200).json("User already liked routine.");
+  } else {
+    const likedRoutine = await db.routines.likeRoutine([userId, routineId]);
+    console.log(likedRoutine);
+    if (db) {
+      res.status(200).json(likedRoutine);
+    }
   }
 }
 
 async function unlikeRoutine(req, res) {
   const db = req.app.get("db");
-  const { userId } = req.session.user.user_id;
-  const { routineId } = req.params;
-  const unlikedRoutine = await db.routines.unlikeRoutine([userId, routineId]);
-  if (db) {
-    res.status(200).json(unlikedRoutine);
+  const userId = req.session.user.user_id;
+  const routineId = +req.params.routineId;
+
+  const foundLiked = await db.routines.checkUserLikedRoutine([
+    userId,
+    routineId
+  ]);
+
+  if (foundLiked[0]) {
+    res.status(200).json("User already unliked routine.");
+  } else {
+    const unlikedRoutine = await db.routines.unlikeRoutine([userId, routineId]);
+    if (db) {
+      res.status(200).json(unlikedRoutine);
+    }
   }
 }
 

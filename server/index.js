@@ -4,9 +4,6 @@ const massive = require("massive");
 const session = require("express-session");
 const app = express();
 // Socket
-// const server = require("http").createServer(app);
-// const sockets = require("socket.io");
-// const io = sockets(server);
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 // Controllers
@@ -54,8 +51,8 @@ app.get("/api/routines/user/:userId", routinesController.userRoutines);
 app.post("/api/routines", routinesController.addRoutine);
 app.put("/api/routines/:routineId", routinesController.editRoutine);
 app.delete("/api/routines/:routine_id", routinesController.deleteRoutine);
-app.post("/api/routines/:routineId");
-app.delete("/api/routines/:routineId");
+app.post("/api/routines/:routineId", routinesController.likeRoutine);
+app.put("/api/routines/:routineId", routinesController.unlikeRoutine);
 
 // Cloudinary
 app.get("/api/profile", profController.getProfPic);
