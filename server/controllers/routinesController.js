@@ -219,6 +219,26 @@ async function deleteRoutine(req, res) {
   }
 }
 
+async function likeRoutine(req, res) {
+  const db = req.app.get("db");
+  const { userId } = req.session.user.user_id;
+  const { routineId } = req.params;
+  const likedRoutine = await db.routines.likeRoutine([userId, routineId]);
+  if (db) {
+    res.status(200).json(likedRoutine);
+  }
+}
+
+async function unlikeRoutine(req, res) {
+  const db = req.app.get("db");
+  const { userId } = req.session.user.user_id;
+  const { routineId } = req.params;
+  const unlikedRoutine = await db.routines.unlikeRoutine([userId, routineId]);
+  if (db) {
+    res.status(200).json(unlikedRoutine);
+  }
+}
+
 module.exports = {
   categories,
   routines,
@@ -228,5 +248,7 @@ module.exports = {
   userRoutines,
   addRoutine,
   editRoutine,
-  deleteRoutine
+  deleteRoutine,
+  likeRoutine,
+  unlikeRoutine
 };

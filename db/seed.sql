@@ -122,3 +122,10 @@ ON sr.category_id = sc.category_id
 INNER JOIN skinrou_user su
 ON sr.user_id = su.user_id
 WHERE su.age >= 50;
+
+-- routine likes
+CREATE TABLE routine_likes (
+  routine_id INTEGER NOT NULL REFERENCES skin_routine(routine_id),
+  user_id INTEGER NOT NULL REFERENCES skinrou_user(user_id),
+  liked BOOL
+);
