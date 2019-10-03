@@ -51,8 +51,8 @@ app.get("/api/routines/user/:userId", routinesController.userRoutines);
 app.post("/api/routines", routinesController.addRoutine);
 app.put("/api/routines/:routineId", routinesController.editRoutine);
 app.delete("/api/routines/:routine_id", routinesController.deleteRoutine);
-app.post("/api/routines/:routineId", routinesController.likeRoutine);
-app.put("/api/routines/:routineId", routinesController.unlikeRoutine);
+app.post("/api/routines/like/:routineId", routinesController.likeRoutine);
+app.put("/api/routines/like/:routineId", routinesController.unlikeRoutine);
 
 // Cloudinary
 app.get("/api/profile", profController.getProfPic);

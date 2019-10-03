@@ -240,7 +240,7 @@ async function likeRoutine(req, res) {
 
 async function unlikeRoutine(req, res) {
   const db = req.app.get("db");
-  const userId = req.session.user.user_id;
+  const userId = +req.session.user.user_id;
   const routineId = +req.params.routineId;
 
   const foundLiked = await db.routines.checkUserLikedRoutine([
@@ -249,12 +249,12 @@ async function unlikeRoutine(req, res) {
   ]);
 
   if (foundLiked[0]) {
-    res.status(200).json("User already unliked routine.");
-  } else {
     const unlikedRoutine = await db.routines.unlikeRoutine([userId, routineId]);
     if (db) {
       res.status(200).json(unlikedRoutine);
     }
+  } else {
+    res.status(200).json("User already unliked routine.");
   }
 }
 
