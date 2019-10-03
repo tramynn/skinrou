@@ -60,7 +60,7 @@ function Chatrooms() {
   );
   const [messages, setMessages] = React.useState([]);
   const [userMessage, setUserMessage] = React.useState("");
-  const [socket, setSocket] = React.useState(null);
+  const [socket, setSocket] = React.useState("");
 
   useEffect(() => {
     setSocket(
@@ -75,8 +75,10 @@ function Chatrooms() {
         socket.emit("greet", { message: "Hello Ms. Server!" });
       });
 
-      socket.on("receiveMsg", data => {
-        setMessages(data.messages);
+      socket.on("newMsg", data => {
+        const newMessages = data.messages;
+        console.log("hit", newMessages);
+        setMessages(newMessages);
       });
 
       return () => {
@@ -107,9 +109,9 @@ function Chatrooms() {
             <h1>General</h1>
           </header>
           <main className={classes.chatboxRightMessages}>
-            {messages.map(message => {
+            {messages.map((message, i) => {
               return (
-                <div>
+                <div key={i}>
                   <ul>
                     <div className="Username">
                       <li>{message.username}</li>
@@ -122,7 +124,6 @@ function Chatrooms() {
               );
             })}
           </main>
-          <main>{addChatMessage}</main>
           <span className={classes.chatboxRightMessageSend}>
             <input
               placeholder="Message.."

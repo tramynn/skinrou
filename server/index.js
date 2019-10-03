@@ -4,9 +4,11 @@ const massive = require("massive");
 const session = require("express-session");
 const app = express();
 // Socket
-var server = require("http").createServer(app);
-const sockets = require("socket.io");
-const io = sockets(server);
+// const server = require("http").createServer(app);
+// const sockets = require("socket.io");
+// const io = sockets(server);
+const http = require("http").createServer(app);
+const io = require("socket.io")(http);
 // Controllers
 const authController = require("./controllers/authController");
 const routinesController = require("./controllers/routinesController");
@@ -60,11 +62,7 @@ app.get("/api/profile", profController.getProfPic);
 app.post("/api/profile", profController.addProfPic);
 
 // Socket messages
-let messages = [
-  { username: "sam", message: "hello" },
-  { username: "sam", message: "hello" },
-  { username: "sam", message: "bananas" }
-];
+let messages = [];
 
 // Socket listener
 const chat = io.of("/chatrooms");
@@ -81,16 +79,15 @@ chat.on("connect", socket => {
     const { username, message } = data;
     messages.push({ username, message });
     console.log(messages);
+    chat.emit("newMsg", { messages });
   });
 
-  socket.emit("receiveMsg", { messages });
-
   // When user disconnects
-  socket.on("disconnect", data => {
+  socket.on("disconnect", () => {
     console.log("User disconnected.");
   });
 });
 
-server.listen(SERVER_PORT, () => {
+http.listen(SERVER_PORT, () => {
   console.log(`SERVER LISTENING ON PORT: ${SERVER_PORT}`);
 });
