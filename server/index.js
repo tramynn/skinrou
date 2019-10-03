@@ -59,14 +59,14 @@ app.delete("/api/routines/:routineId");
 app.get("/api/profile", profController.getProfPic);
 app.post("/api/profile", profController.addProfPic);
 
-// Sockets
+// Socket messages
 let messages = [
   { username: "sam", message: "hello" },
   { username: "sam", message: "hello" },
   { username: "sam", message: "bananas" }
 ];
 
-// Server listener
+// Socket listener
 const chat = io.of("/chatrooms");
 chat.on("connect", socket => {
   console.log("A user is connected");
@@ -85,7 +85,8 @@ chat.on("connect", socket => {
 
   socket.emit("receiveMsg", { messages });
 
-  socket.on("disconnect", () => {
+  // When user disconnects
+  socket.on("disconnect", data => {
     console.log("User disconnected.");
   });
 });
@@ -93,7 +94,3 @@ chat.on("connect", socket => {
 server.listen(SERVER_PORT, () => {
   console.log(`SERVER LISTENING ON PORT: ${SERVER_PORT}`);
 });
-
-// app.listen(SERVER_PORT, () => {
-//   console.log(`SERVER LISTENING ON PORT: ${SERVER_PORT}`);
-// });

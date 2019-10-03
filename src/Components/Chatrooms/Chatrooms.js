@@ -85,22 +85,6 @@ function Chatrooms() {
     }
   }, [socket]);
 
-  // if (socket) {
-  //   socket.on("newMessage", data => setMessages(data.messages));
-  // }
-
-  // useEffect(() => {
-  //   if (socket) {
-  //     socket.on("newMessage", data => setMessages(data.messages));
-  //   }
-  // }, []);
-
-  // console.log(
-  //   socket.on("Welcome", msg => {
-  //     console.log("Received: ", msg);
-  //   })
-  // );
-
   return (
     <div className="Chatrooms-container">
       <Header />
@@ -138,6 +122,7 @@ function Chatrooms() {
               );
             })}
           </main>
+          <main>{addChatMessage}</main>
           <span className={classes.chatboxRightMessageSend}>
             <input
               placeholder="Message.."
