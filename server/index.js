@@ -65,38 +65,27 @@ let messages = [
   { username: "sam", message: "hello" },
   { username: "sam", message: "bananas" }
 ];
-// const chatRooms = ["General", "Skintype", "Concerns"];
 
 // Server listener
+const chat = io.of("/chatrooms");
+chat.on("connect", socket => {
+  console.log("A user is connected");
 
-const chatrooms = io.of("/chatrooms");
-chatrooms.on("connection", socket => {
-  console.log("User connected");
-  socket.emit("Welcome", "Hello, welcome to the main chat.");
+  socket.on("greet", data => {
+    console.log(data);
+    socket.emit("respond", { message: "Hello Ms. Client!" });
+  });
 
-  // socket.on("joinRoom", roomName => {
-  //   if (chatRooms.includes(roomName)) {
-  //     socket.join(roomName);
-  //     io.of("/chatrooms")
-  //       .in(roomName)
-  //       .emit("newUser", "New user has joined " + roomName + " room.");
-  //     return socket.emit("success", "You have successfully joined this room.");
-  //   } else {
-  //     return socket.emit("err", "No Room named " + roomName);
-  //   }
-  // });
   socket.on("sendMsg", data => {
-    console.log(
-      `New message received from the user: ${data.username}: ${data.message}`
-    );
+    console.log(`Message received: ${data.username}: ${data.message}`);
     const { username, message } = data;
     messages.push({ username, message });
     console.log(messages);
   });
 
-  chatrooms.emit("newMessage", { messages });
+  socket.emit("receiveMsg", { messages });
 
-  socket.on("Disconnected", () => {
+  socket.on("disconnect", () => {
     console.log("User disconnected.");
   });
 });

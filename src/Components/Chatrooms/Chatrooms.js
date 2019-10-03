@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../Components/Header/Header";
 import "../../styles/partials/Chatrooms/Chatrooms.scss";
 import Paper from "@material-ui/core/Paper";
@@ -7,7 +7,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import { makeStyles } from "@material-ui/styles";
 import { useSelector } from "react-redux";
-const io = require("socket.io-client");
+import io from "socket.io-client";
 
 const useStyles = makeStyles(() => ({
   chatbox: {
@@ -62,30 +62,44 @@ function Chatrooms() {
   const [userMessage, setUserMessage] = React.useState("");
   const [socket, setSocket] = React.useState(null);
 
-  React.useEffect(() => {
-    setSocket(io("http://localhost:4242/chatrooms"));
+  useEffect(() => {
+    setSocket(
+      io("ws://localhost:4242/chatrooms", { transports: ["websocket"] })
+    );
   }, []);
 
-  // socket.on("Welcome", msg => {
-  //   console.log("Received: ", msg);
-  // });
-  // socket.on("newUser", res => console.log(res));
-  // socket.on("err", err => {
-  //   console.log(err);
-  // });
-  // socket.on("success", res => console.log(res));
-
-  // socket.emit("joinRoom", "General");
-
-  // Mount and watched socket
-  React.useEffect(() => {
+  useEffect(() => {
     if (socket) {
-      socket.on(
-        "newMessage",
-        data => console.log(data) || setMessages(data.messages)
-      );
+      socket.on("connect", () => {
+        console.log("connected!");
+        socket.emit("greet", { message: "Hello Ms. Server!" });
+      });
+
+      socket.on("receiveMsg", data => {
+        setMessages(data.messages);
+      });
+
+      return () => {
+        socket.on("disconnect");
+      };
     }
   }, [socket]);
+
+  // if (socket) {
+  //   socket.on("newMessage", data => setMessages(data.messages));
+  // }
+
+  // useEffect(() => {
+  //   if (socket) {
+  //     socket.on("newMessage", data => setMessages(data.messages));
+  //   }
+  // }, []);
+
+  // console.log(
+  //   socket.on("Welcome", msg => {
+  //     console.log("Received: ", msg);
+  //   })
+  // );
 
   return (
     <div className="Chatrooms-container">
