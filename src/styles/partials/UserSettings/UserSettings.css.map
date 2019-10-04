@@ -1,0 +1,16 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "UserSettings.scss",
+        "../../modules/flex/flex.scss",
+        "../../modules/colors/colors.scss",
+        "../../modules/fonts/fonts.scss",
+        "../../modules/buttons/buttons.scss",
+        "../../modules/colors/colors.scss",
+        "../../modules/fonts/fonts.scss",
+        "../../modules/background/background.scss"
+    ],
+    "names": [],
+    "file": "UserSettings.css"
+}

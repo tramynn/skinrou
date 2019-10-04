@@ -5,6 +5,7 @@ import {
   getProfPic,
   addProfPic
 } from "../../redux/reducers/userReducer";
+import from ""
 
 class UserSettings extends Component {
   constructor() {
@@ -59,6 +60,7 @@ class UserSettings extends Component {
         <img
           src={this.state.url}
           alt={`${this.props.username}'s profile pic`}
+          class="Settings-img"
         />
         <main>
           <button onClick={() => widget.open()}>
