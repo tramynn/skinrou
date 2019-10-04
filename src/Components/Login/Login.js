@@ -64,7 +64,6 @@ class Login extends Component {
               margin="normal"
               variant="outlined"
               autoComplete="off"
-              autoFocus
               required
             />
             <button className="Login-btn login" type="submit">

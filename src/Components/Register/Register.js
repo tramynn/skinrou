@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import "../../styles/partials/Login-Register/Login-Register.css";
 import { connect } from "react-redux";
 import { registerUser } from "../../redux/reducers/userReducer";
 import { Redirect } from "react-router-dom";
+import "../../styles/partials/Login-Register/Login-Register.css";
+import TextField from "@material-ui/core/TextField";
 
 class Register extends Component {
   constructor() {
@@ -50,7 +51,111 @@ class Register extends Component {
           </h1>
         </div>
         <div className="Right-box">
-          <form className="Form-body" onSubmit={this.handleRegisterSubmit}>
+          <form
+            className="Form-body"
+            noValidate
+            autoComplete="off"
+            onSubmit={this.handleRegisterSubmit}
+          >
+            <table>
+              <tr>
+                <td>
+                  {" "}
+                  <TextField
+                    name="firstName"
+                    label="First Name"
+                    className="Register-input"
+                    value={this.state.firstName}
+                    onChange={this.handleRegisterInput}
+                    margin="normal"
+                    variant="outlined"
+                    autoComplete="off"
+                    autoFocus
+                    required
+                  />
+                </td>
+                <td>
+                  <TextField
+                    name="lastName"
+                    label="Last Name"
+                    className="Register-input"
+                    value={this.state.lastName}
+                    onChange={this.handleRegisterInput}
+                    margin="normal"
+                    variant="outlined"
+                    autoComplete="off"
+                    required
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <TextField
+                    name="age"
+                    label="Age"
+                    type="age"
+                    className="Register-input"
+                    value={this.state.age}
+                    onChange={this.handleRegisterInput}
+                    margin="normal"
+                    variant="outlined"
+                    autoComplete="off"
+                    required
+                  />
+                </td>
+                <td>
+                  <TextField
+                    name="phoneNum"
+                    label="Phone #"
+                    className="Register-input"
+                    value={this.state.age}
+                    onChange={this.handleRegisterInput}
+                    margin="normal"
+                    variant="outlined"
+                    autoComplete="off"
+                    required
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <TextField
+                    name="username"
+                    label="Username"
+                    className="Register-input"
+                    value={this.state.username}
+                    onChange={this.handleRegisterInput}
+                    margin="normal"
+                    variant="outlined"
+                    autoComplete="off"
+                    required
+                  />
+                </td>
+                <td>
+                  <TextField
+                    name="password"
+                    label="Password"
+                    type="password"
+                    className="Register-input"
+                    value={this.state.password}
+                    onChange={this.handleRegisterInput}
+                    margin="normal"
+                    variant="outlined"
+                    autoComplete="off"
+                    required
+                  />
+                </td>
+              </tr>
+            </table>
+            <div className="register">
+              <button className="Login-btn register-btn" type="submit">
+                Register
+              </button>
+            </div>
+          </form>
+
+          {/* <form className="Form-body" onSubmit={this.handleRegisterSubmit}>
             <input
               name="firstName"
               type="text"
@@ -95,7 +200,7 @@ class Register extends Component {
               required
             />
             <button type="submit">Register</button>
-          </form>
+          </form> */}
         </div>
       </div>
     );

@@ -35,12 +35,30 @@
     @include flex-column;
     width: 50vw;
     .Login-input {
-      width: 290px;
+      width: 325px;
+      height: 65px;
+      margin: 0px;
+    }
+    .Register-input {
+      width: 200px;
+      height: 65px;
+      margin: 5px;
     }
     .label {
       font-family: $body-fontfamily;
     }
     .login {
+      margin-top: 15px;
+    }
+
+    .register {
+      @include flex-start;
+      position: relative;
+      left: 130px;
+    }
+
+    .register-btn {
+      width: 150px;
       margin-top: 15px;
     }
   }
