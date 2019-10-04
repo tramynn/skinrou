@@ -121,7 +121,7 @@ class UserProfile extends Component {
             <Menu
               id="simple-menu"
               anchorEl={this.state.anchorEl}
-              keepMounted
+              keepMounte
               open={Boolean(this.state.anchorEl)}
               onClose={this.handleClose}
             >

@@ -1,15 +1,33 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getAgeRoutines } from "../../redux/reducers/routinesReducer";
+import {
+  getAgeRoutines,
+  addLike,
+  removeLike
+} from "../../redux/reducers/routinesReducer";
 import Header from "../Header/Header";
 import Card from "@material-ui/core/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowAltCircleUp,
+  faArrowAltCircleDown
+} from "@fortawesome/free-solid-svg-icons";
 
 class AgeRoutines extends Component {
   componentDidMount() {
     this.props.getAgeRoutines(this.props.match.params.age);
   }
+
+  handleAddLike = routineId => {
+    this.props.addLike(routineId);
+    this.props.getAgeRoutines(this.props.match.params.age);
+  };
+
+  handleRemoveLike = routineId => {
+    this.props.removeLike(routineId);
+    this.props.getAgeRoutines(this.props.match.params.age);
+  };
+
   render() {
     const ageRoutines = this.props.routines.map((routine, i) => {
       return (
@@ -34,16 +52,20 @@ class AgeRoutines extends Component {
               <li>{routine.mask}</li>
               <li>{routine.sunscreen}</li>
               <li>{routine.note}</li>
-              <li>
-                <span>
-                  <FontAwesomeIcon icon={faHeart} color="#cf3548" />
+              <div className="Like-btns">
+                <span onClick={() => this.handleAddLike(routine.routine_id)}>
+                  <FontAwesomeIcon icon={faArrowAltCircleUp} color="#777777" />
                 </span>
                 {routine.likes}
-              </li>
-              <li>
-                <br />
-                <br />
-              </li>
+                <span onClick={() => this.handleRemoveLike(routine.routine_id)}>
+                  <FontAwesomeIcon
+                    icon={faArrowAltCircleDown}
+                    color="#777777"
+                  />
+                </span>
+              </div>
+              <br />
+              <br />
             </ul>
           </Card>
         </div>
@@ -66,6 +88,8 @@ const mapStateToProps = reduxState => {
 export default connect(
   mapStateToProps,
   {
-    getAgeRoutines
+    getAgeRoutines,
+    addLike,
+    removeLike
   }
 )(AgeRoutines);
