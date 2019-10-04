@@ -148,15 +148,13 @@ export default function reducer(state = initialState, action) {
         routines: payload.data
       };
     case `${ADD_LIKE}_FULFILLED`:
-      return {
-        ...state,
-        routines: payload.data
-      };
+      // return {
+      //   ...state
+      // };
     case `${REMOVE_LIKE}_FULFILLED`:
-      return {
-        ...state,
-        routines: payload.data
-      };
+      // return {
+      //   ...state
+      // };
     default:
       return state;
   }

@@ -23,10 +23,12 @@ class UserLanding extends Component {
 
   handleAddLike = routineId => {
     this.props.addLike(routineId);
+    this.props.getAllRoutines();
   };
 
   handleRemoveLike = routineId => {
     this.props.removeLike(routineId);
+    this.props.getAllRoutines();
   };
 
   render() {

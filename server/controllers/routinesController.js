@@ -236,13 +236,12 @@ async function likeRoutine(req, res) {
     userId,
     routineId
   ]);
-  if (foundLiked[0]) {
-    res.status(200).json("User already liked routine.");
-  } else {
+
+  if (!foundLiked[0]) {
     const likedRoutine = await db.routines.likeRoutine([userId, routineId]);
     console.log(likedRoutine);
-    if (db) {
-      res.status(200).json(likedRoutine);
+    if (likedRoutine) {
+      res.sendStatus(200);
     }
   }
 }
@@ -251,7 +250,6 @@ async function unlikeRoutine(req, res) {
   const db = req.app.get("db");
   const userId = +req.session.user.user_id;
   const routineId = +req.params.routineId;
-
   const foundLiked = await db.routines.checkUserLikedRoutine([
     userId,
     routineId
@@ -259,11 +257,9 @@ async function unlikeRoutine(req, res) {
 
   if (foundLiked[0]) {
     const unlikedRoutine = await db.routines.unlikeRoutine([userId, routineId]);
-    if (db) {
-      res.status(200).json(unlikedRoutine);
+    if (unlikedRoutine) {
+      res.sendStatus(200);
     }
-  } else {
-    res.status(200).json("User already unliked routine.");
   }
 }
 
