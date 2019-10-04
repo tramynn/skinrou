@@ -51,30 +51,33 @@ class EditRoutine extends Component {
   }
 
   componentDidMount() {
-    const { routines } = this.props;
+    const matchId = +this.props.match.params.routineId;
+    console.log(typeof matchId);
+    const userRoutines = this.props.routines;
+    console.log(userRoutines);
     // console.log(routines);
     // console.log(typeof routines[0]["time"]);
-    // map over routines and if a property is undefined then
-    // set state to an empty string
-    // otherwise set state with value
-
-    this.setState({
-      time: `${routines[0]["time"]}`,
-      skinType: `${routines[0]["skin_type"]}`,
-      firstCleanser: `${routines[0]["first_cleanser"]}`,
-      secondCleanser: `${routines[0]["second_cleanser"]}`,
-      exfoliator: `${routines[0]["exfoliator"]}`,
-      toner: `${routines[0]["toner"]}`,
-      essence: `${routines[0]["essence"]}`,
-      eyeSerum: `${routines[0]["eye_serum"]}`,
-      eyeMoisturizer: `${routines[0]["eye_moisturizer"]}`,
-      faceSerum: `${routines[0]["face_serum"]}`,
-      faceMoisturizer: `${routines[0]["face_moisturizer"]}`,
-      neckSerum: `${routines[0]["neck_serum"]}`,
-      neckMoisturizer: `${routines[0]["neck_moisturizer"]}`,
-      faceMask: `${routines[0]["mask"]}`,
-      sunscreen: `${routines[0]["sunscreen"]}`,
-      note: `${routines[0]["note"]}`
+    userRoutines.forEach(matchRoutine => {
+      if (matchRoutine.routine_id === matchId) {
+        this.setState({
+          time: `${matchRoutine["time"]}`,
+          skinType: `${matchRoutine["skin_type"]}`,
+          firstCleanser: `${matchRoutine["first_cleanser"]}`,
+          secondCleanser: `${matchRoutine["second_cleanser"]}`,
+          exfoliator: `${matchRoutine["exfoliator"]}`,
+          toner: `${matchRoutine["toner"]}`,
+          essence: `${matchRoutine["essence"]}`,
+          eyeSerum: `${matchRoutine["eye_serum"]}`,
+          eyeMoisturizer: `${matchRoutine["eye_moisturizer"]}`,
+          faceSerum: `${matchRoutine["face_serum"]}`,
+          faceMoisturizer: `${matchRoutine["face_moisturizer"]}`,
+          neckSerum: `${matchRoutine["neck_serum"]}`,
+          neckMoisturizer: `${matchRoutine["neck_moisturizer"]}`,
+          faceMask: `${matchRoutine["mask"]}`,
+          sunscreen: `${matchRoutine["sunscreen"]}`,
+          note: `${matchRoutine["note"]}`
+        });
+      }
     });
   }
 
@@ -129,7 +132,7 @@ class EditRoutine extends Component {
   };
 
   render() {
-    // console.log(this.props.match.params.routineId);
+    console.log(this.props.match.params.routineId);
     const { userId } = this.props;
     if (this.props.shouldRedirect === true) {
       return <Redirect to={`/profile/user/${userId}`} />;

@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import Header from "../Header/Header";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   getUserRoutines,
   deleteRoutine
 } from "../../redux/reducers/routinesReducer";
 import { getSession } from "../../redux/reducers/userReducer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import Card from "@material-ui/core/Card";
 import "../../styles/partials/UserProfile/UserProfile.scss";
-import { Link } from "react-router-dom";
 
 class UserProfile extends Component {
   constructor() {
@@ -62,8 +64,15 @@ class UserProfile extends Component {
               <li>Face Mask: {routine.mask}</li>
               <li>Sunscreen: {routine.sunscreen}</li>
               <li>Note: {routine.note}</li>
+              <li>
+                <span>
+                  <FontAwesomeIcon icon={faHeart} color="#cf3548" />
+                </span>
+                {routine.likes}
+              </li>
             </ul>
             <span>
+              {console.log(routine.routine_id)}
               <Link to={`/editRoutine/${routine.routine_id}`}>
                 <button>EDIT</button>
               </Link>
