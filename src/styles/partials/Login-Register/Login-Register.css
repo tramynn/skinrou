@@ -62,5 +62,18 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 50vw;
+}
+
+.Right-box .Form-body .Login-input {
+  width: 290px;
+}
+
+.Right-box .Form-body .label {
+  font-family: Montserrat, sans-serif;
+}
+
+.Right-box .Form-body .login {
+  margin-top: 15px;
 }
 /*# sourceMappingURL=Login-Register.css.map */

@@ -25,6 +25,7 @@
   width: 15vw;
   margin-top: 8vh;
   @include flex-row;
+  @include flex-column;
 }
 
 // LOGIN AND REGISTER BUTTONS
@@ -32,7 +33,8 @@
 .Login-btn,
 .Register-btn {
   @extend %btn-base;
-  margin: 5px;
+  width: 325px;
+  margin: 10px;
 }
 
 .Login-btn:hover {
@@ -62,6 +64,5 @@
   .Login-btn,
   .Register-btn {
     width: 90vw;
-    margin: 5px;
   }
 }

@@ -33,5 +33,17 @@
   .Form-body {
     @include flex-base;
     @include flex-column;
+    width: 50vw;
+    .Login-input {
+      width: 290px;
+    }
+    .label {
+      font-family: $body-fontfamily;
+    }
+    .login {
+      margin-top: 15px;
+    }
   }
 }
+
+// MEDIA QUERIES

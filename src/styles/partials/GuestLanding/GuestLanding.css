@@ -1,16 +1,17 @@
 .Login-btn,
 .Register-btn {
-  border-radius: 40px;
+  border-radius: 5px;
   border: 2px solid #21669c;
   background-color: #21669c;
   color: white;
   font-family: Montserrat, sans-serif;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 12px;
-  width: 140px;
+  width: 290px;
+  height: 55px;
 }
 
 .Login-btn:hover {
@@ -85,11 +86,16 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .Login-btn,
 .Register-btn {
-  margin: 5px;
+  width: 325px;
+  margin: 10px;
 }
 
 @media (max-width: 414px) {
@@ -107,7 +113,6 @@
   .Login-btn,
   .Register-btn {
     width: 90vw;
-    margin: 5px;
   }
 }
 /*# sourceMappingURL=GuestLanding.css.map */

@@ -1,9 +1,10 @@
 {
     "version": 3,
-    "mappings": "AA8BA,AAAA,cAAc,AAAA,MAAM,CAAC;EACnB,KAAK,EAAE,KAAK;EACZ,gBAAgB,ECnBH,OAAO;EDoBpB,UAAU,EAAE,EAAE;EACd,MAAM,EAAE,OAAO;CAChB",
+    "mappings": "",
     "sources": [
         "buttons.scss",
-        "../colors/colors.scss"
+        "../colors/colors.scss",
+        "../fonts/fonts.scss"
     ],
     "names": [],
     "file": "buttons.css"
