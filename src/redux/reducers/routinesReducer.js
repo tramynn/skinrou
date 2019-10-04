@@ -15,6 +15,8 @@ const GET_USER_ROUTINES = "GET_USER_ROUTINES";
 const ADD_ROUTINE = "ADD_ROUTINE";
 const EDIT_ROUTINE = "EDIT_ROUTINE";
 const DELETE_ROUTINE = "DELETE_ROUTINE";
+const ADD_LIKE = "ADD_LIKE";
+const REMOVE_LIKE = "REMOVE_LIKE";
 
 export function getCategories() {
   return {
@@ -79,6 +81,20 @@ export function deleteRoutine(routine_id) {
   };
 }
 
+export function addLike(routineId) {
+  return {
+    type: ADD_LIKE,
+    payload: Axios.post(`/api/routines/like/${routineId}`)
+  };
+}
+
+export function removeLike(routineId) {
+  return {
+    type: REMOVE_LIKE,
+    payload: Axios.put(`/api/routines/like/${routineId}`)
+  };
+}
+
 export default function reducer(state = initialState, action) {
   const { type, payload } = action;
 
@@ -127,6 +143,16 @@ export default function reducer(state = initialState, action) {
         routines: payload.data
       };
     case `${DELETE_ROUTINE}_FULFILLED`:
+      return {
+        ...state,
+        routines: payload.data
+      };
+    case `${ADD_LIKE}_FULFILLED`:
+      return {
+        ...state,
+        routines: payload.data
+      };
+    case `${REMOVE_LIKE}_FULFILLED`:
       return {
         ...state,
         routines: payload.data

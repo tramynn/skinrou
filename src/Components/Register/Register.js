@@ -108,7 +108,7 @@ class Register extends Component {
                     name="phoneNum"
                     label="Phone #"
                     className="Register-input"
-                    value={this.state.age}
+                    value={this.state.phoneNum}
                     onChange={this.handleRegisterInput}
                     margin="normal"
                     variant="outlined"
