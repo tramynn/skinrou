@@ -9,7 +9,8 @@
         "../../modules/buttons/buttons.scss",
         "../../modules/colors/colors.scss",
         "../../modules/fonts/fonts.scss",
-        "../../modules/background/background.scss"
+        "../../modules/background/background.scss",
+        "../../modules/images/images.scss"
     ],
     "names": [],
     "file": "UserSettings.css"

@@ -209,9 +209,7 @@ async function editRoutine(req, res) {
 async function deleteRoutine(req, res) {
   const db = req.app.get("db");
   const routine_id = +req.params.routine_id;
-  console.log(routine_id);
   const userId = +req.session.user.user_id;
-  console.log(userId);
   const deletedRoutine = await db.routines.deleteRoutine([userId, routine_id]);
   console.log(deletedRoutine);
   if (db) {

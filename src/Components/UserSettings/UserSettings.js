@@ -5,7 +5,7 @@ import {
   getProfPic,
   addProfPic
 } from "../../redux/reducers/userReducer";
-import from ""
+import "../../styles/partials/UserSettings/UserSettings.scss";
 
 class UserSettings extends Component {
   constructor() {

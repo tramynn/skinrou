@@ -1,3 +1,6 @@
+DELETE FROM routine_likes
+WHERE routine_id = $2;
+
 DELETE FROM skin_routine
 WHERE user_id = $1 AND routine_id = $2;
 
