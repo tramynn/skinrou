@@ -13,7 +13,10 @@ import Paper from "@material-ui/core/Paper";
 import Card from "@material-ui/core/Card";
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowAltCircleUp,
+  faArrowAltCircleDown
+} from "@fortawesome/free-solid-svg-icons";
 
 class UserLanding extends Component {
   componentDidMount() {
@@ -70,24 +73,18 @@ class UserLanding extends Component {
               <li>{routine.mask}</li>
               <li>{routine.sunscreen}</li>
               <li>{routine.note}</li>
-              <li>
-                <button onClick={() => this.handleAddLike(routine.routine_id)}>
-                  <span>
-                    <FontAwesomeIcon icon={faHeart} color="#cf3548" />
-                  </span>
-                </button>
-                <button
-                  onClick={() => this.handleRemoveLike(routine.routine_id)}
-                >
-                  <span>
-                    <FontAwesomeIcon icon={faHeart} color="#999999" />
-                  </span>
-                </button>
-                {routine.likes}
-              </li>
-              <br />
-              <br />
             </ul>
+            <div className="Like-btns">
+              <span onClick={() => this.handleAddLike(routine.routine_id)}>
+                <FontAwesomeIcon icon={faArrowAltCircleUp} color="#777777" />
+              </span>
+              {routine.likes}
+              <span onClick={() => this.handleRemoveLike(routine.routine_id)}>
+                <FontAwesomeIcon icon={faArrowAltCircleDown} color="#777777" />
+              </span>
+            </div>
+            <br />
+            <br />
           </Card>
         </div>
       );

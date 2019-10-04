@@ -129,7 +129,6 @@ class EditRoutine extends Component {
   };
 
   render() {
-    console.log(this.props.match.params.routineId);
     const { userId } = this.props;
     if (this.props.shouldRedirect === true) {
       return <Redirect to={`/profile/user/${userId}`} />;
