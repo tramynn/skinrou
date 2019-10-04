@@ -51,6 +51,7 @@ app.get("/api/routines/user/:userId", routinesController.userRoutines);
 app.post("/api/routines", routinesController.addRoutine);
 app.put("/api/routines/:routineId", routinesController.editRoutine);
 app.delete("/api/routines/:routine_id", routinesController.deleteRoutine);
+app.get("/api/routines/like/:userId", routinesController.userLiked);
 app.post("/api/routines/like/:routineId", routinesController.likeRoutine);
 app.put("/api/routines/like/:routineId", routinesController.unlikeRoutine);
 

@@ -15,7 +15,9 @@ import "../../styles/partials/UserProfile/UserProfile.scss";
 class UserProfile extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      
+    };
   }
   componentDidMount() {
     this.props.getSession();
@@ -26,6 +28,10 @@ class UserProfile extends Component {
     console.log(routine_id);
     this.props.deleteRoutine(routine_id);
   };
+
+  handleLike = () => {
+
+  }
 
   render() {
     const {
@@ -72,13 +78,11 @@ class UserProfile extends Component {
               </li>
             </ul>
             <span>
-              {console.log(routine.routine_id)}
               <Link to={`/editRoutine/${routine.routine_id}`}>
                 <button>EDIT</button>
               </Link>
               <button
                 onClick={() => {
-                  // console.log(routine.routine_id);
                   this.handleDelete(routine.routine_id);
                 }}
               >

@@ -219,6 +219,15 @@ async function deleteRoutine(req, res) {
   }
 }
 
+async function userLiked(req, res) {
+  const db = req.app.get("db");
+  const userId = +req.session.user.user_id;
+  const userLiked = await db.routines.getUserLiked(userId);
+  if (db) {
+    res.status(200).json(userLiked);
+  }
+}
+
 async function likeRoutine(req, res) {
   const db = req.app.get("db");
   const userId = +req.session.user.user_id;
@@ -269,5 +278,6 @@ module.exports = {
   editRoutine,
   deleteRoutine,
   likeRoutine,
-  unlikeRoutine
+  unlikeRoutine,
+  userLiked
 };

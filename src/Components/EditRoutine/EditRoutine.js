@@ -52,11 +52,8 @@ class EditRoutine extends Component {
 
   componentDidMount() {
     const matchId = +this.props.match.params.routineId;
-    console.log(typeof matchId);
     const userRoutines = this.props.routines;
-    console.log(userRoutines);
-    // console.log(routines);
-    // console.log(typeof routines[0]["time"]);
+
     userRoutines.forEach(matchRoutine => {
       if (matchRoutine.routine_id === matchId) {
         this.setState({
