@@ -52,7 +52,7 @@ class Login extends Component {
               variant="outlined"
               autoComplete="off"
               autoFocus
-              required
+              required={true}
             />
             <TextField
               name="password"
@@ -64,30 +64,12 @@ class Login extends Component {
               margin="normal"
               variant="outlined"
               autoComplete="off"
-              required
+              required={true}
             />
             <button className="Login-btn login" type="submit">
               Log In
             </button>
           </form>
-          {/* <form className="Form-body" onSubmit={this.handleLoginSubmit}>
-            <input
-              name="username"
-              type="text"
-              placeholder="Username"
-              onChange={this.handleLoginInput}
-              autoFocus
-              required
-            />
-            <input
-              name="password"
-              type="password"
-              placeholder="Password"
-              onChange={this.handleLoginInput}
-              required
-            />
-            <button type="submit">Log In</button>
-          </form> */}
         </div>
       </div>
     );

@@ -71,21 +71,24 @@ function Chatrooms() {
   useEffect(() => {
     if (socket) {
       socket.on("connect", () => {
-        console.log("connected!");
         socket.emit("greet", { message: "Hello Ms. Server!" });
       });
 
+      socket.emit("addUser", username);
+
       socket.on("newMsg", data => {
         const newMessages = data.messages;
-        console.log("hit", newMessages);
         setMessages(newMessages);
       });
 
-      return () => {
-        socket.on("disconnect");
-      };
+      socket.on("userLeft", data => {
+        const userLeftMsg = data.messages;
+        setMessages(userLeftMsg);
+      });
+      
+      socket.on("disconnect");
     }
-  }, [socket]);
+  }, [socket, username]);
 
   return (
     <div className="Chatrooms-container">
@@ -133,10 +136,11 @@ function Chatrooms() {
             <button
               className={classes.button}
               onClick={() => {
-                socket.emit("sendMsg", {
+                let message = {
                   username: username,
                   message: userMessage
-                });
+                };
+                socket.emit("sendMsg", message);
               }}
             >
               Send

@@ -62,16 +62,19 @@ app.post("/api/profile", profController.addProfPic);
 // Socket messages
 let messages = [];
 
-// Socket listener
+// When socket connects
 const chat = io.of("/chatrooms");
 chat.on("connect", socket => {
-  console.log("A user is connected");
-
   socket.on("greet", data => {
     console.log(data);
     socket.emit("respond", { message: "Hello Ms. Client!" });
   });
 
+  socket.on("addUser", username => {
+    socket.id = username;
+  });
+
+  // When user sends a new message
   socket.on("sendMsg", data => {
     console.log(`Message received: ${data.username}: ${data.message}`);
     const { username, message } = data;
@@ -82,7 +85,8 @@ chat.on("connect", socket => {
 
   // When user disconnects
   socket.on("disconnect", () => {
-    console.log("User disconnected.");
+    messages.push({ message: `${socket.id} has left the chat.` });
+    chat.emit("userLeft", { messages });
   });
 });
 

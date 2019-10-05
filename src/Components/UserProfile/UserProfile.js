@@ -44,7 +44,6 @@ class UserProfile extends Component {
   };
 
   handleDelete = routine_id => {
-    console.log(routine_id);
     this.props.deleteRoutine(routine_id);
   };
 
@@ -121,7 +120,7 @@ class UserProfile extends Component {
             <Menu
               id="simple-menu"
               anchorEl={this.state.anchorEl}
-              keepMounte
+              keepMounted
               open={Boolean(this.state.anchorEl)}
               onClose={this.handleClose}
             >
