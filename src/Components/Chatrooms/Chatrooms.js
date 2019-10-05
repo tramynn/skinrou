@@ -58,14 +58,15 @@ function Chatrooms() {
   const username = useSelector(
     initialState => initialState.userReducer.username
   );
-  let [messages, setMessages] = React.useState([]);
+  const [messages, setMessages] = React.useState([]);
   let [userMessage, setUserMessage] = React.useState("");
-  const [socket, setSocket] = React.useState("");
+  const [socket, setSocket] = React.useState(null);
 
   useEffect(() => {
     setSocket(
-      io("ws://localhost:4242/chatrooms", { transports: ["websocket"] })
+      io("http://localhost:4242/chatrooms", { transports: ["websocket"] })
     );
+    return () => {};
   }, []);
 
   useEffect(() => {
@@ -134,8 +135,8 @@ function Chatrooms() {
               );
             })}
           </main>
-          <span className={classes.chatboxRightMessageSend}>
-            <form className={classes.chatboxRightMessages}>
+          <span>
+            <form className={classes.chatboxRightMessageSend}>
               <input
                 placeholder="Message.."
                 className={classes.input}
@@ -147,7 +148,6 @@ function Chatrooms() {
                 type="submit"
                 onClick={e => {
                   e.preventDefault();
-
                   let message = {
                     username: username,
                     message: userMessage
