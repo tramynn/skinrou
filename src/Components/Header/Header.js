@@ -57,7 +57,7 @@ class Header extends Component {
                 </li>
               </Link>
               <Link
-                to="/chatrooms"
+                to="/chat"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <li className="Nav-links">

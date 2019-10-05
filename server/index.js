@@ -63,7 +63,7 @@ app.post("/api/profile", profController.addProfPic);
 let messages = [];
 
 // When socket connects
-const chat = io.of("/chatrooms");
+const chat = io.of("/chat");
 chat.on("connect", socket => {
   socket.on("addUser", username => {
     socket.id = username;

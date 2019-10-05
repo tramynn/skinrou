@@ -1,10 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Header from "../../Components/Header/Header";
-import "../../styles/partials/Chatrooms/Chatrooms.scss";
+import "../../styles/partials/Chat/Chat.scss";
 import Paper from "@material-ui/core/Paper";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import { makeStyles } from "@material-ui/styles";
 import { useSelector } from "react-redux";
 import io from "socket.io-client";
@@ -53,7 +50,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-function Chatrooms() {
+function Chat() {
   const classes = useStyles();
   const username = useSelector(
     initialState => initialState.userReducer.username
@@ -61,13 +58,16 @@ function Chatrooms() {
   const [messages, setMessages] = React.useState([]);
   let [userMessage, setUserMessage] = React.useState("");
   const [socket, setSocket] = React.useState(null);
+  const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    setSocket(
-      io("http://localhost:4242/chatrooms", { transports: ["websocket"] })
-    );
+    setSocket(io("http://localhost:4242/chat", { transports: ["websocket"] }));
     return () => {};
   }, []);
+
+  useEffect(() => {
+    messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
+  }, [messages]);
 
   useEffect(() => {
     if (socket) {
@@ -105,21 +105,13 @@ function Chatrooms() {
         <nav className={classes.chatboxLeft}>
           <h1>Chatrooms</h1>
           <hr />
-          <List className="Chatroom-topics">
-            {["General", "Skincare by Skin Type", "Skincare by Concerns"].map(
-              topic => (
-                <ListItem key={topic} button>
-                  <ListItemText primary={topic} />
-                </ListItem>
-              )
-            )}
-          </List>
+          Users in the chat:
         </nav>
         <span className={classes.chatboxRight}>
           <header className={classes.chatboxRightTitle}>
             <h1>General</h1>
           </header>
-          <main className={classes.chatboxRightMessages}>
+          <main className={classes.chatboxRightMessages} ref={messagesEndRef}>
             {messages.map((message, i) => {
               return (
                 <div key={i}>
@@ -155,9 +147,7 @@ function Chatrooms() {
                   socket.emit("sendMsg", message);
                   clearInput();
                 }}
-              >
-                Send
-              </button>
+              ></button>
             </form>
           </span>
         </span>
@@ -166,4 +156,4 @@ function Chatrooms() {
   );
 }
 
-export default Chatrooms;
+export default Chat;

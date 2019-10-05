@@ -8,7 +8,7 @@ import Routines from "./Components/Routines/Routines";
 import CreateRoutine from "./Components/CreateRoutine/CreateRoutine";
 import UserSettings from "./Components/UserSettings/UserSettings";
 import UserProfile from "./Components/UserProfile/UserProfile";
-import Chatrooms from "./Components/Chatrooms/Chatrooms";
+import Chat from "./Components/Chat/Chat";
 import AgeRoutines from "./Components/AgeRoutines/AgeRoutines";
 import SkintypeRoutines from "./Components/SkintypeRoutines/SkintypeRoutines";
 import EditRoutine from "./Components/EditRoutine/EditRoutine";
@@ -26,7 +26,7 @@ export default (
     <Route component={EditRoutine} exact path="/editRoutine/:routineId" />
     <Route component={UserSettings} path="/settings" />
     <Route component={UserProfile} path="/profile/user/:userId" />
-    <Route component={Chatrooms} path="/chatrooms" />
+    <Route component={Chat} path="/chat" />
     <Route
       render={() => {
         return <h1>404 Page Not Found.</h1>;
