@@ -71,10 +71,13 @@ function Chatrooms() {
   useEffect(() => {
     if (socket) {
       socket.on("connect", () => {
-        socket.emit("greet", { message: "Hello Ms. Server!" });
+        socket.emit("addUser", username);
       });
 
-      socket.emit("addUser", username);
+      socket.on("userEntered", data => {
+        const userEnteredMsg = data.messages;
+        setMessages(userEnteredMsg);
+      });
 
       socket.on("newMsg", data => {
         const newMessages = data.messages;
@@ -85,7 +88,7 @@ function Chatrooms() {
         const userLeftMsg = data.messages;
         setMessages(userLeftMsg);
       });
-      
+
       socket.on("disconnect");
     }
   }, [socket, username]);
@@ -128,23 +131,25 @@ function Chatrooms() {
             })}
           </main>
           <span className={classes.chatboxRightMessageSend}>
-            <input
-              placeholder="Message.."
-              className={classes.input}
-              onChange={e => setUserMessage(e.target.value)}
-            />
-            <button
-              className={classes.button}
-              onClick={() => {
-                let message = {
-                  username: username,
-                  message: userMessage
-                };
-                socket.emit("sendMsg", message);
-              }}
-            >
-              Send
-            </button>
+            <form>
+              <input
+                placeholder="Message.."
+                className={classes.input}
+                onChange={e => setUserMessage(e.target.value)}
+              />
+              <button
+                className={classes.button}
+                onClick={() => {
+                  let message = {
+                    username: username,
+                    message: userMessage
+                  };
+                  socket.emit("sendMsg", message);
+                }}
+              >
+                Send
+              </button>
+            </form>
           </span>
         </span>
       </Paper>

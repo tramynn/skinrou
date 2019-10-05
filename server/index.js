@@ -65,27 +65,32 @@ let messages = [];
 // When socket connects
 const chat = io.of("/chatrooms");
 chat.on("connect", socket => {
-  socket.on("greet", data => {
-    console.log(data);
-    socket.emit("respond", { message: "Hello Ms. Client!" });
-  });
-
   socket.on("addUser", username => {
     socket.id = username;
+    messages.push({ message: `${socket.id} entered the chat.` });
+    chat.emit("userEntered", { messages });
   });
 
   // When user sends a new message
   socket.on("sendMsg", data => {
     console.log(`Message received: ${data.username}: ${data.message}`);
     const { username, message } = data;
-    messages.push({ username, message });
+    messages.push({
+      username,
+      message,
+      hours: new Date().getHours(),
+      minutes: new Date().getMinutes()
+      // let hours = Math.floor(num / 60);
+      // var minutes = num % 60;
+      // return hours + ":" + minutes;
+    });
     console.log(messages);
     chat.emit("newMsg", { messages });
   });
 
   // When user disconnects
   socket.on("disconnect", () => {
-    messages.push({ message: `${socket.id} has left the chat.` });
+    messages.push({ message: `${socket.id} left the chat.` });
     chat.emit("userLeft", { messages });
   });
 });
