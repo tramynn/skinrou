@@ -58,14 +58,9 @@ function Chatrooms() {
   const username = useSelector(
     initialState => initialState.userReducer.username
   );
-  const [messages, setMessages] = React.useState([]);
-  const [userMessage, setUserMessage] = React.useState("");
+  let [messages, setMessages] = React.useState([]);
+  let [userMessage, setUserMessage] = React.useState("");
   const [socket, setSocket] = React.useState("");
-
-  const onSubmit = e => {
-    e.preventDefault();
-    setUserMessage("");
-  };
 
   useEffect(() => {
     setSocket(
@@ -87,7 +82,6 @@ function Chatrooms() {
       socket.on("newMsg", data => {
         const newMessages = data.messages;
         setMessages(newMessages);
-        // CLEAR user message input
       });
 
       socket.on("userLeft", data => {
@@ -98,6 +92,10 @@ function Chatrooms() {
       socket.on("disconnect");
     }
   }, [socket, username]);
+
+  const clearInput = () => {
+    setUserMessage("");
+  };
 
   return (
     <div className="Chatrooms-container">
@@ -137,21 +135,25 @@ function Chatrooms() {
             })}
           </main>
           <span className={classes.chatboxRightMessageSend}>
-            <form onSubmit={onSubmit}>
+            <form className={classes.chatboxRightMessages}>
               <input
                 placeholder="Message.."
                 className={classes.input}
+                value={"" || `${userMessage}`}
                 onChange={e => setUserMessage(e.target.value)}
               />
               <button
                 className={classes.button}
                 type="submit"
-                onClick={() => {
+                onClick={e => {
+                  e.preventDefault();
+
                   let message = {
                     username: username,
                     message: userMessage
                   };
                   socket.emit("sendMsg", message);
+                  clearInput();
                 }}
               >
                 Send
