@@ -62,6 +62,11 @@ function Chatrooms() {
   const [userMessage, setUserMessage] = React.useState("");
   const [socket, setSocket] = React.useState("");
 
+  const onSubmit = e => {
+    e.preventDefault();
+    setUserMessage("");
+  };
+
   useEffect(() => {
     setSocket(
       io("ws://localhost:4242/chatrooms", { transports: ["websocket"] })
@@ -82,6 +87,7 @@ function Chatrooms() {
       socket.on("newMsg", data => {
         const newMessages = data.messages;
         setMessages(newMessages);
+        // CLEAR user message input
       });
 
       socket.on("userLeft", data => {
@@ -131,7 +137,7 @@ function Chatrooms() {
             })}
           </main>
           <span className={classes.chatboxRightMessageSend}>
-            <form>
+            <form onSubmit={onSubmit}>
               <input
                 placeholder="Message.."
                 className={classes.input}
@@ -139,6 +145,7 @@ function Chatrooms() {
               />
               <button
                 className={classes.button}
+                type="submit"
                 onClick={() => {
                   let message = {
                     username: username,
