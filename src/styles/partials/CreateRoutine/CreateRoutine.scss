@@ -5,10 +5,7 @@
 @import "../../modules/background/background.scss";
 
 .CreateRoutine-container {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  @include bg-full-fixed;
   background-image: url("../../../images/create-routine.jpg");
 }
 
@@ -54,7 +51,6 @@
       width: 300px;
       border-radius: 4px;
       margin: 2px;
-
     }
     .Create-input {
       width: 300px;
