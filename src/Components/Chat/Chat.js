@@ -61,8 +61,7 @@ function Chat() {
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    setSocket(io("http://localhost:4242/chat", { transports: ["websocket"] }));
-    return () => {};
+    setSocket(io());
   }, []);
 
   useEffect(() => {
