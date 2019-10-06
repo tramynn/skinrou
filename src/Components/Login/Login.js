@@ -32,10 +32,8 @@ class Login extends Component {
     console.log(this.props.userId);
     return (
       <div className="Login-Register-container">
-        <div className="Left-box">
-          <h1 className="Welcome-message">Welcome Back.</h1>
-        </div>
         <div className="Right-box">
+          <h1 className="Welcome-message">Welcome Back.</h1>
           <form
             className="Form-body"
             noValidate
@@ -66,11 +64,12 @@ class Login extends Component {
               autoComplete="off"
               required={true}
             />
-            <button className="Login-btn login" type="submit">
+            <button className="Login-btn login-btn-style" type="submit">
               Log In
             </button>
           </form>
         </div>
+        <div className="Left-box"></div>
       </div>
     );
   }

@@ -1,8 +1,10 @@
 .Login-btn,
 .Register-btn {
   border-radius: 5px;
-  border: 2px solid #21669c;
+  border: 2px solid transparent;
   background-color: #21669c;
+  text-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
+  background-size: 200% auto;
   color: white;
   font-family: Montserrat, sans-serif;
   font-weight: bold;
@@ -12,26 +14,40 @@
   padding: 12px;
   width: 290px;
   height: 55px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.Login-btn {
+  background-image: -webkit-gradient(linear, left top, right top, from(#5f926a), color-stop(51%, #21669b), to(#5f926a));
+  background-image: linear-gradient(to right, #5f926a 0%, #21669b 51%, #5f926a 100%);
 }
 
 .Login-btn:hover {
-  color: #024a81;
-  background-color: transparent;
   -webkit-transition: 1s;
   transition: 1s;
+  background-position: right center;
   cursor: pointer;
 }
 
 
 .Register-btn {
   background-color: transparent;
-  color: #024a81;
-  border: 2px solid #21669c;
+  color: #485e52;
+  border: 2px solid #485e52;
+  -webkit-transition: 1s;
+  transition: 1s;
+  background-position: left center;
 }
 
 .Register-btn:hover {
   color: white;
-  background-color: #21669c;
+  border: 2px solid transparent;
+  background-image: -webkit-gradient(linear, left top, right top, from(#5f926a), color-stop(51%, #21669b), to(#5f926a));
+  background-image: linear-gradient(to right, #5f926a 0%, #21669b 51%, #5f926a 100%);
   -webkit-transition: 1s;
   transition: 1s;
   cursor: pointer;

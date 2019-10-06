@@ -20,3 +20,10 @@
   width: 67vw;
   height: 93vh;
 }
+
+@mixin bg-full-fixed {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

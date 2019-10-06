@@ -37,6 +37,10 @@
   margin: 10px;
 }
 
+.Login-btn {
+  @extend %btn-gradient;
+}
+
 .Login-btn:hover {
   @extend %primary-btn-hover;
 }

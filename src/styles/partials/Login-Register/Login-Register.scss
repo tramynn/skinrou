@@ -4,11 +4,13 @@
 @import "../../modules/background/background.scss";
 
 .Login-Register-container {
+  @include bg-full-fixed;
+  @include flex-base;
   width: 100vw;
   height: 100vh;
   background-color: #6497b1;
   text-align: center;
-  @include flex-base;
+  background-image: url("../../../images//login-register.jpg");
 
   .Left-box,
   .Right-box {
@@ -19,7 +21,10 @@
 
 .Welcome-message {
   @include h1-font;
-  color: $primary-h1-color;
+  color: $mo-5;
+  font-style: italic;
+  position: relative;
+  bottom: 50px;
 }
 
 .Left-box {
@@ -27,13 +32,15 @@
 }
 
 .Right-box {
-  background-color: white;
   @include bg-half-width;
+  background-color: white;
 
   .Form-body {
     @include flex-base;
     @include flex-column;
-    width: 50vw;
+    position: relative;
+    top: 25px;
+
     .Login-input {
       width: 325px;
       height: 65px;
@@ -47,16 +54,16 @@
     .label {
       font-family: $body-fontfamily;
     }
-    .login {
+    .login-btn-style {
       margin-top: 15px;
+      // background-image: linear-gradient(120deg, $tl-3 0%, $mo-3 100%);
+      @extend %btn-gradient;
     }
-
     .register {
       @include flex-start;
       position: relative;
       left: 130px;
     }
-
     .register-btn {
       width: 150px;
       margin-top: 15px;
