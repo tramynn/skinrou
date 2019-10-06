@@ -2,6 +2,7 @@
 @import "../../modules/colors/colors.scss";
 @import "../../modules/fonts/fonts.scss";
 @import "../../modules/background/background.scss";
+@import "../../modules/buttons/buttons.scss";
 
 .Login-Register-container {
   @include bg-full-fixed;
@@ -59,10 +60,11 @@
       // background-image: linear-gradient(120deg, $tl-3 0%, $mo-3 100%);
       @extend %btn-gradient;
     }
+
     .register {
       @include flex-start;
       position: relative;
-      left: 130px;
+      right: 130px;
     }
     .register-btn {
       width: 150px;

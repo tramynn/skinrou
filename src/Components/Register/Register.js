@@ -43,14 +43,15 @@ class Register extends Component {
 
     return (
       <div className="Login-Register-container">
-        <div className="Left-box">
+        <div className="Right-box">
           <h1 className="Welcome-message">
             Welcome,
             <br />
             please sign-up.
           </h1>
-        </div>
-        <div className="Right-box">
+
+
+
           <form
             className="Form-body"
             noValidate
@@ -154,6 +155,8 @@ class Register extends Component {
               </button>
             </div>
           </form>
+        </div>
+        <div className="Left-box">
 
           {/* <form className="Form-body" onSubmit={this.handleRegisterSubmit}>
             <input
