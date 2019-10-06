@@ -1,3 +1,7 @@
+.hidden-by-default {
+  display: none;
+}
+
 .Header-main-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -76,5 +80,39 @@
   -webkit-transition: 0.5s;
   transition: 0.5s;
   cursor: pointer;
+}
+
+.Nav-collapsed-container {
+  width: 50vw;
+  background-color: gray;
+  margin-top: 90px;
+}
+
+.Menu-bar {
+  text-align: center;
+  height: 7vh;
+  padding-left: 2px;
+  padding-right: 2px;
+  width: 60px;
+}
+
+.Menu-bar .Hamburger {
+  height: 100%;
+}
+
+.Menu-bar:hover {
+  background-color: #5f926a;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .Nav-default-container {
+    display: none;
+  }
+  .Menu-bar {
+    display: block;
+  }
 }
 /*# sourceMappingURL=Header.css.map */
