@@ -5,7 +5,48 @@
 @import "../../modules/background/background.scss";
 
 .Home-container {
-  @include bg-full;
+  @include bg-full-fixed;
+  @include flex-base;
+  @include flex-column;
   background-image: url("../../../images/home-bg.jpg");
-  background-color: $ol-1;
+  overflow-y: auto;
+}
+
+.Category-header {
+  @include flex-base;
+  height: 15vh;
+  width: 50vw;
+}
+
+.Category-nav {
+  @include flex-base;
+  height: 50px;
+  width: 340px;
+  margin: 10px;
+
+  .Category-name {
+    @include h1-font;
+    @include flex-base;
+    color: white;
+    background-color: gray;
+    height: 60px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .Category-name:hover {
+    background-color: blue;
+  }
+}
+
+.Home-body {
+  @include flex-base;
+  @include flex-column;
+  background-color: gray;
+
+  .All-routines {
+    background-color: $ol-1;
+    margin: 20px;
+    width: 50vw;
+    height: 400px;
+  }
 }

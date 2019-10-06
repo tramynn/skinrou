@@ -9,8 +9,6 @@ import {
   addLike,
   removeLike
 } from "../../redux/reducers/routinesReducer";
-import Paper from "@material-ui/core/Paper";
-import Card from "@material-ui/core/Card";
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -37,15 +35,16 @@ class UserLanding extends Component {
   render() {
     const categoriesMapped = this.props.categories.map((category, i) => {
       return (
-        <div key={i} className="Category-name">
-          <Link
-            style={{ textDecoration: "none" }}
-            to={`/routines/${category.category_id}`}
-          >
-            <Paper>
+        <div key={i}>
+          <div className="Category-nav">
+            <Link
+              className="Category-name"
+              style={{ textDecoration: "none" }}
+              to={`/routines/${category.category_id}`}
+            >
               <h1>{category.category_name}</h1>
-            </Paper>
-          </Link>
+            </Link>
+          </div>
         </div>
       );
     });
@@ -53,7 +52,7 @@ class UserLanding extends Component {
     const allRoutinesMapped = this.props.routines.map((routine, i) => {
       return (
         <div key={i} className="All-routines">
-          <Card className="Routine">
+          <div>
             <h1>{routine.username}</h1>
             <h3>{routine.skin_type}</h3>
             <h3>{routine.age}</h3>
@@ -85,7 +84,7 @@ class UserLanding extends Component {
             </div>
             <br />
             <br />
-          </Card>
+          </div>
         </div>
       );
     });
@@ -93,14 +92,13 @@ class UserLanding extends Component {
     return (
       <div className="Home-container">
         <ScrollToTopOnMount />
-        <header className="Header">
+        <nav>
           <Header />
-        </header>
-        <nav>{categoriesMapped}</nav>
-        <div>
-          <aside className="Home-left-box"></aside>
-          <main className="Home-center-box">{allRoutinesMapped}</main>
-          <aside className="Home-right-box"></aside>
+        </nav>
+        <header className="Category-header">{categoriesMapped}</header>
+        <div className="Home-body">
+          <header>All routines.</header>
+          {allRoutinesMapped}
         </div>
       </div>
     );
