@@ -61,9 +61,7 @@ function Chatrooms() {
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    setSocket(
-      io("http://localhost:4242/chatrooms", { transports: ["websocket"] })
-    );
+    setSocket(io("/chat"));
     return () => {};
   }, []);
 

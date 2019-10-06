@@ -10,11 +10,14 @@ const io = require("socket.io")(http);
 const authController = require("./controllers/authController");
 const routinesController = require("./controllers/routinesController");
 const profController = require("./controllers/profController");
+const path = require("path");
 // Dotenv
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 
 // Middleware
 app.use(express.json());
+
+app.use(express.static(`${__dirname}/../build`));
 
 app.use(
   session({
@@ -93,6 +96,10 @@ chat.on("connect", socket => {
     messages.push({ message: `${socket.id} left the chat.` });
     chat.emit("userLeft", { messages });
   });
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
 });
 
 http.listen(SERVER_PORT, () => {
