@@ -32,7 +32,7 @@ class Login extends Component {
     console.log(this.props.userId);
     return (
       <div className="Login-Register-container">
-        <div className="Right-box">
+        <div className="Left-box">
           <h1 className="Welcome-message">Welcome Back.</h1>
           <form
             className="Form-body"
@@ -69,7 +69,7 @@ class Login extends Component {
             </button>
           </form>
         </div>
-        <div className="Left-box"></div>
+        <div className="Right-box"></div>
       </div>
     );
   }

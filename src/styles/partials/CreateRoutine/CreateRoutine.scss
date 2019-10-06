@@ -25,6 +25,7 @@
     padding-top: 80px;
     padding-bottom: 80px;
     text-align: right;
+    background-color: $ol-1;
 
     h1 {
       @include h1-font;
@@ -47,6 +48,7 @@
         top: 42px;
       }
     }
+
     .Create-form {
       width: 300px;
       border-radius: 4px;

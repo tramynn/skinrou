@@ -1,4 +1,4 @@
-.Right-box .Form-body .login-btn-style {
+.Left-box .Form-body .login-btn-style {
   background-image: -webkit-gradient(linear, left top, right top, from(#5f926a), color-stop(51%, #21669b), to(#5f926a));
   background-image: linear-gradient(to right, #5f926a 0%, #21669b 51%, #5f926a 100%);
 }
@@ -19,7 +19,6 @@
           align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #6497b1;
   text-align: center;
   background-image: url("../../../images//login-register.jpg");
 }
@@ -50,18 +49,18 @@
   bottom: 50px;
 }
 
-.Left-box {
-  width: 50vw;
-  height: 100vh;
-}
-
 .Right-box {
   width: 50vw;
   height: 100vh;
-  background-color: white;
 }
 
-.Right-box .Form-body {
+.Left-box {
+  width: 50vw;
+  height: 100vh;
+  background-color: #e7eff6;
+}
+
+.Left-box .Form-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -79,27 +78,27 @@
   top: 25px;
 }
 
-.Right-box .Form-body .Login-input {
+.Left-box .Form-body .Login-input {
   width: 325px;
   height: 65px;
   margin: 0px;
 }
 
-.Right-box .Form-body .Register-input {
+.Left-box .Form-body .Register-input {
   width: 200px;
   height: 65px;
   margin: 5px;
 }
 
-.Right-box .Form-body .label {
+.Left-box .Form-body .label {
   font-family: Montserrat, sans-serif;
 }
 
-.Right-box .Form-body .login-btn-style {
+.Left-box .Form-body .login-btn-style {
   margin-top: 15px;
 }
 
-.Right-box .Form-body .register {
+.Left-box .Form-body .register {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,7 +112,7 @@
   right: 130px;
 }
 
-.Right-box .Form-body .register-btn {
+.Left-box .Form-body .register-btn {
   width: 150px;
   margin-top: 15px;
 }

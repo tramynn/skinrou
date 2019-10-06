@@ -43,7 +43,7 @@ class Register extends Component {
 
     return (
       <div className="Login-Register-container">
-        <div className="Right-box">
+        <div className="Left-box">
           <h1 className="Welcome-message">
             Welcome,
             <br />

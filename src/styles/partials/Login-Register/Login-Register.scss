@@ -9,7 +9,6 @@
   @include flex-base;
   width: 100vw;
   height: 100vh;
-  background-color: #6497b1;
   text-align: center;
   background-image: url("../../../images//login-register.jpg");
 
@@ -28,13 +27,13 @@
   bottom: 50px;
 }
 
-.Left-box {
+.Right-box {
   @include bg-half-width;
 }
 
-.Right-box {
+.Left-box {
   @include bg-half-width;
-  background-color: white;
+  background-color: $ol-1;
 
   .Form-body {
     @include flex-base;
@@ -57,7 +56,6 @@
     }
     .login-btn-style {
       margin-top: 15px;
-      // background-image: linear-gradient(120deg, $tl-3 0%, $mo-3 100%);
       @extend %btn-gradient;
     }
 
