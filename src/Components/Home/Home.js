@@ -93,7 +93,9 @@ class UserLanding extends Component {
     return (
       <div className="Home-container">
         <ScrollToTopOnMount />
-        <Header />
+        <header className="Header">
+          <Header />
+        </header>
         <nav>{categoriesMapped}</nav>
         <div>
           <aside className="Home-left-box"></aside>

@@ -3,12 +3,12 @@ import Header from "../Header/Header";
 import "../../styles/partials/CreateRoutine/CreateRoutine.scss";
 import { connect } from "react-redux";
 import { addRoutine } from "../../redux/reducers/routinesReducer";
+import { Redirect } from "react-router-dom";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import TextField from "@material-ui/core/TextField";
-// import FormHelperText from "@material-ui/core/FormHelperText";
 import num1 from "../../images/1.png";
 import num2 from "../../images/2.png";
 import num3 from "../../images/3.png";
@@ -25,9 +25,6 @@ import num13 from "../../images/13.png";
 import num14 from "../../images/14.png";
 import num15 from "../../images/15.png";
 import num16 from "../../images/16.png";
-
-// Routing
-import { Redirect } from "react-router-dom";
 
 class CreateRoutine extends Component {
   constructor() {
@@ -128,7 +125,7 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <FormControl className="Create-form">
-                        <InputLabel className="Create-label">Time</InputLabel>
+                        <InputLabel>Time</InputLabel>
                         <Select
                           name="time"
                           value={this.state.time}
@@ -139,9 +136,6 @@ class CreateRoutine extends Component {
                           <MenuItem value={`Day`}>Day</MenuItem>
                           <MenuItem value={`Night`}>Night</MenuItem>
                         </Select>
-                        {/* <FormHelperText>
-                          Time you would like to do your skincare.
-                        </FormHelperText> */}
                       </FormControl>
                     </td>
                   </tr>
@@ -151,9 +145,7 @@ class CreateRoutine extends Component {
                     </td>
                     <td className="Right-col">
                       <FormControl className="Create-form">
-                        <InputLabel className="Create-label">
-                          Skin Type
-                        </InputLabel>
+                        <InputLabel>Skin Type</InputLabel>
                         <Select
                           name="skinType"
                           value={this.state.skinType}

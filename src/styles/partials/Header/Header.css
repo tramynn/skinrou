@@ -1,10 +1,4 @@
-.Header-container {
-  color: white;
-  background: -webkit-gradient(linear, left top, right top, from(#21669b), to(#587e60));
-  background: linear-gradient(90deg, #21669b 0%, #587e60 100%);
-  max-height: 7vh;
-  height: 7vh;
-  width: 100vw;
+.Header-main-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24,9 +18,16 @@
   font-weight: bold;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  color: white;
+  background: -webkit-gradient(linear, left top, right top, from(#21669b), to(#587e60));
+  background: linear-gradient(90deg, #21669b 0%, #587e60 100%);
+  -webkit-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.4);
+  height: 7vh;
+  width: 100vw;
 }
 
-.Header-container img {
+.Header-main-container img {
   margin-left: 30px;
 }
 

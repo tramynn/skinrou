@@ -50,8 +50,6 @@ class Register extends Component {
             please sign-up.
           </h1>
 
-
-
           <form
             className="Form-body"
             noValidate
@@ -156,55 +154,7 @@ class Register extends Component {
             </div>
           </form>
         </div>
-        <div className="Left-box">
-
-          {/* <form className="Form-body" onSubmit={this.handleRegisterSubmit}>
-            <input
-              name="firstName"
-              type="text"
-              placeholder="First Name"
-              onChange={this.handleRegisterInput}
-              autoFocus
-              required
-            />
-            <input
-              name="lastName"
-              type="text"
-              placeholder="Last Name"
-              onChange={this.handleRegisterInput}
-              required
-            />
-            <input
-              name="age"
-              type="number"
-              placeholder="Age"
-              onChange={this.handleRegisterInput}
-              required
-            />
-            <input
-              name="phoneNum"
-              type="text"
-              placeholder="Phone #"
-              onChange={this.handleRegisterInput}
-              required
-            />
-            <input
-              name="username"
-              type="text"
-              placeholder="Username"
-              onChange={this.handleRegisterInput}
-              required
-            />
-            <input
-              name="password"
-              type="password"
-              placeholder="Password"
-              onChange={this.handleRegisterInput}
-              required
-            />
-            <button type="submit">Register</button>
-          </form> */}
-        </div>
+        <div className="Left-box"></div>
       </div>
     );
   }

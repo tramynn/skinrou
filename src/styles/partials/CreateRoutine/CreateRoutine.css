@@ -20,6 +20,11 @@
   transition: 0.5s;
 }
 
+.CreateRoutine-main .CreateRoutine-right-box .Create-btn {
+  background-image: -webkit-gradient(linear, left top, right top, from(#5f926a), color-stop(51%, #21669b), to(#5f926a));
+  background-image: linear-gradient(to right, #5f926a 0%, #21669b 51%, #5f926a 100%);
+}
+
 .CreateRoutine-main .CreateRoutine-right-box .Create-btn:hover {
   -webkit-transition: 1s;
   transition: 1s;
@@ -68,7 +73,6 @@
           flex-direction: column;
   width: 67vw;
   height: auto;
-  background-color: #e7eff6;
   padding-top: 80px;
   padding-bottom: 80px;
   text-align: right;
@@ -77,6 +81,7 @@
 .CreateRoutine-main .CreateRoutine-right-box h1 {
   font-family: Paytone One, sans-serif;
   font-size: 70px;
+  color: #024a81;
   padding-bottom: 40px;
   font-style: italic;
 }
@@ -108,14 +113,6 @@
   margin: 2px;
 }
 
-.CreateRoutine-main .CreateRoutine-right-box .Create-form .Create-label {
-  color: #4b86b4;
-}
-
-.CreateRoutine-main .CreateRoutine-right-box .Create-form .Create-text {
-  color: #024a81;
-}
-
 .CreateRoutine-main .CreateRoutine-right-box .Create-input {
   width: 300px;
   border-radius: 4px;
@@ -125,7 +122,6 @@
 }
 
 .CreateRoutine-main .CreateRoutine-right-box .Create-btn {
-  height: 50px;
   width: 200px;
   margin-top: 40px;
   margin-right: 2px;

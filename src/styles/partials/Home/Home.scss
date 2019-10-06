@@ -5,7 +5,7 @@
 @import "../../modules/background/background.scss";
 
 .Home-container {
-  // background-image: url("../../../images/home-bg.jpg");
   @include bg-full;
+  background-image: url("../../../images/home-bg.jpg");
   background-color: $ol-1;
 }

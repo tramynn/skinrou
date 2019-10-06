@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAMA,AAAA,eAAe,CAAC;EOLd,mBAAmB,EAAE,MAAM;EAC3B,eAAe,EAAE,KAAK;EACtB,iBAAiB,EAAE,SAAS;EAC5B,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EPIb,gBAAgB,EEmCX,OAAO;CFlCb",
+    "mappings": "AAMA,AAAA,eAAe,CAAC;EOLd,mBAAmB,EAAE,MAAM;EAC3B,eAAe,EAAE,KAAK;EACtB,iBAAiB,EAAE,SAAS;EAC5B,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EPGb,gBAAgB,EAAE,kCAAkC;EACpD,gBAAgB,EEmCX,OAAO;CFlCb",
     "sources": [
         "Home.scss",
         "../../modules/flex/flex.scss",

@@ -30,7 +30,7 @@ class Header extends Component {
 
     return (
       <div>
-        <div className="Header-container">
+        <div className="Header-main-container">
           <img src={navLogo} width={200} alt="SKINROU" />
           <nav className="Nav-default-container">
             <ul className="Nav-default-links">
