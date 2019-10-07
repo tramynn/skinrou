@@ -143,65 +143,8 @@ class Header extends Component {
             X
           </button>
           <ul className="side-menu">
-            <Link
-              to="/home"
-              style={{ color: "inherit", textDecoration: "inherit" }}
-            >
-              <li className="Nav-collapsed-links">
-                <span>
-                  <FontAwesomeIcon icon={faHome} color="#FFFFFF" />
-                </span>
-                Home
-              </li>
-            </Link>
-            <Link
-              to="/createRoutine"
-              style={{ color: "inherit", textDecoration: "inherit" }}
-            >
-              <li className="Nav-collapsed-links">
-                <span>
-                  <FontAwesomeIcon icon={faPlusCircle} color="#FFFFFF" />
-                </span>
-                Routine
-              </li>
-            </Link>
-            <Link
-              to="/chat"
-              style={{ color: "inherit", textDecoration: "inherit" }}
-            >
-              <li className="Nav-collapsed-links">
-                <span>
-                  <FontAwesomeIcon icon={faCommentDots} color="#FFFFFF" />
-                </span>
-                Chat
-              </li>
-            </Link>
-            <Link
-              to="/settings"
-              style={{ color: "inherit", textDecoration: "inherit" }}
-            >
-              <li className="Nav-collapsed-links">
-                <span>
-                  <FontAwesomeIcon icon={faCog} color="#FFFFFF" />
-                </span>
-                <span className="Link">Settings</span>
-              </li>
-            </Link>
-            <Link
-              to="/"
-              style={{ color: "inherit", textDecoration: "inherit" }}
-            >
-              <li className="Nav-collapsed-links" onClick={this.handleLogout}>
-                <span>
-                  <FontAwesomeIcon icon={faSignOutAlt} color="#FFFFFF" />
-                </span>
-                Log Out
-              </li>
-            </Link>
-            <li>
-              <hr />
-            </li>
             <li className="Header-message">Hello, {firstName}</li>
+
             <Link
               to={`/profile/user/${userId}`}
               style={{ color: "inherit", textDecoration: "inherit" }}
@@ -212,6 +155,66 @@ class Header extends Component {
                 </span>
                 Profile
               </li>
+              <Link />
+
+              <Link
+                to="/home"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-collapsed-links">
+                  <span>
+                    <FontAwesomeIcon icon={faHome} color="#FFFFFF" />
+                  </span>
+                  Home
+                </li>
+              </Link>
+              <Link
+                to="/createRoutine"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-collapsed-links">
+                  <span>
+                    <FontAwesomeIcon icon={faPlusCircle} color="#FFFFFF" />
+                  </span>
+                  Routine
+                </li>
+              </Link>
+              <Link
+                to="/chat"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-collapsed-links">
+                  <span>
+                    <FontAwesomeIcon icon={faCommentDots} color="#FFFFFF" />
+                  </span>
+                  Chat
+                </li>
+              </Link>
+              <li>
+                <hr />
+              </li>
+              <Link
+                to="/settings"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-collapsed-links">
+                  <span>
+                    <FontAwesomeIcon icon={faCog} color="#FFFFFF" />
+                  </span>
+                  <span className="Link">Settings</span>
+                </li>
+              </Link>
+              <Link
+                to="/"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-collapsed-links" onClick={this.handleLogout}>
+                  <span>
+                    <FontAwesomeIcon icon={faSignOutAlt} color="#FFFFFF" />
+                  </span>
+                  Log Out
+                </li>
+              </Link>
             </Link>
           </ul>
         </nav>

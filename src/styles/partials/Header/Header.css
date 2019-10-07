@@ -126,13 +126,8 @@ nav.side-menu,
 }
 
 .side-menu-open {
-  -webkit-animation: open 0.6s forwards linear;
-          animation: open 0.6s forwards linear;
-}
-
-.side-menu-close {
-  -webkit-animation: close 0.6s forwards linear;
-          animation: close 0.6s forwards linear;
+  -webkit-animation: open 0.5s forwards linear;
+          animation: open 0.5s forwards linear;
 }
 
 @-webkit-keyframes open {
@@ -147,6 +142,11 @@ nav.side-menu,
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
   }
+}
+
+.side-menu-close {
+  -webkit-animation: close 0.5s forwards linear;
+          animation: close 0.5s forwards linear;
 }
 
 @-webkit-keyframes close {
@@ -169,6 +169,12 @@ nav.side-menu,
     -webkit-transform: translateX(100vw);
             transform: translateX(100vw);
   }
+}
+
+.Menu-close {
+  position: absolute;
+  top: 15vw;
+  left: 15vw;
 }
 
 @media (max-width: 1024px) {

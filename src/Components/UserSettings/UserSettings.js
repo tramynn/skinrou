@@ -60,7 +60,7 @@ class UserSettings extends Component {
         <img
           src={this.state.url}
           alt={`${this.props.username}'s profile pic`}
-          class="Settings-img"
+          className="Settings-img"
         />
         <main>
           <button onClick={() => widget.open()}>
