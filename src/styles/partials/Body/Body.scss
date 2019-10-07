@@ -4,7 +4,7 @@
 @import "../../modules/buttons/buttons.scss";
 @import "../../modules/background/background.scss";
 
-.Home-container {
+.Body-container {
   @include bg-full;
   @include flex-column;
   background-image: url("../../../images/home-bg.jpg");
@@ -12,22 +12,18 @@
   overflow-y: auto;
 }
 
-.Category-bg {
-  @include bg-full;
-  @include flex-base;
-  @include flex-column;
-  padding-top: 10vh;
-  height: 90vh;
+// Media Queries
+@media (max-width: 1024px) {
 }
 
-.Home-body {
-  @include flex-base;
-  @include flex-column;
+@media (max-width: 768px) {
+}
 
-  .Home-header {
-    @include h2-font;
-    padding: 50px;
-    font-style: italic;
-    margin-top: 20vh;
-  }
+@media (max-width: 425px) {
+}
+
+@media (max-width: 375px) {
+}
+
+@media (max-width: 320px) {
 }

@@ -1,0 +1,15 @@
+.Body-container {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: url("../../../images/home-bg.jpg");
+  background-attachment: scroll;
+  overflow-y: auto;
+}
+/*# sourceMappingURL=Body.css.map */

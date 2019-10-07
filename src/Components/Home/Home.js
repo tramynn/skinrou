@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "../Header/Header";
-import "../../styles/partials/Home/Home.scss";
+import "../../styles/partials/Body/Body.scss";
 import "../../styles/partials/RoutineNav/RoutineNav.scss";
 import "../../styles/partials/Routines/Routines.scss";
 import { connect } from "react-redux";
@@ -52,7 +52,7 @@ class UserLanding extends Component {
 
     const allRoutinesMapped = this.props.routines.map((routine, i) => {
       return (
-        <div key={i} className="All-routines">
+        <div key={i} className="Routines">
           <div>
             <h1>{routine.username}</h1>
             <h3>{routine.skin_type}</h3>
@@ -94,19 +94,23 @@ class UserLanding extends Component {
       <div>
         <ScrollToTopOnMount />
         <Header />
-        <div className="Home-container">
+        <div className="Body-container">
           <header className="Category-bg">
-            {categoriesMapped}
-            <FontAwesomeIcon
-              icon={faArrowDown}
-              color="#FFFFFF"
-              size="2x"
-              className="Arrow-down"
-            />
+            <div className="">{categoriesMapped}</div>
+            <div>
+              <FontAwesomeIcon
+                icon={faArrowDown}
+                color="#024a81"
+                size="2x"
+                className="Arrow-down"
+              />
+            </div>
           </header>
-          <div className="Home-body">
-            <header className="Home-header">All routines.</header>
-            {allRoutinesMapped}
+          <div className="Routines-wrapper">
+            {/* <header className="Routines-header">All routines.</header> */}
+            <main className="Routines-container">
+              <div className="Routines-body">{allRoutinesMapped}</div>
+            </main>
           </div>
         </div>
       </div>

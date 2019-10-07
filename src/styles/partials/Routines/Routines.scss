@@ -4,9 +4,49 @@
 @import "../../modules/buttons/buttons.scss";
 @import "../../modules/background/background.scss";
 
-.All-routines {
+.Routines {
   background-color: $ol-1;
   margin: 20px;
   width: 50vw;
-  height: 400px;
+  height: px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  box-shadow: 0px 2px 6px 0px hsla(0, 0%, 0%, 0.4);
+}
+
+.Routines-wrapper {
+  @include bg-full;
+  @include flex-base;
+  @include flex-column;
+
+  .Routines-header {
+    @include h2-font;
+    padding: 20px;
+    font-style: italic;
+  }
+
+  .Routines-container {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+
+    .Routines-body {
+    }
+  }
+}
+
+// Media Queries
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 425px) {
+}
+
+@media (max-width: 375px) {
+}
+
+@media (max-width: 320px) {
 }
