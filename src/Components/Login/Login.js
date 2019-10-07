@@ -29,7 +29,6 @@ class Login extends Component {
     if (this.props.userId) {
       return <Redirect to="/home" />;
     }
-    console.log(this.props.userId);
     return (
       <div className="Login-Register-container">
         <div className="Left-box">

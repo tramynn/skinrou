@@ -25,6 +25,8 @@
   color: white;
   background: -webkit-gradient(linear, left top, right top, from(#21669b), to(#587e60));
   background: linear-gradient(90deg, #21669b 0%, #587e60 100%);
+  -webkit-box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.4);
   height: 8vh;
   width: 100vw;
   position: fixed;
@@ -49,7 +51,7 @@
 }
 
 .Nav-default-container span {
-  margin-right: 5px;
+  margin: 5px;
 }
 
 .Nav-default-container .Header-message {
@@ -77,6 +79,10 @@
   -webkit-transition: 0.5s;
   transition: 0.5s;
   cursor: pointer;
+}
+
+.Nav-default-container .Header-profile {
+  text-transform: lowercase;
 }
 
 .Menu-bar {
@@ -115,8 +121,6 @@ nav.side-menu,
   height: 100vh;
   background: -webkit-gradient(linear, left top, right top, from(#21669b), to(#587e60));
   background: linear-gradient(90deg, #21669b 0%, #587e60 100%);
-  -webkit-box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.4);
   position: fixed;
   top: 0;
   left: 0;

@@ -42,11 +42,10 @@ class Header extends Component {
     } else if (this.state.menuOpenStatus === "side-menu-open") {
       this.setState({ menuOpenStatus: "side-menu-close" });
     }
-    console.log("hit");
   };
 
   render() {
-    const { firstName, userId } = this.props;
+    const { userId, username, firstName, lastName } = this.props;
 
     return (
       <div>
@@ -54,6 +53,109 @@ class Header extends Component {
           <img src={navLogo} width={200} alt="SKINROU" />
           <nav className="Nav-default-container">
             <ul className="Nav-default-links">
+              <Link
+                to="/home"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-links">
+                  <span>
+                    <FontAwesomeIcon icon={faHome} color="#FFFFFF" />
+                  </span>
+                </li>
+              </Link>
+              <Link
+                to="/createRoutine"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-links">
+                  <span>
+                    <FontAwesomeIcon icon={faPlusCircle} color="#FFFFFF" />
+                  </span>
+                </li>
+              </Link>
+              <Link
+                to="/chat"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-links">
+                  <span>
+                    <FontAwesomeIcon icon={faCommentDots} color="#FFFFFF" />
+                  </span>
+                </li>
+              </Link>
+              <li>
+                <span>
+                  <FontAwesomeIcon icon={faGripLinesVertical} color="#FFFFFF" />
+                </span>
+              </li>
+              <li className="Header-message">
+                <span>Hello, {firstName}</span>
+              </li>
+              <Link
+                to={`/profile/user/${userId}`}
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-links">
+                  <span>
+                    <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />
+                  </span>
+                  <div className="Header-profile">{username}</div>
+                </li>
+              </Link>
+              <Link
+                to="/settings"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-links">
+                  <span>
+                    <FontAwesomeIcon icon={faCog} color="#FFFFFF" />
+                  </span>
+                </li>
+              </Link>
+              <Link
+                to="/"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                <li className="Nav-links" onClick={this.handleLogout}>
+                  <span>
+                    <FontAwesomeIcon icon={faSignOutAlt} color="#FFFFFF" />
+                  </span>
+                </li>
+              </Link>
+            </ul>
+          </nav>
+          <span
+            className="Menu-bar hidden-by-default"
+            onClick={this.toggleMenu}
+          >
+            <FontAwesomeIcon
+              icon={faBars}
+              color="#FFFFFF"
+              size="2x"
+              className="Hamburger"
+            />
+          </span>
+        </div>
+        <nav className={this.state.menuOpenStatus}>
+          <button className="Menu-close" onClick={this.toggleMenu}>
+            X
+          </button>
+          <ul className="side-menu">
+            <Link
+              to={`/profile/user/${userId}`}
+              style={{ color: "inherit", textDecoration: "inherit" }}
+            >
+              <div className="Header-profile-side">
+                {/* <div className="Header-avatar">IMG</div> */}
+                <div className="Header-username">
+                  <span>
+                    <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />
+                  </span>
+                  {username}
+                </div>
+              </div>
+            </Link>
+            <span className="Nav-collapsed-links">
               <Link
                 to="/home"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -87,6 +189,9 @@ class Header extends Component {
                   Chat
                 </li>
               </Link>
+              <li>
+                <hr />
+              </li>
               <Link
                 to="/settings"
                 style={{ color: "inherit", textDecoration: "inherit" }}
@@ -109,113 +214,7 @@ class Header extends Component {
                   Log Out
                 </li>
               </Link>
-              <li>
-                <FontAwesomeIcon icon={faGripLinesVertical} color="#FFFFFF" />
-              </li>
-              <li className="Header-message">Hello, {firstName}</li>
-              <Link
-                to={`/profile/user/${userId}`}
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <li className="Nav-links">
-                  <span>
-                    <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />
-                  </span>
-                  Profile
-                </li>
-              </Link>
-            </ul>
-          </nav>
-          <span
-            className="Menu-bar hidden-by-default"
-            onClick={this.toggleMenu}
-          >
-            <FontAwesomeIcon
-              icon={faBars}
-              color="#FFFFFF"
-              size="2x"
-              className="Hamburger"
-            />
-          </span>
-        </div>
-        <nav className={this.state.menuOpenStatus}>
-          <button className="Menu-close" onClick={this.toggleMenu}>
-            X
-          </button>
-          <ul className="side-menu">
-            <li className="Header-message">Hello, {firstName}</li>
-
-            <Link
-              to={`/profile/user/${userId}`}
-              style={{ color: "inherit", textDecoration: "inherit" }}
-            >
-              <li className="Nav-collapsed-links">
-                <span>
-                  <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />
-                </span>
-                Profile
-              </li>
-              <Link />
-
-              <Link
-                to="/home"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <li className="Nav-collapsed-links">
-                  <span>
-                    <FontAwesomeIcon icon={faHome} color="#FFFFFF" />
-                  </span>
-                  Home
-                </li>
-              </Link>
-              <Link
-                to="/createRoutine"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <li className="Nav-collapsed-links">
-                  <span>
-                    <FontAwesomeIcon icon={faPlusCircle} color="#FFFFFF" />
-                  </span>
-                  Routine
-                </li>
-              </Link>
-              <Link
-                to="/chat"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <li className="Nav-collapsed-links">
-                  <span>
-                    <FontAwesomeIcon icon={faCommentDots} color="#FFFFFF" />
-                  </span>
-                  Chat
-                </li>
-              </Link>
-              <li>
-                <hr />
-              </li>
-              <Link
-                to="/settings"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <li className="Nav-collapsed-links">
-                  <span>
-                    <FontAwesomeIcon icon={faCog} color="#FFFFFF" />
-                  </span>
-                  <span className="Link">Settings</span>
-                </li>
-              </Link>
-              <Link
-                to="/"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <li className="Nav-collapsed-links" onClick={this.handleLogout}>
-                  <span>
-                    <FontAwesomeIcon icon={faSignOutAlt} color="#FFFFFF" />
-                  </span>
-                  Log Out
-                </li>
-              </Link>
-            </Link>
+            </span>
           </ul>
         </nav>
       </div>
@@ -226,7 +225,9 @@ class Header extends Component {
 const mapStateToProps = reduxState => {
   return {
     userId: reduxState.userReducer.userId,
-    firstName: reduxState.userReducer.firstName
+    username: reduxState.userReducer.username,
+    firstName: reduxState.userReducer.firstName,
+    lastName: reduxState.userReducer.lastName
   };
 };
 

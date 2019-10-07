@@ -5,3 +5,9 @@
 @import "../../modules/background/background.scss";
 @import "../../modules/images/images.scss";
 
+.UserSettings-container {
+  @include bg-full;
+  @include flex-base;
+  @include flex-column;
+  background-color: $ol-1;
+}

@@ -5,6 +5,7 @@ import {
   getProfPic,
   addProfPic
 } from "../../redux/reducers/userReducer";
+import Header from "../Header/Header";
 import "../../styles/partials/UserSettings/UserSettings.scss";
 
 class UserSettings extends Component {
@@ -17,15 +18,12 @@ class UserSettings extends Component {
 
   checkUploadResult = (error, resultEvent) => {
     if (resultEvent.event === "success") {
-      console.log("Picture uploaded successfully");
-      console.log(resultEvent.info.url);
       this.setState({ url: resultEvent.info.url });
     }
   };
 
   componentDidMount() {
     const { url } = this.props;
-    console.log(url);
     this.setState({
       url
     });
@@ -34,8 +32,6 @@ class UserSettings extends Component {
   handleAdd = () => {
     const { userId } = this.props;
     const { url } = this.state;
-    console.log(typeof url);
-    console.log(userId);
     const newPic = { userId, url };
     this.props.addProfPic(newPic);
   };
@@ -54,22 +50,23 @@ class UserSettings extends Component {
 
     return (
       <div>
-        <header>
+        <Header />
+        <div className="UserSettings-container">
           <h1>My Settings</h1>
-        </header>
-        <img
-          src={this.state.url}
-          alt={`${this.props.username}'s profile pic`}
-          className="Settings-img"
-        />
-        <main>
-          <button onClick={() => widget.open()}>
-            <h1>Upload photo</h1>
-          </button>
-          <button onClick={() => this.handleAdd()}>
-            <h1>Set Picture</h1>
-          </button>
-        </main>
+          <img
+            src={this.state.url}
+            alt={`${this.props.username}'s profile pic`}
+            className="Settings-img"
+          />
+          <main>
+            <button onClick={() => widget.open()}>
+              <h1>Upload photo</h1>
+            </button>
+            <button onClick={() => this.handleAdd()}>
+              <h1>Set Picture</h1>
+            </button>
+          </main>
+        </div>
       </div>
     );
   }
