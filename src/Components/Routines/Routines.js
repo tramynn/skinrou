@@ -30,90 +30,99 @@ class Routines extends Component {
                     <h1 className="Category-nav-links">15+</h1>
                   </Link>
                 </div>
-                <div />
-
-                <div className="middle-row">
-                  <div className="Category-nav-container">
-                    <Link
-                      to="/routines/age/20"
-                      style={{ color: "inherit", textDecoration: "inherit" }}
-                    >
-                      <h1 className="Category-nav-links">20s</h1>
-                    </Link>
-                  </div>
-                  <div className="Category-nav-container">
-                    <Link
-                      to="/routines/age/30"
-                      style={{ color: "inherit", textDecoration: "inherit" }}
-                    >
-                      <h1 className="Category-nav-links">30s</h1>
-                    </Link>
-                  </div>
+              </div>
+              <div className="middle-row">
+                <div className="Category-nav-container">
+                  <Link
+                    to="/routines/age/20"
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                  >
+                    <h1 className="Category-nav-links">20s</h1>
+                  </Link>
                 </div>
+                <div className="Category-nav-container">
+                  <Link
+                    to="/routines/age/30"
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                  >
+                    <h1 className="Category-nav-links">30s</h1>
+                  </Link>
+                </div>
+              </div>
 
-                <div className="bottom-row">
-                  <div className="Category-nav-container">
-                    <Link
-                      to="/routines/age/40"
-                      style={{ color: "inherit", textDecoration: "inherit" }}
-                    >
-                      <h1 className="Category-nav-links">40s</h1>
-                    </Link>
-                  </div>
-                  <div className="Category-nav-container">
-                    <Link
-                      to="/routines/age/50"
-                      style={{ color: "inherit", textDecoration: "inherit" }}
-                    >
-                      <h1 className="Category-nav-links">50+</h1>
-                    </Link>
-                  </div>
+              <div className="bottom-row">
+                <div className="Category-nav-container">
+                  <Link
+                    to="/routines/age/40"
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                  >
+                    <h1 className="Category-nav-links">40s</h1>
+                  </Link>
+                </div>
+                <div className="Category-nav-container">
+                  <Link
+                    to="/routines/age/50"
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                  >
+                    <h1 className="Category-nav-links">50+</h1>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
         ) : null}
         {this.props.match.params.categoryId === "1" ? (
-          <div>
-            <div className="Category-nav-container">
-              <Link
-                to="/routines/skintype/combination"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <h1 className="Category-nav-links">Combination</h1>
-              </Link>
-            </div>
-            <div className="Category-nav-container">
-              <Link
-                to="/routines/skintype/dry"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <h1 className="Category-nav-links">Dry</h1>
-              </Link>
-            </div>
-            <div className="Category-nav-container">
-              <Link
-                to="/routines/skintype/oily"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <h1 className="Category-nav-links">Oily</h1>
-              </Link>
-            </div>
-            <div className="Category-nav-container">
-              <Link
-                to="/routines/skintype/sensitive"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <h1 className="Category-nav-links">Sensitive</h1>
-              </Link>
-            </div>
-            <div className="Category-nav-container">
-              <Link
-                to="/routines/skintype/normal"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <h1 className="Category-nav-links">Normal</h1>
-              </Link>
+          <div className="Body-container">
+            <div className="Category-bg-routines">
+              <div className="top-row">
+                <div>
+                  <h1>Routines by Skin Type</h1>
+                </div>
+                <div className="Category-nav-container">
+                  <Link
+                    to="/routines/skintype/combination"
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                  >
+                    <h1 className="Category-nav-links">Combination</h1>
+                  </Link>
+                </div>
+              </div>
+              <div className="middle-row">
+                <div className="Category-nav-container">
+                  <Link
+                    to="/routines/skintype/dry"
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                  >
+                    <h1 className="Category-nav-links">Dry</h1>
+                  </Link>
+                </div>
+                <div className="Category-nav-container">
+                  <Link
+                    to="/routines/skintype/oily"
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                  >
+                    <h1 className="Category-nav-links">Oily</h1>
+                  </Link>
+                </div>
+              </div>
+              <div className="bottom-row">
+                <div className="Category-nav-container">
+                  <Link
+                    to="/routines/skintype/sensitive"
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                  >
+                    <h1 className="Category-nav-links">Sensitive</h1>
+                  </Link>
+                </div>
+                <div className="Category-nav-container">
+                  <Link
+                    to="/routines/skintype/normal"
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                  >
+                    <h1 className="Category-nav-links">Normal</h1>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         ) : null}
