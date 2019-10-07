@@ -1,0 +1,12 @@
+@import "../../modules/flex/flex.scss";
+@import "../../modules/colors/colors.scss";
+@import "../../modules/fonts/fonts.scss";
+@import "../../modules/buttons/buttons.scss";
+@import "../../modules/background/background.scss";
+
+.All-routines {
+  background-color: $ol-1;
+  margin: 20px;
+  width: 50vw;
+  height: 400px;
+}

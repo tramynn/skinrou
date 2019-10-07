@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Header from "../Header/Header";
 import "../../styles/partials/Home/Home.scss";
+import "../../styles/partials/RoutineNav/RoutineNav.scss";
+import "../../styles/partials/Routines/Routines.scss";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import {
@@ -13,7 +15,8 @@ import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowAltCircleUp,
-  faArrowAltCircleDown
+  faArrowAltCircleDown,
+  faArrowDown
 } from "@fortawesome/free-solid-svg-icons";
 
 class UserLanding extends Component {
@@ -35,16 +38,14 @@ class UserLanding extends Component {
   render() {
     const categoriesMapped = this.props.categories.map((category, i) => {
       return (
-        <div key={i}>
-          <div className="Category-nav">
-            <Link
-              className="Category-name"
-              style={{ textDecoration: "none" }}
-              to={`/routines/${category.category_id}`}
-            >
-              <h1>{category.category_name}</h1>
-            </Link>
-          </div>
+        <div key={i} className="Category-nav-container">
+          <Link
+            className="Category-nav-links"
+            style={{ textDecoration: "none" }}
+            to={`/routines/${category.category_id}`}
+          >
+            <h1>{category.category_name}</h1>
+          </Link>
         </div>
       );
     });
@@ -90,15 +91,23 @@ class UserLanding extends Component {
     });
 
     return (
-      <div className="Home-container">
+      <div>
         <ScrollToTopOnMount />
-        <nav>
-          <Header />
-        </nav>
-        <header className="Category-header">{categoriesMapped}</header>
-        <div className="Home-body">
-          <header>All routines.</header>
-          {allRoutinesMapped}
+        <Header />
+        <div className="Home-container">
+          <header className="Category-bg">
+            {categoriesMapped}
+            <FontAwesomeIcon
+              icon={faArrowDown}
+              color="#FFFFFF"
+              size="2x"
+              className="Arrow-down"
+            />
+          </header>
+          <div className="Home-body">
+            <header className="Home-header">All routines.</header>
+            {allRoutinesMapped}
+          </div>
         </div>
       </div>
     );

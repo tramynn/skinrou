@@ -4,6 +4,21 @@
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: url("../../../images/home-bg.jpg");
+  background-attachment: scroll;
+  overflow-y: auto;
+}
+
+.Category-bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,61 +32,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: url("../../../images/home-bg.jpg");
-  background-attachment: scroll;
-  overflow-y: auto;
-}
-
-.Category-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 15vh;
-  width: 50vw;
-}
-
-.Category-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 50px;
-  width: 340px;
-  margin: 10px;
-}
-
-.Category-nav .Category-name {
-  font-family: Paytone One, sans-serif;
-  font-size: 70px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: white;
-  background-color: gray;
-  height: 60px;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.Category-nav .Category-name:hover {
-  background-color: blue;
+  padding-top: 10vh;
+  height: 90vh;
 }
 
 .Home-body {
@@ -88,13 +50,15 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: gray;
 }
 
-.Home-body .All-routines {
-  background-color: #e7eff6;
-  margin: 20px;
-  width: 50vw;
-  height: 400px;
+.Home-body .Home-header {
+  font-family: Raleway, sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  padding: 50px;
+  font-style: italic;
+  margin-top: 20vh;
 }
 /*# sourceMappingURL=Home.css.map */

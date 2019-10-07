@@ -1,8 +1,8 @@
 {
     "version": 3,
-    "mappings": "AAMA,AAAA,sBAAsB,CAAC;ECiBrB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,UAAU;EAC3B,WAAW,EAAE,MAAM;EAlBnB,cAAc,EAAE,MAAM;CDEvB",
+    "mappings": "AAMA,AAAA,aAAa,CAAC;EACZ,gBAAgB,EEqCX,OAAO;EFpCZ,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;CACd",
     "sources": [
-        "UserProfile.scss",
+        "Routines.scss",
         "../../modules/flex/flex.scss",
         "../../modules/colors/colors.scss",
         "../../modules/fonts/fonts.scss",
@@ -12,5 +12,5 @@
         "../../modules/background/background.scss"
     ],
     "names": [],
-    "file": "UserProfile.css"
+    "file": "Routines.css"
 }
