@@ -5,13 +5,14 @@
 @import "../../modules/background/background.scss";
 
 .CreateRoutine-container {
-  @include bg-full-fixed;
+  @include bg-full;
   background-image: url("../../../images/create-routine.jpg");
+  overflow-y: auto;
 }
 
 .CreateRoutine-main {
   @include flex-start;
-  overflow-y: auto;
+  // overflow-y: auto;
 
   .CreateRoutine-left-box {
     width: 33vw;

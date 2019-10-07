@@ -5,10 +5,11 @@
 @import "../../modules/background/background.scss";
 
 .Home-container {
-  @include bg-full-fixed;
+  @include bg-full;
   @include flex-base;
   @include flex-column;
   background-image: url("../../../images/home-bg.jpg");
+  background-attachment: scroll;
   overflow-y: auto;
 }
 

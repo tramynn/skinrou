@@ -5,7 +5,7 @@
 @import "../../modules/buttons/buttons.scss";
 
 .Login-Register-container {
-  @include bg-full-fixed;
+  @include bg-full;
   @include flex-base;
   width: 100vw;
   height: 100vh;

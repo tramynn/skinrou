@@ -15,9 +15,9 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "center",
-    marginTop: "15px",
     fontFamily: "Raleway, sans-serif",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    marginTop: "8.5vh"
   },
   chatboxLeft: {
     width: "33%",

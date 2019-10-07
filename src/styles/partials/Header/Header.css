@@ -25,9 +25,7 @@
   color: white;
   background: -webkit-gradient(linear, left top, right top, from(#21669b), to(#587e60));
   background: linear-gradient(90deg, #21669b 0%, #587e60 100%);
-  -webkit-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.4);
-          box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.4);
-  height: 7vh;
+  height: 8vh;
   width: 100vw;
   position: fixed;
   top: 0;
@@ -36,7 +34,7 @@
 }
 
 .Header-main-container img {
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .Nav-default-container .Nav-default-links {
@@ -60,8 +58,7 @@
 }
 
 .Nav-default-container .Nav-links {
-  height: 7vh;
-  max-height: 7vh;
+  height: 8vh;
   padding-left: 12px;
   padding-right: 12px;
   display: -webkit-box;
@@ -82,15 +79,9 @@
   cursor: pointer;
 }
 
-.Nav-collapsed-container {
-  width: 50vw;
-  background-color: gray;
-  margin-top: 90px;
-}
-
 .Menu-bar {
   text-align: center;
-  height: 7vh;
+  height: 8vh;
   padding-left: 2px;
   padding-right: 2px;
   width: 60px;
@@ -105,6 +96,79 @@
   -webkit-transition: 0.5s;
   transition: 0.5s;
   cursor: pointer;
+}
+
+nav.side-menu,
+.side-menu-open,
+.side-menu-close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, right top, from(#21669b), to(#587e60));
+  background: linear-gradient(90deg, #21669b 0%, #587e60 100%);
+  -webkit-box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateX(100vw);
+          transform: translateX(100vw);
+  z-index: 2;
+}
+
+.side-menu-open {
+  -webkit-animation: open 0.6s forwards linear;
+          animation: open 0.6s forwards linear;
+}
+
+.side-menu-close {
+  -webkit-animation: close 0.6s forwards linear;
+          animation: close 0.6s forwards linear;
+}
+
+@-webkit-keyframes open {
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes open {
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes close {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+}
+
+@keyframes close {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
 }
 
 @media (max-width: 1024px) {

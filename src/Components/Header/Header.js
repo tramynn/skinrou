@@ -35,13 +35,14 @@ class Header extends Component {
 
   toggleMenu = () => {
     if (
-      this.state.menuOpenStatus === "side-menu-close" ||
-      this.state.menuOpenStatus === "side-menu"
+      this.state.menuOpenStatus === "side-menu" ||
+      this.state.menuOpenStatus === "side-menu-close"
     ) {
       this.setState({ menuOpenStatus: "side-menu-open" });
-    } else if (this.state.menuOpenStatus === "side-menu-close") {
+    } else if (this.state.menuOpenStatus === "side-menu-open") {
       this.setState({ menuOpenStatus: "side-menu-close" });
     }
+    console.log("hit");
   };
 
   render() {
@@ -125,7 +126,10 @@ class Header extends Component {
               </Link>
             </ul>
           </nav>
-          <span className="Menu-bar hidden-by-default">
+          <span
+            className="Menu-bar hidden-by-default"
+            onClick={this.toggleMenu}
+          >
             <FontAwesomeIcon
               icon={faBars}
               color="#FFFFFF"
@@ -134,8 +138,11 @@ class Header extends Component {
             />
           </span>
         </div>
-        <nav className="Nav-collapsed-container hidden-by-default">
-          <ul className="Nav-collapsed-links">
+        <nav className={this.state.menuOpenStatus}>
+          <button className="Menu-close" onClick={this.toggleMenu}>
+            X
+          </button>
+          <ul className="side-menu">
             <Link
               to="/home"
               style={{ color: "inherit", textDecoration: "inherit" }}
