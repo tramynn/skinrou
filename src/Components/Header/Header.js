@@ -10,7 +10,8 @@ import {
   faCog,
   faGripLinesVertical,
   faCommentDots,
-  faBars
+  faBars,
+  faTimes
 } from "@fortawesome/free-solid-svg-icons";
 import { getSession, logoutUser } from "../../redux/reducers/userReducer";
 import { connect } from "react-redux";
@@ -51,6 +52,7 @@ class Header extends Component {
       <div>
         <div className="Header-main-container">
           <img src={navLogo} width={200} alt="SKINROU" />
+          {/* MAIN MENU */}
           <nav className="Nav-default-container">
             <ul className="Nav-default-links">
               <Link
@@ -136,17 +138,22 @@ class Header extends Component {
             />
           </span>
         </div>
+        {/* SIDE MENU */}
         <nav className={this.state.menuOpenStatus}>
-          <button className="Menu-close" onClick={this.toggleMenu}>
-            X
-          </button>
+          <div onClick={this.toggleMenu}>
+            <FontAwesomeIcon
+              icon={faTimes}
+              color="#FFFFFF"
+              size="lg"
+              className="Menu-close"
+            />
+          </div>
           <ul className="side-menu">
             <Link
               to={`/profile/user/${userId}`}
               style={{ color: "inherit", textDecoration: "inherit" }}
             >
               <div className="Header-profile-side">
-                {/* <div className="Header-avatar">IMG</div> */}
                 <div className="Header-username">
                   <span>
                     <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />

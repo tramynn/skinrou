@@ -76,8 +76,8 @@
 
 .Nav-default-container .Nav-links:hover {
   background-color: #5f926a;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
   cursor: pointer;
 }
 
@@ -99,8 +99,8 @@
 
 .Menu-bar:hover {
   background-color: #5f926a;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
   cursor: pointer;
 }
 
@@ -130,8 +130,8 @@ nav.side-menu,
 }
 
 .side-menu-open {
-  -webkit-animation: open 0.5s forwards linear;
-          animation: open 0.5s forwards linear;
+  -webkit-animation: open 0.6s forwards linear;
+          animation: open 0.6s forwards linear;
 }
 
 @-webkit-keyframes open {
@@ -149,8 +149,8 @@ nav.side-menu,
 }
 
 .side-menu-close {
-  -webkit-animation: close 0.5s forwards linear;
-          animation: close 0.5s forwards linear;
+  -webkit-animation: close 0.6s forwards linear;
+          animation: close 0.6s forwards linear;
 }
 
 @-webkit-keyframes close {
@@ -176,9 +176,20 @@ nav.side-menu,
 }
 
 .Menu-close {
+  -webkit-transition: -webkit-transform 0.6s;
+  transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  transition: transform 0.6s, -webkit-transform 0.6s;
   position: absolute;
   top: 15vw;
   left: 15vw;
+}
+
+.Menu-close:hover {
+  color: #77a37a;
+  -webkit-transform: scale(1.75);
+          transform: scale(1.75);
+  cursor: pointer;
 }
 
 @media (max-width: 1024px) {
