@@ -24,7 +24,7 @@
 .GuestLanding-Buttons {
   width: 15vw;
   margin-top: 8vh;
-  @include flex-row;
+  @include flex-row-space-a;
   @include flex-column;
 }
 

@@ -52,7 +52,6 @@ class Header extends Component {
       <div>
         <div className="Header-main-container">
           <img src={navLogo} width={200} alt="SKINROU" />
-          {/* MAIN MENU */}
           <nav className="Nav-default-container">
             <ul className="Nav-default-links">
               <Link
@@ -138,7 +137,9 @@ class Header extends Component {
             />
           </span>
         </div>
+        {/* */}
         {/* SIDE MENU */}
+        {/*  */}
         <nav className={this.state.menuOpenStatus}>
           <div onClick={this.toggleMenu}>
             <FontAwesomeIcon
@@ -153,75 +154,74 @@ class Header extends Component {
               to={`/profile/user/${userId}`}
               style={{ color: "inherit", textDecoration: "inherit" }}
             >
-              <div className="Header-profile-side">
-                <div className="Header-username">
-                  <span>
-                    <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />
-                  </span>
-                  {username}
-                </div>
-              </div>
-            </Link>
-            <span className="Nav-collapsed-links">
-              <Link
-                to="/home"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <li className="Nav-links">
-                  <span>
-                    <FontAwesomeIcon icon={faHome} color="#FFFFFF" />
-                  </span>
-                  Home
-                </li>
-              </Link>
-              <Link
-                to="/createRoutine"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <li className="Nav-links">
-                  <span>
-                    <FontAwesomeIcon icon={faPlusCircle} color="#FFFFFF" />
-                  </span>
-                  Routine
-                </li>
-              </Link>
-              <Link
-                to="/chat"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <li className="Nav-links">
-                  <span>
-                    <FontAwesomeIcon icon={faCommentDots} color="#FFFFFF" />
-                  </span>
-                  Chat
-                </li>
-              </Link>
-              <li>
-                <hr />
+              <li className="Nav-side-links">
+                <span className="Side-icons">
+                  <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />
+                </span>
+                <div className="Side-username">{username}</div>
               </li>
-              <Link
-                to="/settings"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <li className="Nav-links">
-                  <span>
-                    <FontAwesomeIcon icon={faCog} color="#FFFFFF" />
-                  </span>
-                  <span className="Link">Settings</span>
-                </li>
-              </Link>
-              <Link
-                to="/"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <li className="Nav-links" onClick={this.handleLogout}>
-                  <span>
-                    <FontAwesomeIcon icon={faSignOutAlt} color="#FFFFFF" />
-                  </span>
-                  Log Out
-                </li>
-              </Link>
-            </span>
+            </Link>
+            <div className="separator-container">
+              <div className="separator"></div>
+            </div>
+            <Link
+              to="/home"
+              style={{ color: "inherit", textDecoration: "inherit" }}
+            >
+              <li className="Nav-side-links">
+                <span className="Side-icons">
+                  <FontAwesomeIcon icon={faHome} color="#FFFFFF" />
+                </span>
+                <div className="Side-links">Home</div>
+              </li>
+            </Link>
+            <Link
+              to="/createRoutine"
+              style={{ color: "inherit", textDecoration: "inherit" }}
+            >
+              <li className="Nav-side-links">
+                <span className="Side-icons">
+                  <FontAwesomeIcon icon={faPlusCircle} color="#FFFFFF" />
+                </span>
+                <div className="Side-links">Routine</div>
+              </li>
+            </Link>
+            <Link
+              to="/chat"
+              style={{ color: "inherit", textDecoration: "inherit" }}
+            >
+              <li className="Nav-side-links">
+                <span className="Side-icons">
+                  <FontAwesomeIcon icon={faCommentDots} color="#FFFFFF" />
+                </span>
+                <div className="Side-links">Chat</div>
+              </li>
+            </Link>
+            <div className="separator-container">
+              <div className="separator"></div>
+            </div>
+            <Link
+              to="/settings"
+              style={{ color: "inherit", textDecoration: "inherit" }}
+            >
+              <li className="Nav-side-links">
+                <span className="Side-icons">
+                  <FontAwesomeIcon icon={faCog} color="#FFFFFF" />
+                </span>
+                <div className="Side-links">Settings</div>
+              </li>
+            </Link>
+            <Link
+              to="/"
+              style={{ color: "inherit", textDecoration: "inherit" }}
+            >
+              <li className="Nav-side-links" onClick={this.handleLogout}>
+                <span className="Side-icons">
+                  <FontAwesomeIcon icon={faSignOutAlt} color="#FFFFFF" />
+                </span>
+                <div className="Side-links">Log Out</div>
+              </li>
+            </Link>
           </ul>
         </nav>
       </div>

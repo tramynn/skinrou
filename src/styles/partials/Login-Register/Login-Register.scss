@@ -7,8 +7,6 @@
 .Login-Register-container {
   @include bg-full;
   @include flex-base;
-  width: 100vw;
-  height: 100vh;
   text-align: center;
   background-image: url("../../../images//login-register.jpg");
 
@@ -52,11 +50,11 @@
       margin: 5px;
     }
     .label {
-      font-family: $body-fontfamily;
+      @include p-font;
     }
     .login-btn-style {
-      margin-top: 15px;
       @extend %btn-gradient;
+      margin-top: 15px;
     }
 
     .register {
@@ -65,10 +63,10 @@
       right: 130px;
     }
     .register-btn {
-      width: 150px;
       margin-top: 15px;
+      width: 150px;
     }
   }
 }
 
-// MEDIA QUERIES
+// Media Queries

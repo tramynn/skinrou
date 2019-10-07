@@ -60,9 +60,6 @@
 }
 
 .Nav-default-container .Nav-links {
-  height: 8vh;
-  padding-left: 12px;
-  padding-right: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -72,6 +69,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 8vh;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .Nav-default-container .Nav-links:hover {
@@ -129,6 +129,82 @@ nav.side-menu,
   z-index: 2;
 }
 
+.separator-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+}
+
+.separator-container .separator {
+  border-top: 2px solid white;
+  border-radius: 2px;
+  opacity: 0.3;
+  width: 10%;
+  text-align: center;
+}
+
+.Nav-side-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Raleway, sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  color: white;
+}
+
+.Nav-side-links .Side-username,
+.Nav-side-links .Side-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+  -webkit-transition: -webkit-transform 0.6s;
+  transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  transition: transform 0.6s, -webkit-transform 0.6s;
+}
+
+.Nav-side-links .Side-username {
+  text-transform: none;
+}
+
+.Nav-side-links .Side-links {
+  text-transform: uppercase;
+}
+
+.Nav-side-links .Side-icons {
+  padding: 10px;
+}
+
+.Side-links:hover,
+.Side-username:hover {
+  color: #77a37a;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  cursor: pointer;
+}
+
 .side-menu-open {
   -webkit-animation: open 0.6s forwards linear;
           animation: open 0.6s forwards linear;
@@ -181,8 +257,8 @@ nav.side-menu,
   transition: transform 0.6s;
   transition: transform 0.6s, -webkit-transform 0.6s;
   position: absolute;
-  top: 15vw;
-  left: 15vw;
+  top: 8vh;
+  left: 8vh;
 }
 
 .Menu-close:hover {

@@ -11,6 +11,8 @@ $body-fontfamily: Montserrat, sans-serif;
 @mixin h2-font {
   font-family: Raleway, sans-serif;
   font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 0.03em;
 }
 
 @mixin nav-font {
