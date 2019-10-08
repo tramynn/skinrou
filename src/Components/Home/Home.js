@@ -60,7 +60,7 @@ class UserLanding extends Component {
               <table className="Routine-user">
                 <tr>
                   <td className="User-avatar">
-                    <FontAwesomeIcon icon={faUserCircle} color="#9e9e9e" />
+                    <FontAwesomeIcon icon={faUserCircle} color="#e7eff6" />
                   </td>
                   <td className="Routine-username">{routine.username}</td>
                 </tr>

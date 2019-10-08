@@ -26,15 +26,17 @@
   font-size: 2em;
   font-weight: bold;
   font-style: italic;
+  color: white;
+  text-shadow: 3px 3px 0px #024a81;
   letter-spacing: 0.03em;
   position: relative;
-  top: 40px;
+  top: 60px;
 }
 
 .Category-bg .Arrow-down,
 .Category-bg-routines .Arrow-down {
   position: relative;
-  top: 80px;
+  top: 90px;
   opacity: 0.8;
 }
 
@@ -63,8 +65,9 @@
       -ms-flex-align: center;
           align-items: center;
   font-family: Paytone One, sans-serif;
-  text-shadow: 3px 3px 0px #5f926a;
+  text-shadow: 3px 3px 0px #77a37a;
   font-size: 70px;
+  line-height: 1.1618em;
   color: white;
   font-style: italic;
   text-shadow: 3px 3px 0px #4b86b4;
@@ -72,7 +75,6 @@
   height: 25vh;
   font-size: 50px;
   margin: 10px;
-  line-height: 1.1618em;
 }
 
 .Category-nav-container .Category-nav-links {
@@ -86,8 +88,9 @@
       -ms-flex-align: center;
           align-items: center;
   font-family: Paytone One, sans-serif;
-  text-shadow: 3px 3px 0px #5f926a;
+  text-shadow: 3px 3px 0px #77a37a;
   font-size: 70px;
+  line-height: 1.1618em;
   background-color: #9fbea1;
   border-radius: 6px;
   text-shadow: 3px 3px 0px #5f926a;
