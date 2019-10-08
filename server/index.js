@@ -64,12 +64,15 @@ app.post("/api/profile", profController.addProfPic);
 
 // Socket messages
 let messages = [];
+let users = [];
 
 // When socket connects
 const chat = io.of("/chat");
 chat.on("connect", socket => {
   socket.on("addUser", username => {
     socket.id = username;
+    users.push({ user: socket.id });
+    chat.emit("usersInChat", { users });
     messages.push({ message: `${socket.id} entered the chat.` });
     chat.emit("userEntered", { messages });
   });
@@ -93,6 +96,8 @@ chat.on("connect", socket => {
 
   // When user disconnects
   socket.on("disconnect", () => {
+    console.log(typeof socket.id);
+    // users.pop({`socket.id`})
     messages.push({ message: `${socket.id} left the chat.` });
     chat.emit("userLeft", { messages });
   });

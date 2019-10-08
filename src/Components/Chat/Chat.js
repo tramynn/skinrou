@@ -56,6 +56,7 @@ function Chat() {
     initialState => initialState.userReducer.username
   );
   const [messages, setMessages] = React.useState([]);
+  const [users, setUsers] = React.useState([]);
   let [userMessage, setUserMessage] = React.useState("");
   const [socket, setSocket] = React.useState(null);
   const messagesEndRef = useRef(null);
@@ -74,6 +75,11 @@ function Chat() {
         socket.emit("addUser", username);
       });
 
+      socket.on("usersInChat", data => {
+        const usersInChat = data.users;
+        setUsers(usersInChat);
+      });
+
       socket.on("userEntered", data => {
         const userEnteredMsg = data.messages;
         setMessages(userEnteredMsg);
@@ -87,6 +93,12 @@ function Chat() {
       socket.on("userLeft", data => {
         const userLeftMsg = data.messages;
         setMessages(userLeftMsg);
+      });
+
+      socket.on("reconnect", () => {
+        if (username) {
+          socket.emit("addUser", username);
+        }
       });
 
       socket.on("disconnect");
@@ -105,6 +117,15 @@ function Chat() {
           <h1>Chatrooms</h1>
           <hr />
           Users in the chat:
+          {users.map((user, i) => {
+            return (
+              <div key={i}>
+                <ul>
+                  <li>{user.user}</li>
+                </ul>
+              </div>
+            );
+          })}
         </nav>
         <span className={classes.chatboxRight}>
           <header className={classes.chatboxRightTitle}>
