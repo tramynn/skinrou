@@ -22,17 +22,25 @@ $body-fontfamily: Montserrat, sans-serif;
 
 // Font h3
 @mixin h3-font {
-  color: $gs-5;
-  font-family: Raleway, sans-serif;
+  font-family: Montserrat, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1.618em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+// Font nav
+@mixin nav-font {
+  font-family: Montserrat, sans-serif;
   font-size: 1em;
   font-weight: bold;
   letter-spacing: 0.03em;
 }
 
-// Font nav
-@mixin nav-font {
-  font-family: Raleway, sans-serif;
-  font-size: 1em;
+@mixin nav-side-font {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.5em;
   font-weight: bold;
   letter-spacing: 0.03em;
   text-transform: uppercase;

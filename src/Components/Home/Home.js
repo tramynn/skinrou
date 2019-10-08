@@ -60,7 +60,7 @@ class UserLanding extends Component {
               <table className="Routine-user">
                 <tr>
                   <td className="User-avatar">
-                    <FontAwesomeIcon icon={faUserCircle} color="#e7eff6" />
+                    <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />
                   </td>
                   <td className="Routine-username">{routine.username}</td>
                 </tr>
@@ -169,11 +169,19 @@ class UserLanding extends Component {
           </div>
           <div className="Like-btns">
             <div onClick={() => this.handleAddLike(routine.routine_id)}>
-              <FontAwesomeIcon icon={faArrowAltCircleUp} color="#777777" />
+              <FontAwesomeIcon
+                icon={faArrowAltCircleUp}
+                color="#777777"
+                className="like-unlike"
+              />
             </div>
             <div className="Routine-likes">{routine.likes}</div>
             <div onClick={() => this.handleRemoveLike(routine.routine_id)}>
-              <FontAwesomeIcon icon={faArrowAltCircleDown} color="#777777" />
+              <FontAwesomeIcon
+                icon={faArrowAltCircleDown}
+                color="#777777"
+                className="like-unlike"
+              />
             </div>
           </div>
         </div>

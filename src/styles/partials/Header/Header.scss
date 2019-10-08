@@ -121,7 +121,7 @@ nav.side-menu,
 
 .Nav-side-links {
   @include flex-start;
-  @include h2-font;
+  @include nav-side-font;
   color: white;
 
   .Side-username,

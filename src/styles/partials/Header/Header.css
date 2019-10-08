@@ -24,10 +24,9 @@
           justify-content: space-between;
   align-items: center;
   font-family: Raleway, sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
   letter-spacing: 0.03em;
-  text-transform: uppercase;
   color: white;
   background: -webkit-gradient(linear, left top, right top, from(#21669b), to(#587e60));
   background: linear-gradient(90deg, #21669b 0%, #587e60 100%);
@@ -185,7 +184,6 @@ nav.side-menu,
   font-family: Raleway, sans-serif;
   font-size: 2em;
   font-weight: bold;
-  font-style: italic;
   letter-spacing: 0.03em;
   color: white;
 }

@@ -49,12 +49,14 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: Roboto, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 1em;
+  font-weight: bold;
   line-height: 1.618em;
   letter-spacing: 0.03em;
-  background-color: #5f926a;
-  color: #e7eff6;
+  text-transform: uppercase;
+  background-color: #757575;
+  color: white;
   padding: 10px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -66,13 +68,14 @@
 
 .Routines-body .Routines .Routine-top .Routine-user .User-avatar,
 .Routines-body .Routines .Routine-top .Routine-user .Routine-age {
-  padding-left: 10px;
+  padding-left: 5px;
   width: 15%;
+  text-align: center;
 }
 
 .Routines-body .Routines .Routine-top .Routine-user .Routine-username,
 .Routines-body .Routines .Routine-top .Routine-user .Routine-skintype {
-  padding-left: 10px;
+  padding-left: 15px;
   width: 100%;
 }
 
@@ -86,6 +89,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: Roboto, sans-serif;
+  font-size: 1em;
+  line-height: 1.618em;
+  letter-spacing: 0.03em;
+  color: #616161;
   margin-top: 10px;
   padding: 15px;
 }
@@ -102,20 +110,22 @@
 
 .Routines-body .Routine-info .Routine-left-col,
 .Routines-body .Routine-info .Routine-right-col {
-  padding: 10px 15px;
+  padding: 10px 10px;
 }
 
 .Routines-body .Routine-info .Routine-left-col {
-  color: #212121;
-  font-family: Raleway, sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 1em;
   font-weight: bold;
+  line-height: 1.618em;
   letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #424242;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-right: 2px solid #c4c4c4;
   height: 100%;
-  width: 30%;
+  width: 35%;
 }
 
 .Routines-body .Routine-info .Routine-right-col {
@@ -123,7 +133,7 @@
   font-size: 1em;
   line-height: 1.618em;
   letter-spacing: 0.03em;
-  width: 70%;
-  color: #424242;
+  width: 65%;
+  color: #212121;
 }
 /*# sourceMappingURL=Routines.css.map */
