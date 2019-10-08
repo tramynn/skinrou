@@ -19,8 +19,11 @@ class Routines extends Component {
           <div className="Body-container">
             <div className="Category-bg-routines">
               <div className="top-row">
-                <div>
-                  <h1>Routines by Age</h1>
+                <div className="Category-nav-container">
+                  <h1 className="Category-title">
+                    Routines <br /> by <br />
+                    Age
+                  </h1>
                 </div>
                 <div className="Category-nav-container">
                   <Link
@@ -75,8 +78,11 @@ class Routines extends Component {
           <div className="Body-container">
             <div className="Category-bg-routines">
               <div className="top-row">
-                <div>
-                  <h1>Routines by Skin Type</h1>
+                <div className="Category-nav-container">
+                  <h1 className="Category-title">
+                    Routines <br /> by <br />
+                    Skin Type
+                  </h1>
                 </div>
                 <div className="Category-nav-container">
                   <Link
