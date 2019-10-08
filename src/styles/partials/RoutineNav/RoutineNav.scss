@@ -9,10 +9,18 @@
   @include bg-full;
   @include flex-base;
   @include flex-column;
-}
-.Arrow-down {
-  margin-top: 20px;
-  opacity: 0.8;
+
+  .Routines-title {
+    @include h2-font;
+    position: relative;
+    top: 40px;
+    
+  }
+  .Arrow-down {
+    position: relative;
+    top: 80px;
+    opacity: 0.8;
+  }
 }
 
 .Category-nav-container {

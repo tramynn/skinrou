@@ -187,6 +187,7 @@ class UserLanding extends Component {
         <div className="Body-container">
           <header className="Category-bg">
             <div className="">{categoriesMapped}</div>
+            <div className="Routines-title">All routines</div>
             <div>
               <FontAwesomeIcon
                 icon={faArrowDown}
@@ -197,9 +198,6 @@ class UserLanding extends Component {
             </div>
           </header>
           <div className="Routines-wrapper">
-            <header className="Routines-header">
-              All routines <br />
-            </header>
             <main className="Routines-container">
               <div className="Routines-body">{allRoutinesMapped}</div>
             </main>

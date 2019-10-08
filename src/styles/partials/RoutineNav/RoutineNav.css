@@ -1,4 +1,5 @@
-.Category-bg {
+.Category-bg,
+.Category-bg-routines {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -17,12 +18,23 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 96vh;
-  margin-top: 40px;
 }
 
-.Arrow-down {
-  margin-top: 20px;
+.Category-bg .Routines-title,
+.Category-bg-routines .Routines-title {
+  font-family: Raleway, sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  position: relative;
+  top: 40px;
+}
+
+.Category-bg .Arrow-down,
+.Category-bg-routines .Arrow-down {
+  position: relative;
+  top: 80px;
   opacity: 0.8;
 }
 
@@ -40,6 +52,29 @@
   text-align: center;
 }
 
+.Category-nav-container .Category-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Paytone One, sans-serif;
+  text-shadow: 3px 3px 0px #5f926a;
+  font-size: 70px;
+  color: white;
+  font-style: italic;
+  text-shadow: 3px 3px 0px #4b86b4;
+  width: 25vw;
+  height: 25vh;
+  font-size: 50px;
+  margin: 10px;
+  line-height: 1.1618em;
+}
+
 .Category-nav-container .Category-nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -51,20 +86,38 @@
       -ms-flex-align: center;
           align-items: center;
   font-family: Paytone One, sans-serif;
+  text-shadow: 3px 3px 0px #5f926a;
   font-size: 70px;
   background-color: #9fbea1;
   border-radius: 6px;
+  text-shadow: 3px 3px 0px #5f926a;
   -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
           box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
   color: #024a81;
-  font-style: italic;
-  width: 50vw;
-  height: 35vh;
+  width: 25vw;
+  height: 25vh;
   font-size: 50px;
-  margin-top: 10px;
+  margin-left: 25px;
+  line-height: 1.1618em;
 }
 
 .Category-nav-container .Category-nav-links:hover {
-  background-color: #77a37a;
+  background-color: #6497b1;
+  color: #9fbea1;
+  text-shadow: 3px 3px 0px #024a81;
+}
+
+.top-row,
+.middle-row,
+.bottom-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=RoutineNav.css.map */

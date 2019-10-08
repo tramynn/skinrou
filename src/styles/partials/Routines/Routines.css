@@ -1,3 +1,34 @@
+.Routines-wrapper {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: pink;
+}
+
+.Routines-wrapper .Routines-container {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 .Routines-body .Routines {
   font-family: Montserrat, sans-serif;
   font-size: 1em;
@@ -89,44 +120,5 @@
 .Routines-body .Routine-info .Routine-right-col {
   width: 70%;
   color: #212121;
-}
-
-.Routines-wrapper {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.Routines-wrapper .Routines-header {
-  font-family: Raleway, sans-serif;
-  font-size: 2em;
-  font-weight: bold;
-  letter-spacing: 0.03em;
-  padding: 20px;
-  font-style: italic;
-}
-
-.Routines-wrapper .Routines-container {
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
 }
 /*# sourceMappingURL=Routines.css.map */

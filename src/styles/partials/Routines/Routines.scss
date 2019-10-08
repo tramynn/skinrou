@@ -4,6 +4,19 @@
 @import "../../modules/buttons/buttons.scss";
 @import "../../modules/background/background.scss";
 
+.Routines-wrapper {
+  @include bg-full;
+  @include flex-base;
+  @include flex-column;
+  background-color: pink;
+
+  .Routines-container {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
 .Routines-body {
   .Routines {
     @include p-font;
@@ -65,30 +78,11 @@
       font-weight: bold;
       height: 100%;
       width: 30%;
-      // text-align: center;
     }
     .Routine-right-col {
       width: 70%;
       color: $gs-5;
     }
-  }
-}
-
-.Routines-wrapper {
-  @include bg-full;
-  @include flex-base;
-  @include flex-column;
-
-  .Routines-header {
-    @include h2-font;
-    padding: 20px;
-    font-style: italic;
-  }
-
-  .Routines-container {
-    height: 100vh;
-    display: flex;
-    justify-content: space-around;
   }
 }
 

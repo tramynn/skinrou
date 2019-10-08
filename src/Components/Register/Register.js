@@ -154,7 +154,7 @@ class Register extends Component {
             </div>
           </form>
         </div>
-        <div className="Left-box"></div>
+        <div className="Right-box"></div>
       </div>
     );
   }
