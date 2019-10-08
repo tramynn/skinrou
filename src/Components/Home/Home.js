@@ -54,26 +54,108 @@ class UserLanding extends Component {
       return (
         <div key={i} className="Routines">
           <div>
-            <h1>{routine.username}</h1>
-            <h3>{routine.skin_type}</h3>
-            <h3>{routine.age}</h3>
-            <h3>{routine.time}</h3>
-            <ul>
-              <li>{routine.first_cleanser}</li>
-              <li>{routine.second_cleanser}</li>
-              <li>{routine.exfoliator}</li>
-              <li>{routine.toner}</li>
-              <li>{routine.essence}</li>
-              <li>{routine.eye_serum}</li>
-              <li>{routine.eye_moisturizer}</li>
-              <li>{routine.face_serum}</li>
-              <li>{routine.face_moisturizer}</li>
-              <li>{routine.neck_serum}</li>
-              <li>{routine.neck_moisturizer}</li>
-              <li>{routine.mask}</li>
-              <li>{routine.sunscreen}</li>
-              <li>{routine.note}</li>
-            </ul>
+            <table>
+              <tr>
+                <td className="Routine-username">{routine.username}</td>
+              </tr>
+              <tr>
+                <td className="Routine-age">{routine.age}</td>
+                <td className="Routine-skintype">{routine.skin_type}</td>
+              </tr>
+            </table>
+            <hr />
+            <table>
+              <tr>
+                <td>
+                  <label>Routine Time</label>
+                </td>
+                <td>{routine.time}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>First Cleanser</label>
+                </td>
+                <td className="Routine-right-col">{routine.first_cleanser}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Second Cleanser</label>
+                </td>
+                <td>{routine.second_cleanser}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Exfoliator</label>
+                </td>
+                <td>{routine.exfoliator}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Toner</label>
+                </td>
+                <td>{routine.toner}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Essence</label>
+                </td>
+                <td>{routine.essence}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Eye Serum</label>
+                </td>
+                <td>{routine.eye_serum}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Eye Moisturizer</label>
+                </td>
+                <td>{routine.eye_moisturizer}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Face Serum</label>
+                </td>
+                <td>{routine.face_serum}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Face Moisturizer</label>
+                </td>
+                <td>{routine.face_moisturizer}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Neck Serum</label>
+                </td>
+                <td>{routine.neck_serum}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Neck Moisturizer</label>
+                </td>
+                <td>{routine.neck_moisturizer}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Mask</label>
+                </td>
+                <td>{routine.mask}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Sunscreen</label>
+                </td>
+                <td>{routine.sunscreen}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Note</label>
+                </td>
+                <td>{routine.note}</td>
+              </tr>
+            </table>
             <div className="Like-btns">
               <span onClick={() => this.handleAddLike(routine.routine_id)}>
                 <FontAwesomeIcon icon={faArrowAltCircleUp} color="#777777" />
@@ -83,8 +165,6 @@ class UserLanding extends Component {
                 <FontAwesomeIcon icon={faArrowAltCircleDown} color="#777777" />
               </span>
             </div>
-            <br />
-            <br />
           </div>
         </div>
       );
