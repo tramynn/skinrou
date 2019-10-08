@@ -18,3 +18,18 @@
   background-color: blue;
   @include bg-full;
 }
+
+.Edit-delete-menu {
+  padding-top: 15px;
+  padding-right: 15px;
+  text-align: center;
+  width: 10%;
+}
+
+.Edit-delete-menu:hover {
+  cursor: pointer;
+}
+
+.Routine-bottom {
+  @include flex-row-space-bt;
+}

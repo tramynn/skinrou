@@ -187,54 +187,56 @@ class UserProfile extends Component {
               </tr>
             </table>
           </div>
-          <div className="Like-btns">
-            <div onClick={() => this.handleAddLike(routine.routine_id)}>
-              <FontAwesomeIcon
-                icon={faArrowAltCircleUp}
-                color="#777777"
-                className="like-unlike"
-              />
+          <div className="Routine-bottom">
+            <div className="Like-btns">
+              <div onClick={() => this.handleAddLike(routine.routine_id)}>
+                <FontAwesomeIcon
+                  icon={faArrowAltCircleUp}
+                  color="#777777"
+                  className="like-unlike"
+                />
+              </div>
+              <div className="Routine-likes">{routine.likes}</div>
+              <div onClick={() => this.handleRemoveLike(routine.routine_id)}>
+                <FontAwesomeIcon
+                  icon={faArrowAltCircleDown}
+                  color="#777777"
+                  className="like-unlike"
+                />
+              </div>
             </div>
-            <div className="Routine-likes">{routine.likes}</div>
-            <div onClick={() => this.handleRemoveLike(routine.routine_id)}>
-              <FontAwesomeIcon
-                icon={faArrowAltCircleDown}
-                color="#777777"
-                className="like-unlike"
-              />
+            <div className="Edit-delete-container">
+              <div
+                aria-controls="simple-menu"
+                aria-haspopup="true"
+                onClick={this.handleOpen}
+                size={2}
+                className="Edit-delete-menu"
+              >
+                <FontAwesomeIcon icon={faEllipsisH} color="#777777" size="1x" />
+              </div>
+              <Menu
+                id="simple-menu"
+                anchorEl={this.state.anchorEl}
+                keepMounted
+                open={Boolean(this.state.anchorEl)}
+                onClose={this.handleClose}
+              >
+                <Link
+                  to={`/editRoutine/${routine.routine_id}`}
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  <MenuItem>Edit</MenuItem>
+                </Link>
+                <MenuItem
+                  onClick={() => {
+                    this.handleDelete(routine.routine_id);
+                  }}
+                >
+                  Delete
+                </MenuItem>
+              </Menu>
             </div>
-          </div>
-          <div className="Edit-delete-container">
-            <button
-              aria-controls="simple-menu"
-              aria-haspopup="true"
-              onClick={this.handleOpen}
-              size={2}
-              className="Edit-delete-menu"
-            >
-              <FontAwesomeIcon icon={faEllipsisH} color="#777777" size="2x" />
-            </button>
-            <Menu
-              id="simple-menu"
-              anchorEl={this.state.anchorEl}
-              keepMounted
-              open={Boolean(this.state.anchorEl)}
-              onClose={this.handleClose}
-            >
-              <Link
-                to={`/editRoutine/${routine.routine_id}`}
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                <MenuItem>Edit</MenuItem>
-              </Link>
-              <MenuItem
-                onClick={() => {
-                  this.handleDelete(routine.routine_id);
-                }}
-              >
-                Delete
-              </MenuItem>
-            </Menu>
           </div>
         </div>
       );
