@@ -8,10 +8,68 @@
 .UserSettings-container {
   @include bg-full;
   @include flex-base;
-  @include flex-column;
-  background-color: $ol-1;
+  text-align: center;
+  background-color: #d4e7f4;
 }
 
-.Settings-img {
-  @extend %img-profile;
+.UserSettings-left {
+  @include bg-half-width;
+}
+
+.UserSettings-right {
+  @include bg-full;
+  @include flex-base;
+  @include flex-column;
+  background-color: $ol-1;
+
+  .UserSettings-header {
+    @include h1-font-b;
+    font-size: 50px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+
+  .Settings-img {
+    @extend %img-profile;
+    padding-bottom: 30px;
+  }
+}
+
+.Upload-btn,
+.Set-btn {
+  @extend %btn-base;
+  margin: 10px;
+  width: 220px;
+}
+
+.Upload-btn {
+  @extend %btn-gradient;
+
+  .Upload-btn:hover {
+    @extend %primary-btn-hover;
+  }
+}
+
+.Set-btn {
+  @extend %secondary-btn;
+
+  .Set-btn:hover {
+    @extend %secondary-btn-hover;
+  }
+}
+
+// Media Queries
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 425px) {
+}
+
+@media (max-width: 375px) {
+}
+
+@media (max-width: 320px) {
 }

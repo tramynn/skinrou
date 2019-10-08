@@ -7,12 +7,12 @@
 .CreateRoutine-container {
   @include bg-full;
   background-image: url("../../../images/create-routine.jpg");
+  background-attachment: scroll;
   overflow-y: auto;
 }
 
 .CreateRoutine-main {
   @include flex-start;
-  // overflow-y: auto;
 
   .CreateRoutine-left-box {
     width: 33vw;
@@ -25,14 +25,11 @@
     height: auto;
     padding-top: 80px;
     padding-bottom: 80px;
-    text-align: right;
     background-color: $ol-1;
 
     h1 {
-      @include h1-font;
-      color: $mo-5;
+      @include h1-font-b;
       padding-bottom: 40px;
-      font-style: italic;
     }
 
     .Left-col {
@@ -62,15 +59,20 @@
       margin-top: 16px;
       color: white;
     }
-    .Create-btn {
-      @extend %btn-base;
-      @extend %btn-gradient;
-      width: 220px;
-      margin-top: 60px;
-      margin-right: 2px;
-    }
-    .Create-btn:hover {
-      @extend %primary-btn-hover;
+
+    .Create-btn-container {
+      text-align: right;
+
+      .Create-btn {
+        @extend %btn-base;
+        @extend %btn-gradient;
+        width: 220px;
+        margin-top: 60px;
+        margin-right: 2px;
+      }
+      .Create-btn:hover {
+        @extend %primary-btn-hover;
+      }
     }
   }
 }

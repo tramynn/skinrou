@@ -39,18 +39,18 @@
 
 .Login-btn {
   @extend %btn-gradient;
-}
 
-.Login-btn:hover {
-  @extend %primary-btn-hover;
+  .Login-btn:hover {
+    @extend %primary-btn-hover;
+  }
 }
 
 .Register-btn {
   @extend %secondary-btn;
-}
 
-.Register-btn:hover {
-  @extend %secondary-btn-hover;
+  .Register-btn:hover {
+    @extend %secondary-btn-hover;
+  }
 }
 
 // MEDIA QUERIES

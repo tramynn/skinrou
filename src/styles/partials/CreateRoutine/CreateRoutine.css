@@ -1,4 +1,4 @@
-.CreateRoutine-main .CreateRoutine-right-box .Create-btn {
+.CreateRoutine-main .CreateRoutine-right-box .Create-btn-container .Create-btn {
   border-radius: 5px;
   border: 2px solid transparent;
   background-color: #21669c;
@@ -20,12 +20,12 @@
   transition: 0.5s;
 }
 
-.CreateRoutine-main .CreateRoutine-right-box .Create-btn {
+.CreateRoutine-main .CreateRoutine-right-box .Create-btn-container .Create-btn {
   background-image: -webkit-gradient(linear, left top, right top, from(#5f926a), color-stop(51%, #21669b), to(#5f926a));
   background-image: linear-gradient(to right, #5f926a 0%, #21669b 51%, #5f926a 100%);
 }
 
-.CreateRoutine-main .CreateRoutine-right-box .Create-btn:hover {
+.CreateRoutine-main .CreateRoutine-right-box .Create-btn-container .Create-btn:hover {
   -webkit-transition: 1s;
   transition: 1s;
   background-position: right center;
@@ -39,6 +39,7 @@
   width: 100vw;
   height: 100vh;
   background-image: url("../../../images/create-routine.jpg");
+  background-attachment: scroll;
   overflow-y: auto;
 }
 
@@ -76,17 +77,17 @@
   height: auto;
   padding-top: 80px;
   padding-bottom: 80px;
-  text-align: right;
   background-color: #e7eff6;
 }
 
 .CreateRoutine-main .CreateRoutine-right-box h1 {
-  font-family: Paytone One, sans-serif;
-  text-shadow: 3px 3px 0px #5f926a;
-  font-size: 70px;
   color: #024a81;
-  padding-bottom: 40px;
+  font-family: Paytone One, sans-serif;
+  text-shadow: 3px 3px 0px #77a37a;
+  font-size: 70px;
+  line-height: 1.1618em;
   font-style: italic;
+  padding-bottom: 40px;
 }
 
 .CreateRoutine-main .CreateRoutine-right-box .Left-col {
@@ -124,7 +125,11 @@
   color: white;
 }
 
-.CreateRoutine-main .CreateRoutine-right-box .Create-btn {
+.CreateRoutine-main .CreateRoutine-right-box .Create-btn-container {
+  text-align: right;
+}
+
+.CreateRoutine-main .CreateRoutine-right-box .Create-btn-container .Create-btn {
   width: 220px;
   margin-top: 60px;
   margin-right: 2px;

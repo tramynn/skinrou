@@ -1,4 +1,59 @@
-.Settings-img {
+.Upload-btn,
+.Set-btn {
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-color: #21669c;
+  text-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
+  background-size: 200% auto;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: Montserrat, sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 12px;
+  width: 290px;
+  height: 55px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.Upload-btn {
+  background-image: -webkit-gradient(linear, left top, right top, from(#5f926a), color-stop(51%, #21669b), to(#5f926a));
+  background-image: linear-gradient(to right, #5f926a 0%, #21669b 51%, #5f926a 100%);
+}
+
+.Upload-btn .Upload-btn:hover {
+  -webkit-transition: 1s;
+  transition: 1s;
+  background-position: right center;
+  cursor: pointer;
+}
+
+
+.Set-btn {
+  background-color: transparent;
+  color: #485e52;
+  border: 2px solid #485e52;
+  -webkit-transition: 1s;
+  transition: 1s;
+  background-position: left center;
+}
+
+.Set-btn .Set-btn:hover {
+  color: white;
+  border: 2px solid transparent;
+  background-image: -webkit-gradient(linear, left top, right top, from(#5f926a), color-stop(51%, #21669b), to(#5f926a));
+  background-image: linear-gradient(to right, #5f926a 0%, #21669b 51%, #5f926a 100%);
+  -webkit-transition: 1s;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.UserSettings-right .Settings-img {
   border-radius: 50%;
   width: 300px;
   height: 300px;
@@ -19,10 +74,56 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
+  background-color: #d4e7f4;
+}
+
+.UserSettings-left {
+  width: 50vw;
+  height: 100vh;
+}
+
+.UserSettings-right {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #e7eff6;
+}
+
+.UserSettings-right .UserSettings-header {
+  color: #024a81;
+  font-family: Paytone One, sans-serif;
+  text-shadow: 3px 3px 0px #77a37a;
+  font-size: 70px;
+  line-height: 1.1618em;
+  font-style: italic;
+  font-size: 50px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.UserSettings-right .Settings-img {
+  padding-bottom: 30px;
+}
+
+.Upload-btn,
+.Set-btn {
+  margin: 10px;
+  width: 220px;
 }
 /*# sourceMappingURL=UserSettings.css.map */

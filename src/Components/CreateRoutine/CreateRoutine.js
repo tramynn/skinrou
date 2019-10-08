@@ -376,9 +376,11 @@ class CreateRoutine extends Component {
                   </tr>
                 </tbody>
               </table>
-              <button type="submit" className="Create-btn">
-                Create Routine
-              </button>
+              <div className="Create-btn-container">
+                <button type="submit" className="Create-btn">
+                  Create Routine
+                </button>
+              </div>
             </form>
           </div>
         </div>

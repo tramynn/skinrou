@@ -58,24 +58,32 @@ class UserSettings extends Component {
       <div>
         <Header />
         <div className="UserSettings-container">
-          <h1>My Settings</h1>
-          {this.state.url != null ? (
-            <img
-              src={this.state.url}
-              alt={`${this.props.username}'s profile pic`}
-              className="Settings-img"
-            />
-          ) : (
-            <FontAwesomeIcon icon={faUserCircle} color="#9e9e9e" size="6x" />
-          )}
-          <main>
-            <button onClick={() => widget.open()}>
-              <h1>Upload photo</h1>
-            </button>
-            <button onClick={() => this.handleAdd()}>
-              <h1>Set Picture</h1>
-            </button>
-          </main>
+          {/* <div className="UserSettings-left"></div> */}
+          <div className="UserSettings-right">
+            <header className="UserSettings-header">my settings.</header>
+            {this.state.url != null ? (
+              <img
+                src={this.state.url}
+                alt={`${this.props.username}'s profile pic`}
+                className="Settings-img"
+              />
+            ) : (
+              <FontAwesomeIcon
+                icon={faUserCircle}
+                color="#9e9e9e"
+                size="10x"
+                className="User-avatar"
+              />
+            )}
+            <main>
+              <button className="Upload-btn" onClick={() => widget.open()}>
+                Upload photo
+              </button>
+              <button className="Set-btn" onClick={() => this.handleAdd()}>
+                Set Picture
+              </button>
+            </main>
+          </div>
         </div>
       </div>
     );

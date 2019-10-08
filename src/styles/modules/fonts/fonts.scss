@@ -9,6 +9,15 @@ $body-fontfamily: Montserrat, sans-serif;
   line-height: 1.1618em;
 }
 
+@mixin h1-font-b {
+  color: $mo-5;
+  font-family: Paytone One, sans-serif;
+  text-shadow: 3px 3px 0px $tl-1;
+  font-size: 70px;
+  line-height: 1.1618em;
+  font-style: italic;
+}
+
 // Font h2
 @mixin h2-font {
   font-family: Raleway, sans-serif;
