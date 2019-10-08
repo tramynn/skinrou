@@ -46,7 +46,7 @@ class Header extends Component {
   };
 
   render() {
-    const { userId, username, firstName, lastName } = this.props;
+    const { userId, username, firstName, url } = this.props;
 
     return (
       <div>
@@ -97,10 +97,18 @@ class Header extends Component {
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 <li className="Nav-links">
-                  <span>
-                    <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />
-                  </span>
-                  <div className="Header-profile">{username}</div>
+                  {url != null ? (
+                    <img
+                      src={url}
+                      alt={`${username}'s profile pic`}
+                      className="User-avatar"
+                    />
+                  ) : (
+                    <span>
+                      <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />
+                    </span>
+                  )}
+                  <div className="Header-username">{username}</div>
                 </li>
               </Link>
               <Link
@@ -156,7 +164,15 @@ class Header extends Component {
             >
               <li className="Nav-side-links">
                 <span className="Side-icons">
-                  <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />
+                  {url != null ? (
+                    <img
+                      src={url}
+                      alt={`${username}'s profile pic`}
+                      className="User-avatar-side"
+                    />
+                  ) : (
+                    <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />
+                  )}
                 </span>
                 <div className="Side-username">{username}</div>
               </li>
@@ -234,7 +250,7 @@ const mapStateToProps = reduxState => {
     userId: reduxState.userReducer.userId,
     username: reduxState.userReducer.username,
     firstName: reduxState.userReducer.firstName,
-    lastName: reduxState.userReducer.lastName
+    url: reduxState.userReducer.url
   };
 };
 

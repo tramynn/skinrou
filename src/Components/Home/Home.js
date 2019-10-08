@@ -11,12 +11,14 @@ import {
   addLike,
   removeLike
 } from "../../redux/reducers/routinesReducer";
+import { getSession } from "../../redux/reducers/userReducer";
 import ScrollToTopOnMount from "../../ScrollToTopOnMount";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowAltCircleUp,
   faArrowAltCircleDown,
-  faArrowDown
+  faArrowDown,
+  faUserCircle
 } from "@fortawesome/free-solid-svg-icons";
 
 class UserLanding extends Component {
@@ -56,6 +58,9 @@ class UserLanding extends Component {
           <div>
             <table>
               <tr>
+                <td>
+                  <FontAwesomeIcon icon={faUserCircle} color="#9e9e9e" />
+                </td>
                 <td className="Routine-username">{routine.username}</td>
               </tr>
               <tr>
@@ -187,7 +192,9 @@ class UserLanding extends Component {
             </div>
           </header>
           <div className="Routines-wrapper">
-            {/* <header className="Routines-header">All routines.</header> */}
+            <header className="Routines-header">
+              All routines <br />
+            </header>
             <main className="Routines-container">
               <div className="Routines-body">{allRoutinesMapped}</div>
             </main>
@@ -211,6 +218,7 @@ export default connect(
     getCategories,
     getAllRoutines,
     addLike,
-    removeLike
+    removeLike,
+    getSession
   }
 )(UserLanding);

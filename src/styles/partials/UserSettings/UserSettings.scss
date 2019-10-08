@@ -11,3 +11,7 @@
   @include flex-column;
   background-color: $ol-1;
 }
+
+.Settings-img {
+  @extend %img-profile;
+}

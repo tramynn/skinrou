@@ -7,6 +7,8 @@ import {
 } from "../../redux/reducers/userReducer";
 import Header from "../Header/Header";
 import "../../styles/partials/UserSettings/UserSettings.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 
 class UserSettings extends Component {
   constructor() {
@@ -41,23 +43,31 @@ class UserSettings extends Component {
       {
         cloudName: "skinrou",
         uploadPreset: "oo1xr8dd",
-        sources: ["local", "url", "dropbox", "facebook", "instagram"]
+        sources: ["local", "url", "dropbox", "facebook", "instagram"],
+        cropping: true,
+        cropping_aspect_ratio: 1
       },
       (error, result) => {
         this.checkUploadResult(error, result);
       }
     );
 
+    const { username, firstName, lastName, age, phoneNum } = this.props;
+
     return (
       <div>
         <Header />
         <div className="UserSettings-container">
           <h1>My Settings</h1>
-          <img
-            src={this.state.url}
-            alt={`${this.props.username}'s profile pic`}
-            className="Settings-img"
-          />
+          {this.state.url != null ? (
+            <img
+              src={this.state.url}
+              alt={`${this.props.username}'s profile pic`}
+              className="Settings-img"
+            />
+          ) : (
+            <FontAwesomeIcon icon={faUserCircle} color="#9e9e9e" size="6x" />
+          )}
           <main>
             <button onClick={() => widget.open()}>
               <h1>Upload photo</h1>

@@ -138,18 +138,6 @@ class UserProfile extends Component {
                 Delete
               </MenuItem>
             </Menu>
-            <div>
-              {/* <Link to={`/editRoutine/${routine.routine_id}`}>Edit</Link>
-              <button
-                onClick={() => {
-                  this.handleDelete(routine.routine_id);
-                }}
-              >
-                DELETE
-              </button> */}
-            </div>
-            <br />
-            <br />
           </Card>
         </div>
       );
