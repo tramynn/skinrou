@@ -5,6 +5,16 @@
 @import "../../modules/background/background.scss";
 
 .UserProfile-container {
-  @include flex-start;
+  @include bg-full;
   @include flex-column;
+}
+
+.UserProfile-left {
+  @include bg-third-width;
+  background-color: pink;
+}
+
+.UserProfile-right {
+  background-color: blue;
+  @include bg-full;
 }

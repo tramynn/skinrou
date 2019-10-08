@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import Header from "../Header/Header";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Card from "@material-ui/core/Card";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import "../../styles/partials/UserProfile/UserProfile.scss";
+import "../../styles/partials/Routines/Routines.scss";
+import "../../styles/partials/Body/Body.scss";
 import {
   getUserRoutines,
   deleteRoutine,
@@ -17,7 +18,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowAltCircleUp,
   faArrowAltCircleDown,
-  faEllipsisH
+  faEllipsisH,
+  faUserCircle
 } from "@fortawesome/free-solid-svg-icons";
 
 class UserProfile extends Component {
@@ -70,45 +72,139 @@ class UserProfile extends Component {
       url
     } = this.props;
 
-    const userRoutines = routines.map((routine, i) => {
+    const userRoutines = this.props.routines.map((routine, i) => {
       return (
-        <div key={i} className="User-routines">
-          <Card className="Routine">
-            <header>
-              <h1>{routine.username}</h1>
-              <h3>Skin Type: {routine.skin_type}</h3>
-              <h3>Age: {routine.age}</h3>
-              <h3>Time: {routine.time}</h3>
-            </header>
-            <main></main>
-            <ul>
-              <li>First Cleanser: {routine.first_cleanser}</li>
-              <li>Second Cleanser: {routine.second_cleanser}</li>
-              <li>Exfoliator: {routine.exfoliator}</li>
-              <li>Toner: {routine.toner}</li>
-              <li>Essence: {routine.essence}</li>
-              <li>Eye Serum: {routine.eye_serum}</li>
-              <li>Eye Moisturizer: {routine.eye_moisturizer}</li>
-              <li>Face Serum: {routine.face_serum}</li>
-              <li>Face Moisturizer: {routine.face_moisturizer}</li>
-              <li>Neck Serum: {routine.neck_serum}</li>
-              <li>Neck Moisturizer: {routine.neck_moisturizer}</li>
-              <li>Face Mask: {routine.mask}</li>
-              <li>Sunscreen: {routine.sunscreen}</li>
-              <li>Note: {routine.note}</li>
-              <div className="Like-btns">
-                <span onClick={() => this.handleAddLike(routine.routine_id)}>
-                  <FontAwesomeIcon icon={faArrowAltCircleUp} color="#777777" />
-                </span>
-                {routine.likes}
-                <span onClick={() => this.handleRemoveLike(routine.routine_id)}>
-                  <FontAwesomeIcon
-                    icon={faArrowAltCircleDown}
-                    color="#777777"
-                  />
-                </span>
-              </div>
-            </ul>
+        <div key={i} className="Routines">
+          <div>
+            <div className="Routine-top">
+              <table className="Routine-user">
+                <tr>
+                  <td className="User-avatar">
+                    <FontAwesomeIcon icon={faUserCircle} color="#FFFFFF" />
+                  </td>
+                  <td className="Routine-username">{routine.username}</td>
+                </tr>
+                <tr>
+                  <td className="Routine-age">{routine.age}</td>
+                  <td className="Routine-skintype">{routine.skin_type}</td>
+                </tr>
+              </table>
+            </div>
+            <table className="Routine-info">
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Routine Time</label>
+                </td>
+                <td className="Routine-right-col">{routine.time}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>First Cleanser</label>
+                </td>
+                <td className="Routine-right-col">{routine.first_cleanser}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Second Cleanser</label>
+                </td>
+                <td className="Routine-right-col">{routine.second_cleanser}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Exfoliator</label>
+                </td>
+                <td className="Routine-right-col">{routine.exfoliator}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Toner</label>
+                </td>
+                <td className="Routine-right-col">{routine.toner}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Essence</label>
+                </td>
+                <td className="Routine-right-col">{routine.essence}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Eye Serum</label>
+                </td>
+                <td className="Routine-right-col">{routine.eye_serum}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Eye Moisturizer</label>
+                </td>
+                <td className="Routine-right-col">{routine.eye_moisturizer}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Face Serum</label>
+                </td>
+                <td className="Routine-right-col">{routine.face_serum}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Face Moisturizer</label>
+                </td>
+                <td className="Routine-right-col">
+                  {routine.face_moisturizer}
+                </td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Neck Serum</label>
+                </td>
+                <td className="Routine-right-col">{routine.neck_serum}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Neck Moisturizer</label>
+                </td>
+                <td className="Routine-right-col">
+                  {routine.neck_moisturizer}
+                </td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Mask</label>
+                </td>
+                <td className="Routine-right-col">{routine.mask}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Sunscreen</label>
+                </td>
+                <td className="Routine-right-col">{routine.sunscreen}</td>
+              </tr>
+              <tr>
+                <td className="Routine-left-col">
+                  <label>Note</label>
+                </td>
+                <td className="Routine-right-col">{routine.note}</td>
+              </tr>
+            </table>
+          </div>
+          <div className="Like-btns">
+            <div onClick={() => this.handleAddLike(routine.routine_id)}>
+              <FontAwesomeIcon
+                icon={faArrowAltCircleUp}
+                color="#777777"
+                className="like-unlike"
+              />
+            </div>
+            <div className="Routine-likes">{routine.likes}</div>
+            <div onClick={() => this.handleRemoveLike(routine.routine_id)}>
+              <FontAwesomeIcon
+                icon={faArrowAltCircleDown}
+                color="#777777"
+                className="like-unlike"
+              />
+            </div>
+          </div>
+          <div className="Edit-delete-container">
             <button
               aria-controls="simple-menu"
               aria-haspopup="true"
@@ -139,27 +235,40 @@ class UserProfile extends Component {
                 Delete
               </MenuItem>
             </Menu>
-          </Card>
+          </div>
         </div>
       );
     });
+
     return (
       <div className="UserProfile-container">
         <Header />
-        <header>
-          <h1>My Profile</h1>
-          <main>
-            My Information
-            <ul>
-              <li>{username}</li>
-              <li>First Name: {firstName}</li>
-              <li>Last Name: {lastName}</li>
-              <li>Age: {age}</li>
-              <li>Phone Number: {phoneNum}</li>
-            </ul>
-          </main>
-        </header>
-        <main>{userRoutines}</main>
+        {/* <div className="UserProfile-left">
+          <div>
+            <header>
+              <ul>
+                <li>{username}</li>
+                <li>
+                  {firstName} {lastName}
+                </li>
+              </ul>
+            </header>
+            <main>
+              <ul>
+                <li>Age: {age}</li>
+                <li>Phone Number: {phoneNum}</li>
+              </ul>
+            </main>
+          </div>
+        </div> */}
+        <div className="Body-container">
+          <div className="Routines-wrapper">
+            <main className="Routines-container">
+              <header className="User-routines-tile">my routines.</header>
+              <div className="Routines-body">{userRoutines}</div>
+            </main>
+          </div>
+        </div>
       </div>
     );
   }

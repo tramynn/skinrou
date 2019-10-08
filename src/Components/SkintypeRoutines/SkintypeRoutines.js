@@ -9,7 +9,6 @@ import {
   removeLike
 } from "../../redux/reducers/routinesReducer";
 import Header from "../Header/Header";
-import Card from "@material-ui/core/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowAltCircleUp,

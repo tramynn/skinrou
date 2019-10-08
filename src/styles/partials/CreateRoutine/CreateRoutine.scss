@@ -29,6 +29,7 @@
 
     h1 {
       @include h1-font-b;
+      font-size: 50px;
       padding-bottom: 40px;
     }
 

@@ -405,14 +405,16 @@ class EditRoutine extends Component {
                   </tr>
                 </tbody>
               </table>
-              <button
-                onClick={e =>
-                  this.handleEdit(e, this.props.match.params.routineId)
-                }
-                className="Create-btn"
-              >
-                Edit Routine
-              </button>
+              <div className="Create-btn-container">
+                <button
+                  onClick={e =>
+                    this.handleEdit(e, this.props.match.params.routineId)
+                  }
+                  className="Create-btn"
+                >
+                  Edit Routine
+                </button>
+              </div>
             </form>
           </div>
         </div>
