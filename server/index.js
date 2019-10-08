@@ -98,7 +98,7 @@ chat.on("connect", socket => {
   socket.on("disconnect", () => {
     const remainingUsers = users.filter(user => user.user !== socket.id);
     users = remainingUsers;
-    console.log(users);
+    chat.emit("usersInChat", { users });
     messages.push({ message: `${socket.id} left the chat.` });
     chat.emit("userLeft", { messages });
   });
