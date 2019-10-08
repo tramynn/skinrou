@@ -56,25 +56,26 @@ class UserLanding extends Component {
       return (
         <div key={i} className="Routines">
           <div>
-            <table>
+            <div className="Routine-top">
+              <table className="Routine-user">
+                <tr>
+                  <td className="User-avatar">
+                    <FontAwesomeIcon icon={faUserCircle} color="#9e9e9e" />
+                  </td>
+                  <td className="Routine-username">{routine.username}</td>
+                </tr>
+                <tr>
+                  <td className="Routine-age">{routine.age}</td>
+                  <td className="Routine-skintype">{routine.skin_type}</td>
+                </tr>
+              </table>
+            </div>
+            <table className="Routine-info">
               <tr>
-                <td>
-                  <FontAwesomeIcon icon={faUserCircle} color="#9e9e9e" />
-                </td>
-                <td className="Routine-username">{routine.username}</td>
-              </tr>
-              <tr>
-                <td className="Routine-age">{routine.age}</td>
-                <td className="Routine-skintype">{routine.skin_type}</td>
-              </tr>
-            </table>
-            <hr />
-            <table>
-              <tr>
-                <td>
+                <td className="Routine-left-col">
                   <label>Routine Time</label>
                 </td>
-                <td>{routine.time}</td>
+                <td className="Routine-right-col">{routine.time}</td>
               </tr>
               <tr>
                 <td className="Routine-left-col">
@@ -86,89 +87,93 @@ class UserLanding extends Component {
                 <td className="Routine-left-col">
                   <label>Second Cleanser</label>
                 </td>
-                <td>{routine.second_cleanser}</td>
+                <td className="Routine-right-col">{routine.second_cleanser}</td>
               </tr>
               <tr>
                 <td className="Routine-left-col">
                   <label>Exfoliator</label>
                 </td>
-                <td>{routine.exfoliator}</td>
+                <td className="Routine-right-col">{routine.exfoliator}</td>
               </tr>
               <tr>
                 <td className="Routine-left-col">
                   <label>Toner</label>
                 </td>
-                <td>{routine.toner}</td>
+                <td className="Routine-right-col">{routine.toner}</td>
               </tr>
               <tr>
                 <td className="Routine-left-col">
                   <label>Essence</label>
                 </td>
-                <td>{routine.essence}</td>
+                <td className="Routine-right-col">{routine.essence}</td>
               </tr>
               <tr>
                 <td className="Routine-left-col">
                   <label>Eye Serum</label>
                 </td>
-                <td>{routine.eye_serum}</td>
+                <td className="Routine-right-col">{routine.eye_serum}</td>
               </tr>
               <tr>
                 <td className="Routine-left-col">
                   <label>Eye Moisturizer</label>
                 </td>
-                <td>{routine.eye_moisturizer}</td>
+                <td className="Routine-right-col">{routine.eye_moisturizer}</td>
               </tr>
               <tr>
                 <td className="Routine-left-col">
                   <label>Face Serum</label>
                 </td>
-                <td>{routine.face_serum}</td>
+                <td className="Routine-right-col">{routine.face_serum}</td>
               </tr>
               <tr>
                 <td className="Routine-left-col">
                   <label>Face Moisturizer</label>
                 </td>
-                <td>{routine.face_moisturizer}</td>
+                <td className="Routine-right-col">
+                  {routine.face_moisturizer}
+                </td>
               </tr>
               <tr>
                 <td className="Routine-left-col">
                   <label>Neck Serum</label>
                 </td>
-                <td>{routine.neck_serum}</td>
+                <td className="Routine-right-col">{routine.neck_serum}</td>
               </tr>
               <tr>
                 <td className="Routine-left-col">
                   <label>Neck Moisturizer</label>
                 </td>
-                <td>{routine.neck_moisturizer}</td>
+                <td className="Routine-right-col">
+                  {routine.neck_moisturizer}
+                </td>
               </tr>
               <tr>
                 <td className="Routine-left-col">
                   <label>Mask</label>
                 </td>
-                <td>{routine.mask}</td>
+                <td className="Routine-right-col">{routine.mask}</td>
               </tr>
               <tr>
                 <td className="Routine-left-col">
                   <label>Sunscreen</label>
                 </td>
-                <td>{routine.sunscreen}</td>
+                <td className="Routine-right-col">{routine.sunscreen}</td>
               </tr>
               <tr>
                 <td className="Routine-left-col">
                   <label>Note</label>
                 </td>
-                <td>{routine.note}</td>
+                <td className="Routine-right-col">{routine.note}</td>
               </tr>
             </table>
-            <div className="Like-btns">
-              <span onClick={() => this.handleAddLike(routine.routine_id)}>
-                <FontAwesomeIcon icon={faArrowAltCircleUp} color="#777777" />
-              </span>
-              {routine.likes}
-              <span onClick={() => this.handleRemoveLike(routine.routine_id)}>
-                <FontAwesomeIcon icon={faArrowAltCircleDown} color="#777777" />
-              </span>
+          </div>
+          <div className="Like-btns">
+            <div onClick={() => this.handleAddLike(routine.routine_id)}>
+              <FontAwesomeIcon icon={faArrowAltCircleUp} color="#777777" />
+            </div>
+            <div className="Routine-likes">{routine.likes}</div>
+            <div onClick={() => this.handleRemoveLike(routine.routine_id)}>
+              <FontAwesomeIcon icon={faArrowAltCircleDown} color="#777777" />
             </div>
           </div>
         </div>

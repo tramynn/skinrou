@@ -66,7 +66,8 @@ class UserProfile extends Component {
       lastName,
       age,
       phoneNum,
-      routines
+      routines,
+      url
     } = this.props;
 
     const userRoutines = routines.map((routine, i) => {
