@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../../styles/partials/Login-Register/Login-Register.css";
+import "../../styles/partials/Login-Register/Login-Register.scss";
 import { connect } from "react-redux";
 import { loginUser } from "../../redux/reducers/userReducer";
 import { Redirect } from "react-router-dom";
@@ -68,7 +68,7 @@ class Login extends Component {
             </button>
           </form>
         </div>
-        <div className="Right-box"></div>
+        {/* <div className="Right-box"></div> */}
       </div>
     );
   }

@@ -49,7 +49,6 @@ class Register extends Component {
             <br />
             please sign-up.
           </h1>
-
           <form
             className="Form-body"
             noValidate
@@ -154,7 +153,7 @@ class Register extends Component {
             </div>
           </form>
         </div>
-        <div className="Right-box"></div>
+        {/* <div className="Right-box"></div> */}
       </div>
     );
   }

@@ -22,7 +22,9 @@
   color: $mo-5;
   font-style: italic;
   position: relative;
-  bottom: 50px;
+  bottom: 40px;
+  font-size: 45px;
+  line-height: 1em;
 }
 
 .Right-box {
@@ -30,14 +32,18 @@
 }
 
 .Left-box {
-  @include bg-half-width;
+  height: 500px;
+  width: 370px;
   background-color: $ol-1;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0px 2px 6px 0px hsla(0, 0%, 0%, 0.4);
 
   .Form-body {
     @include flex-base;
     @include flex-column;
     position: relative;
-    top: 25px;
+    top: 20px;
 
     .Login-input {
       width: 325px;
@@ -45,7 +51,7 @@
       margin: 0px;
     }
     .Register-input {
-      width: 200px;
+      width: 160px;
       height: 65px;
       margin: 5px;
     }
@@ -55,12 +61,13 @@
     .login-btn-style {
       @extend %btn-gradient;
       margin-top: 15px;
+      width: 325px;
     }
 
     .register {
       @include flex-start;
       position: relative;
-      right: 130px;
+      right: 90px;
     }
     .register-btn {
       margin-top: 15px;
@@ -70,3 +77,82 @@
 }
 
 // Media Queries
+@media (max-width: 1024) {
+}
+
+@media (max-width: 768) {
+}
+
+@media (max-width: 425) {
+}
+
+@media (max-width: 375) {
+}
+
+@media (max-width: 320) {
+}
+
+// .Login-Register-container {
+//   @include bg-full;
+//   @include flex-base;
+//   text-align: center;
+//   background-image: url("../../../images//login-register.jpg");
+
+//   .Left-box,
+//   .Right-box {
+//     @include flex-base;
+//     @include flex-column;
+//   }
+// }
+
+// .Welcome-message {
+//   @include h1-font;
+//   color: $mo-5;
+//   font-style: italic;
+//   position: relative;
+//   bottom: 50px;
+// }
+
+// .Right-box {
+//   @include bg-half-width;
+// }
+
+// .Left-box {
+//   @include bg-half-width;
+//   background-color: $ol-1;
+
+//   .Form-body {
+//     @include flex-base;
+//     @include flex-column;
+//     position: relative;
+//     top: 25px;
+
+//     .Login-input {
+//       width: 325px;
+//       height: 65px;
+//       margin: 0px;
+//     }
+//     .Register-input {
+//       width: 200px;
+//       height: 65px;
+//       margin: 5px;
+//     }
+//     .label {
+//       @include p-font;
+//     }
+//     .login-btn-style {
+//       @extend %btn-gradient;
+//       margin-top: 15px;
+//     }
+
+//     .register {
+//       @include flex-start;
+//       position: relative;
+//       right: 130px;
+//     }
+//     .register-btn {
+//       margin-top: 15px;
+//       width: 150px;
+//     }
+//   }
+// }
