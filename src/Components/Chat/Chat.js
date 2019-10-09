@@ -17,21 +17,35 @@ const useStyles = makeStyles(() => ({
     alignItems: "center",
     fontFamily: "Raleway, sans-serif",
     fontWeight: "bold",
-    marginTop: "8.5vh"
+    marginTop: "8.5vh",
+    letterSpacing: ".06em"
   },
   chatboxLeft: {
-    width: "33%",
-    height: "90%",
+    width: "20%",
+    height: "100%",
     padding: "10px",
-    borderRight: "1px solid white"
+    borderRight: "1px solid white",
+    textTransform: "uppercase",
+    lineHeight: "1.218em"
+  },
+  chatboxLeftTitle: {
+    textAlign: "center",
+    textTransform: "uppercase",
+    paddingTop: "15px",
+    fontWeight: "bold",
+    fontStyle: "italic"
   },
   chatboxRight: {
-    width: "67%",
+    width: "80%",
     height: "95%",
     padding: "10px"
   },
   chatboxRightTitle: {
-    textAlign: "center"
+    textAlign: "center",
+    textTransform: "uppercase",
+    paddingTop: "1px",
+    fontWeight: "bold",
+    fontStyle: "italic"
   },
   chatboxRightMessages: {
     height: "90%",
@@ -40,13 +54,29 @@ const useStyles = makeStyles(() => ({
   chatboxRightMessageSend: {
     display: "flex",
     justifyContent: "flex-start",
-    height: "5%"
+    height: "5%",
+    margin: "5px"
   },
   input: {
-    width: "90%"
+    width: "80%",
+    padding: "6px",
+    borderRadius: "5px",
+    border: "1px solid transparent",
+    backgroundColor: "#e7eff6"
   },
   button: {
-    width: "10%"
+    width: "20%",
+    boxSizing: "border-box",
+    borderRadius: "6px",
+    padding: "5px",
+    color: "#024a81",
+    borderRadius: "5px",
+    border: "1px solid transparent",
+    backgroundColor: "#9fbea1",
+    fontSize: "16px",
+    fontFamily: "$body-fontfamily",
+    letterSpacing: "0.12em",
+    textTransform: "uppercase"
   }
 }));
 
@@ -114,7 +144,7 @@ function Chat() {
       <Header />
       <Paper className={classes.chatbox}>
         <nav className={classes.chatboxLeft}>
-          <h1>Chatrooms</h1>
+          <h1 className={classes.chatboxLeftTitle}>Chat</h1>
           <hr />
           Users in the chat:
           {users.map((user, i) => {
@@ -128,9 +158,8 @@ function Chat() {
           })}
         </nav>
         <span className={classes.chatboxRight}>
-          <header className={classes.chatboxRightTitle}>
-            <h1>General</h1>
-          </header>
+          <header className={classes.chatboxRightTitle}>General</header>
+          <hr />
           <main className={classes.chatboxRightMessages} ref={messagesEndRef}>
             {messages.map((message, i) => {
               return (
@@ -167,7 +196,9 @@ function Chat() {
                   socket.emit("sendMsg", message);
                   clearInput();
                 }}
-              ></button>
+              >
+                SEND
+              </button>
             </form>
           </span>
         </span>

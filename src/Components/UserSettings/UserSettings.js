@@ -36,6 +36,7 @@ class UserSettings extends Component {
     const { url } = this.state;
     const newPic = { userId, url };
     this.props.addProfPic(newPic);
+    alert("You've set your profile photo!");
   };
 
   render() {
