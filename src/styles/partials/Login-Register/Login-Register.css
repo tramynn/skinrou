@@ -41,8 +41,9 @@
 
 .Welcome-message {
   font-family: Paytone One, sans-serif;
-  text-shadow: 3px 3px 0px #5f926a;
+  text-shadow: 3px 3px 0px #77a37a;
   font-size: 70px;
+  line-height: 1.1618em;
   color: #024a81;
   font-style: italic;
   position: relative;
@@ -91,7 +92,7 @@
 }
 
 .Left-box .Form-body .label {
-  font-family: Montserrat, sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 1em;
   line-height: 1.618em;
   letter-spacing: 0.03em;

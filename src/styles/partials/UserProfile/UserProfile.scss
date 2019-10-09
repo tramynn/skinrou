@@ -33,3 +33,10 @@
 .Routine-bottom {
   @include flex-row-space-bt;
 }
+
+.User-routines-title {
+  @include h1-font-b;
+  font-size: 50px;
+  margin-top: 100px;
+  text-align: center;
+}

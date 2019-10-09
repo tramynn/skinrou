@@ -26,7 +26,7 @@
   background-image: linear-gradient(to right, #5f926a 0%, #21669b 51%, #5f926a 100%);
 }
 
-.Login-btn .Login-btn:hover {
+.Login-btn:hover {
   -webkit-transition: 1s;
   transition: 1s;
   background-position: right center;
@@ -43,7 +43,7 @@
   background-position: left center;
 }
 
-.Register-btn .Register-btn:hover {
+.Register-btn:hover {
   color: white;
   border: 2px solid transparent;
   background-image: -webkit-gradient(linear, left top, right top, from(#5f926a), color-stop(51%, #21669b), to(#5f926a));

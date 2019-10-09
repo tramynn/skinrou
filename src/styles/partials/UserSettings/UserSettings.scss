@@ -26,7 +26,7 @@
     @include h1-font-b;
     font-size: 50px;
     padding-top: 50px;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
   }
 
   .Settings-img {
@@ -39,23 +39,21 @@
 .Set-btn {
   @extend %btn-base;
   margin: 10px;
-  width: 220px;
+  width: 200px;
 }
 
 .Upload-btn {
   @extend %btn-gradient;
-
-  .Upload-btn:hover {
-    @extend %primary-btn-hover;
-  }
+}
+.Upload-btn:hover {
+  @extend %primary-btn-hover;
 }
 
 .Set-btn {
   @extend %secondary-btn;
-
-  .Set-btn:hover {
-    @extend %secondary-btn-hover;
-  }
+}
+.Set-btn:hover {
+  @extend %secondary-btn-hover;
 }
 
 // Media Queries

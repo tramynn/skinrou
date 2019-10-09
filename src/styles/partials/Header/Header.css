@@ -23,8 +23,8 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   align-items: center;
-  font-family: Raleway, sans-serif;
-  font-size: 2em;
+  font-family: Montserrat, sans-serif;
+  font-size: 1em;
   font-weight: bold;
   letter-spacing: 0.03em;
   color: white;
@@ -181,10 +181,11 @@ nav.side-menu,
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: Raleway, sans-serif;
-  font-size: 2em;
+  font-family: Montserrat, sans-serif;
+  font-size: 1.5em;
   font-weight: bold;
   letter-spacing: 0.03em;
+  text-transform: uppercase;
   color: white;
 }
 

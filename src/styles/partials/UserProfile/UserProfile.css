@@ -47,4 +47,16 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
+.User-routines-title {
+  color: #024a81;
+  font-family: Paytone One, sans-serif;
+  text-shadow: 3px 3px 0px #77a37a;
+  font-size: 70px;
+  line-height: 1.1618em;
+  font-style: italic;
+  font-size: 50px;
+  margin-top: 100px;
+  text-align: center;
+}
 /*# sourceMappingURL=UserProfile.css.map */
