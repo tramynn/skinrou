@@ -89,7 +89,7 @@ class Routines extends Component {
                     to="/routines/skintype/combination"
                     style={{ color: "inherit", textDecoration: "inherit" }}
                   >
-                    <h1 className="Category-nav-links">Combination</h1>
+                    <h1 className="Category-nav-links">Combo</h1>
                   </Link>
                 </div>
               </div>

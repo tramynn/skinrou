@@ -40,9 +40,9 @@ class UserLanding extends Component {
   render() {
     const categoriesMapped = this.props.categories.map((category, i) => {
       return (
-        <div key={i} className="Category-nav-container">
+        <div key={i} className="Category-nav-home-container">
           <Link
-            className="Category-nav-links"
+            className="Category-nav-home"
             style={{ textDecoration: "none" }}
             to={`/routines/${category.category_id}`}
           >
