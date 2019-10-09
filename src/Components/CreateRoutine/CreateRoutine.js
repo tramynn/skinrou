@@ -113,7 +113,7 @@ class CreateRoutine extends Component {
       <div className="CreateRoutine-container">
         <Header />
         <div className="CreateRoutine-main">
-          <div className="CreateRoutine-left-box"></div>
+          {/* <div className="CreateRoutine-left-box"></div> */}
           <div className="CreateRoutine-right-box">
             <h1>your skinrou.</h1>
             <form onSubmit={this.handleSubmit} autoComplete="off">

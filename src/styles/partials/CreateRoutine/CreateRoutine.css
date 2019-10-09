@@ -55,10 +55,6 @@
           align-items: center;
 }
 
-.CreateRoutine-main .CreateRoutine-left-box {
-  width: 33vw;
-}
-
 .CreateRoutine-main .CreateRoutine-right-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -73,11 +69,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 67vw;
+  width: 100vw;
   height: auto;
-  padding-top: 80px;
+  padding-top: 90px;
   padding-bottom: 80px;
-  background-color: #e7eff6;
 }
 
 .CreateRoutine-main .CreateRoutine-right-box h1 {
@@ -89,6 +84,7 @@
   font-style: italic;
   font-size: 50px;
   padding-bottom: 40px;
+  text-align: center;
 }
 
 .CreateRoutine-main .CreateRoutine-right-box .Left-col {
@@ -113,13 +109,13 @@
 }
 
 .CreateRoutine-main .CreateRoutine-right-box .Create-form {
-  width: 300px;
+  width: 275px;
   border-radius: 4px;
   margin: 2px;
 }
 
 .CreateRoutine-main .CreateRoutine-right-box .Create-input {
-  width: 300px;
+  width: 275px;
   border-radius: 4px;
   margin: 2px;
   margin-top: 16px;

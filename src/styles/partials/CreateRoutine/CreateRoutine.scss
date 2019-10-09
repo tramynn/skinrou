@@ -14,23 +14,24 @@
 .CreateRoutine-main {
   @include flex-start;
 
-  .CreateRoutine-left-box {
-    width: 33vw;
-  }
+  // .CreateRoutine-left-box {
+  //   width: 33vw;
+  // }
 
   .CreateRoutine-right-box {
     @include flex-base;
     @include flex-column;
-    width: 67vw;
+    width: 100vw;
     height: auto;
-    padding-top: 80px;
+    padding-top: 90px;
     padding-bottom: 80px;
-    background-color: $ol-1;
+    // background-color: $ol-1;
 
     h1 {
       @include h1-font-b;
       font-size: 50px;
       padding-bottom: 40px;
+      text-align: center;
     }
 
     .Left-col {
@@ -49,12 +50,12 @@
     }
 
     .Create-form {
-      width: 300px;
+      width: 275px;
       border-radius: 4px;
       margin: 2px;
     }
     .Create-input {
-      width: 300px;
+      width: 275px;
       border-radius: 4px;
       margin: 2px;
       margin-top: 16px;
@@ -76,4 +77,20 @@
       }
     }
   }
+}
+
+// Media Queries
+@media (max-width: 1024) {
+}
+
+@media (max-width: 768) {
+}
+
+@media (max-width: 425) {
+}
+
+@media (max-width: 375) {
+}
+
+@media (max-width: 320) {
 }
