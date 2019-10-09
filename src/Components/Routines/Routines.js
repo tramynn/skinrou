@@ -40,7 +40,7 @@ class Routines extends Component {
                     to="/routines/age/20"
                     style={{ color: "inherit", textDecoration: "inherit" }}
                   >
-                    <h1 className="Category-nav-links">20s</h1>
+                    <h1 className="Category-nav-links">20+</h1>
                   </Link>
                 </div>
                 <div className="Category-nav-container">
@@ -48,7 +48,7 @@ class Routines extends Component {
                     to="/routines/age/30"
                     style={{ color: "inherit", textDecoration: "inherit" }}
                   >
-                    <h1 className="Category-nav-links">30s</h1>
+                    <h1 className="Category-nav-links">30+</h1>
                   </Link>
                 </div>
               </div>
@@ -59,7 +59,7 @@ class Routines extends Component {
                     to="/routines/age/40"
                     style={{ color: "inherit", textDecoration: "inherit" }}
                   >
-                    <h1 className="Category-nav-links">40s</h1>
+                    <h1 className="Category-nav-links">40+</h1>
                   </Link>
                 </div>
                 <div className="Category-nav-container">

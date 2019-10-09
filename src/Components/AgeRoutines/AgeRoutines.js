@@ -173,7 +173,9 @@ class AgeRoutines extends Component {
         <div className="Body-container">
           <div className="Routines-wrapper">
             <main className="Routines-container">
-              <h3>{this.props.match.params.age}</h3>
+              <header className="Category-subtitle">
+                {this.props.match.params.age}+
+              </header>
               <div className="Routines-body">{ageRoutines}</div>
             </main>
           </div>

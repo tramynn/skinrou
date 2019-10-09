@@ -264,9 +264,9 @@ class UserProfile extends Component {
           </div>
         </div> */}
         <div className="Body-container">
-          <header className="User-routines-title">my routines.</header>
           <div className="Routines-wrapper">
             <main className="Routines-container">
+              <header className="Category-subtitle">my routines.</header>
               <div className="Routines-body">{userRoutines}</div>
             </main>
           </div>
