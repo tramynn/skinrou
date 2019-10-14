@@ -67,7 +67,6 @@ const useStyles = makeStyles(() => ({
   button: {
     width: "20%",
     boxSizing: "border-box",
-    borderRadius: "6px",
     padding: "5px",
     color: "#024a81",
     borderRadius: "5px",
