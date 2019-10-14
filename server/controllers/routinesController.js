@@ -30,31 +30,29 @@ async function routinesByCategory(req, res) {
 // Get age categories
 async function age(req, res) {
   const db = req.app.get("db");
-  const age = req.params.age;
+  const age = +req.params.age;
 
-  // console.log("hit", age, typeof age);
-  if (age == "15") {
+  if (age === 15) {
     const ageFiltered = await db.ageCategories.age15();
     if (db) {
       res.status(200).json(ageFiltered);
     }
-  } else if (age == "20") {
+  } else if (age === 20) {
     const ageFiltered = await db.ageCategories.age20();
     if (db) {
       res.status(200).json(ageFiltered);
     }
-    console.log(ageFiltered);
-  } else if (age == "30") {
+  } else if (age === 30) {
     const ageFiltered = await db.ageCategories.age30();
     if (db) {
       res.status(200).json(ageFiltered);
     }
-  } else if (age == "40") {
+  } else if (age === 40) {
     const ageFiltered = await db.ageCategories.age40();
     if (db) {
       res.status(200).json(ageFiltered);
     }
-  } else if (age == "50") {
+  } else if (age === 50) {
     const ageFiltered = await db.ageCategories.age50();
     if (db) {
       res.status(200).json(ageFiltered);
@@ -63,7 +61,7 @@ async function age(req, res) {
     res.status(404).json("404 Not Found.");
   }
 }
-0;
+
 // Get skintype categories
 async function skintype(req, res) {
   const db = req.app.get("db");
@@ -131,7 +129,6 @@ async function addRoutine(req, res) {
     sunscreen,
     note
   } = req.body;
-  console.log(req.body);
 
   const addedRoutine = await db.routines.addRoutine([
     userId,
@@ -211,7 +208,7 @@ async function deleteRoutine(req, res) {
   const routine_id = +req.params.routine_id;
   const userId = +req.session.user.user_id;
   const deletedRoutine = await db.routines.deleteRoutine([userId, routine_id]);
-  console.log(deletedRoutine);
+
   if (db) {
     res.status(200).json(deletedRoutine);
   }
@@ -237,7 +234,6 @@ async function likeRoutine(req, res) {
 
   if (!foundLiked[0]) {
     const likedRoutine = await db.routines.likeRoutine([userId, routineId]);
-    console.log(likedRoutine);
     if (likedRoutine) {
       res.sendStatus(200);
     }

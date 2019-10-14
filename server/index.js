@@ -90,7 +90,6 @@ chat.on("connect", socket => {
       // var minutes = num % 60;
       // return hours + ":" + minutes;
     });
-    console.log(messages);
     chat.emit("newMsg", { messages });
   });
 

@@ -10,8 +10,6 @@ async function getProfPic(req, res) {
 async function addProfPic(req, res) {
   const db = req.app.get("db");
   const { url, userId } = req.body;
-  console.log(url);
-  console.log(userId);
 
   const pic = await db.profPic.addProfPic([userId, url]);
   if (db) {
